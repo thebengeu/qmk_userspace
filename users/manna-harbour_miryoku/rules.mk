@@ -1,0 +1,60 @@
+# Copyright 2019 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+MOUSEKEY_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes
+TAP_DANCE_ENABLE = yes
+CAPS_WORD_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes
+
+INTROSPECTION_KEYMAP_C = manna-harbour_miryoku.c # keymaps
+
+AUTO_SHIFT_ENABLE = no
+DYNAMIC_TAPPING_TERM_ENABLE = yes
+MIRYOKU_ALPHAS=QWERTY
+MIRYOKU_CLIPBOARD=WIN
+# MIRYOKU_KLUDGE_THUMBCOMBOS=yes
+MIRYOKU_LAYERS=FLIP
+MIRYOKU_NAV=INVERTEDT
+MIRYOKU_TAP=QWERTY
+
+# alternative layout options
+
+ifneq ($(strip $(MIRYOKU_ALPHAS)),)
+  OPT_DEFS += -DMIRYOKU_ALPHAS_$(MIRYOKU_ALPHAS)
+endif
+
+ifneq ($(strip $(MIRYOKU_EXTRA)),)
+  OPT_DEFS += -DMIRYOKU_EXTRA_$(MIRYOKU_EXTRA)
+endif
+
+ifneq ($(strip $(MIRYOKU_TAP)),)
+  OPT_DEFS += -DMIRYOKU_TAP_$(MIRYOKU_TAP)
+endif
+
+ifneq ($(strip $(MIRYOKU_NAV)),)
+  OPT_DEFS += -DMIRYOKU_NAV_$(MIRYOKU_NAV)
+endif
+
+ifneq ($(strip $(MIRYOKU_CLIPBOARD)),)
+  OPT_DEFS += -DMIRYOKU_CLIPBOARD_$(MIRYOKU_CLIPBOARD)
+endif
+
+ifneq ($(strip $(MIRYOKU_LAYERS)),)
+  OPT_DEFS += -DMIRYOKU_LAYERS_$(MIRYOKU_LAYERS)
+endif
+
+# subset mappings
+
+ifneq ($(strip $(MIRYOKU_MAPPING)),)
+  OPT_DEFS += -DMIRYOKU_MAPPING_$(MIRYOKU_MAPPING)
+endif
+
+# kludges
+
+# thumb combos
+ifeq ($(strip $(MIRYOKU_KLUDGE_THUMBCOMBOS)),yes)
+  COMBO_ENABLE = yes
+  OPT_DEFS += -DMIRYOKU_KLUDGE_THUMBCOMBOS
+endif
