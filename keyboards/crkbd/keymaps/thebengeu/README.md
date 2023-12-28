@@ -1,3 +1,5 @@
+# Corne Keyboard (CRKBD)
+
 ```console
-make crkbd:thebengeu MIRYOKU_KLUDGE_THUMBCOMBOS=yes
+make crkbd:thebengeu:flash MIRYOKU_KLUDGE_THUMBCOMBOS=yes
 ```
