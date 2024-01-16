@@ -26,7 +26,7 @@ MIRYOKU_X(AUTO_MOUSE, "Auto Mouse")
 #define MIRYOKU_LAYER_BASE \
 KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,              KC_Y,              KC_U,              KC_I,              KC_O,              KC_P,              \
 LGUI_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G,              KC_H,              LSFT_T(KC_J),      LCTL_T(KC_K),      LALT_T(KC_L),      LGUI_T(KC_QUOT),   \
-LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
+LT(U_BUTTON,KC_Z), KC_X,              KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           KC_DOT,            LT(U_BUTTON,KC_SLSH),\
 U_NP,              U_NP,              LT(U_FUN,KC_DEL),  LT(U_NUM,KC_BSPC), LT(U_SYM,KC_ENT),  LT(U_MOUSE,KC_TAB),LT(U_NAV,KC_SPC),  MEH_T(KC_ESC),     U_NP,              U_NP
 
 #define MIRYOKU_LAYER_BUTTON \
@@ -45,7 +45,7 @@ U_NP,              U_NP,              KC_BTN3,           KC_BTN1,           KC_B
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_LBRC,           KC_1,              KC_2,              KC_3,              KC_RBRC,           \
 KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_EQL,            KC_4,              KC_5,              KC_6,              KC_SCLN,           \
 KC_RCTL,           KC_ALGR,           TD(U_TD_U_NAV),    TD(U_TD_U_NUM),    U_NA,              KC_BSLS,           KC_7,              KC_8,              KC_9,              KC_GRV,            \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_MINS,           KC_0,              KC_DOT,            U_NP,              U_NP
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_MINS,           KC_0,              MEH_T(KC_DOT),     U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_LCBR,           KC_EXLM,           KC_AT,             KC_HASH,           KC_RCBR,           \
@@ -56,11 +56,11 @@ U_NP,              U_NP,              U_NA,              U_NA,              U_NA
 #define MIRYOKU_LAYER_FUN \
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   DT_UP,             KC_PSCR,           KC_F1,             KC_F2,             KC_F3,             KC_F10,            \
 KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           DT_PRNT,           KC_SCRL,           KC_F4,             KC_F5,             KC_F6,             KC_F11,            \
-KC_RCTL,           KC_ALGR,           TD(U_TD_U_MEDIA),  TD(U_TD_U_FUN),    DT_DOWN,           KC_PAUS,           KC_F7,             KC_F8,             KC_F9,             KC_F12,            \
+U_NA,              KC_ALGR,           TD(U_TD_U_MEDIA),  TD(U_TD_U_FUN),    DT_DOWN,           KC_PAUS,           KC_F7,             KC_F8,             KC_F9,             KC_F12,            \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_TAB,            KC_SPC,            KC_APP,            U_NP,              U_NP
 
 #define MIRYOKU_LAYER_AUTO_MOUSE \
 KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,              KC_Y,              KC_U,              KC_I,              KC_O,              KC_P,              \
 LGUI_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G,              KC_H,              LSFT_T(KC_J),      LCTL_T(KC_K),      LALT_T(KC_L),      LGUI_T(KC_QUOT),   \
-LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
+LT(U_BUTTON,KC_Z), KC_X,              KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           KC_DOT,            LT(U_BUTTON,KC_SLSH),\
 U_NP,              U_NP,              KC_BTN3,           KC_BTN1,           KC_BTN2,           LT(U_MOUSE,KC_TAB),LT(U_NAV,KC_SPC),  LT(U_MEDIA,KC_ESC),U_NP,              U_NP
