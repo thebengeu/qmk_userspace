@@ -119,3 +119,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void matrix_scan_user(void) {
     achordion_task();
 }
+
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+    switch (tap_hold_keycode) {
+        case LGUI_T(KC_A):
+        case LT(U_BUTTON, KC_Z):
+            if (other_keycode == KC_X || other_keycode == KC_C || other_keycode == KC_V) {
+                return true;
+            }
+            break;
+        case MEH_T(KC_ESC):
+            return true;
+    }
+
+    return achordion_opposite_hands(tap_hold_record, other_record);
+}
