@@ -130,6 +130,11 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
             break;
         case MEH_T(KC_ESC):
             return true;
+        case LGUI_T(KC_QUOT):
+            if (other_keycode == LT(U_NAV, KC_SPC)) {
+                return true;
+            }
+            break;
     }
 
     return achordion_opposite_hands(tap_hold_record, other_record);
