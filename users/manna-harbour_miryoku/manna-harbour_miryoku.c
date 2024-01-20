@@ -121,6 +121,10 @@ void matrix_scan_user(void) {
 }
 
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+    if (other_keycode == QK_BOOT) {
+        return true;
+    }
+
     switch (tap_hold_keycode) {
         case LGUI_T(KC_A):
         case LT(U_BUTTON, KC_Z):
