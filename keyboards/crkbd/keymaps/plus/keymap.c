@@ -15,7 +15,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [7] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
     [8] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
     [9] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
-    [10] = {ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS)},
     // clang-format on
 };
 #endif
@@ -26,7 +25,6 @@ void caps_word_set_user(bool active) {
 
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
 void pointing_device_init_user(void) {
-    set_auto_mouse_layer(U_AUTO_MOUSE);
     set_auto_mouse_enable(true);
 }
 #endif
