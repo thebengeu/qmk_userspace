@@ -113,6 +113,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_achordion(keycode, record)) {
         return false;
     }
+
     return true;
 }
 
@@ -121,10 +122,6 @@ void matrix_scan_user(void) {
 }
 
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
-    if (other_keycode == QK_BOOT) {
-        return true;
-    }
-
     switch (tap_hold_keycode) {
         case LGUI_T(KC_A):
         case LT(U_BUTTON, KC_Z):
@@ -132,13 +129,36 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
                 return true;
             }
             break;
-        case MEH_T(KC_ESC):
-            return true;
         case LGUI_T(KC_QUOT):
             if (other_keycode == LT(U_NAV, KC_SPC) || other_keycode == LALT_T(KC_L)) {
                 return true;
             }
             break;
+        case LT(U_FUN, KC_DEL):
+        case LT(U_NUM, KC_BSPC):
+        case LT(U_SYM, KC_ENT):
+            switch (other_keycode) {
+                case KC_Q:
+                case LALT_T(KC_S):
+                case LCTL_T(KC_D):
+                case LGUI_T(KC_A):
+                case LSFT_T(KC_F):
+                    return true;
+            }
+            break;
+        case LT(U_MOUSE, KC_TAB):
+        case LT(U_NAV, KC_SPACE):
+            switch (other_keycode) {
+                case KC_P:
+                case LALT_T(KC_L):
+                case LCTL_T(KC_K):
+                case LGUI_T(KC_QUOT):
+                case LSFT_T(KC_J):
+                    return true;
+            }
+            break;
+        case MEH_T(KC_ESC):
+            return true;
     }
 
     return achordion_opposite_hands(tap_hold_record, other_record);
