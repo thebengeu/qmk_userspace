@@ -125,13 +125,18 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
     switch (tap_hold_keycode) {
         case LGUI_T(KC_A):
         case LT(U_BUTTON, KC_Z):
-            if (other_keycode == KC_X || other_keycode == KC_C || other_keycode == KC_V) {
-                return true;
+            switch (other_keycode) {
+                case KC_C:
+                case KC_V:
+                case KC_X:
+                    return true;
             }
             break;
         case LGUI_T(KC_QUOT):
-            if (other_keycode == LT(U_NAV, KC_SPC) || other_keycode == LALT_T(KC_L)) {
-                return true;
+            switch (other_keycode) {
+                case LALT_T(KC_L):
+                case LT(U_NAV, KC_SPC):
+                    return true;
             }
             break;
         case LT(U_FUN, KC_DEL):
@@ -146,8 +151,12 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
                     return true;
             }
             break;
-        case LT(U_MOUSE, KC_TAB):
         case LT(U_NAV, KC_SPACE):
+            switch (other_keycode) {
+                case KC_H:
+                    return true;
+            }
+        case LT(U_MOUSE, KC_TAB):
             switch (other_keycode) {
                 case KC_P:
                 case LALT_T(KC_L):
