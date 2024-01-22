@@ -105,6 +105,8 @@ const uint16_t PROGMEM combos_nm[]              = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM combos_mcomm[]           = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combos_commdot[]         = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combos_dotslsh[]         = {KC_DOT, LT(U_BUTTON, KC_SLSH), COMBO_END};
+const uint16_t PROGMEM combos_bbspc[]           = {KC_B, LT(U_NUM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM combos_nspc[]            = {KC_N, LT(U_NAV, KC_SPC), COMBO_END};
 
 // clang-format off
 combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
@@ -126,32 +128,34 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(U_F
                                             COMBO(combos_ui, KC_DOWN),
                                             COMBO(combos_io, KC_UP),
                                             COMBO(combos_op, KC_RGHT),
-                                            COMBO(combos_aq, KC_EXLM),
-                                            COMBO(combos_sw, KC_AT),
-                                            COMBO(combos_de, KC_HASH),
-                                            COMBO(combos_fr, KC_DLR),
-                                            COMBO(combos_gt, KC_PERC),
-                                            COMBO(combos_hy, KC_CIRC),
-                                            COMBO(combos_ju, KC_AMPR),
-                                            COMBO(combos_ki, KC_ASTR),
-                                            COMBO(combos_lo, KC_LPRN),
-                                            COMBO(combos_quotp, KC_RPRN),
+                                            COMBO(combos_aq, KC_PLUS),
+                                            COMBO(combos_sw, KC_EQL),
+                                            COMBO(combos_de, KC_LCBR),
+                                            COMBO(combos_fr, KC_LBRC),
+                                            COMBO(combos_gt, KC_LPRN),
+                                            COMBO(combos_hy, KC_RPRN),
+                                            COMBO(combos_ju, KC_RBRC),
+                                            COMBO(combos_ki, KC_RCBR),
+                                            COMBO(combos_lo, KC_SCLN),
+                                            COMBO(combos_quotp, KC_COLN),
                                             COMBO(combos_fg, KC_UNDS),
                                             COMBO(combos_hj, KC_MINS),
-                                            COMBO(combos_az, KC_1),
-                                            COMBO(combos_sx, KC_2),
-                                            COMBO(combos_dc, KC_3),
-                                            COMBO(combos_fv, KC_4),
-                                            COMBO(combos_gb, KC_5),
-                                            COMBO(combos_hn, KC_6),
-                                            COMBO(combos_jm, KC_7),
-                                            COMBO(combos_kcomm, KC_8),
-                                            COMBO(combos_ldot, KC_9),
-                                            COMBO(combos_quotslsh, KC_0),
+                                            COMBO(combos_az, KC_EXLM),
+                                            COMBO(combos_sx, KC_AT),
+                                            COMBO(combos_dc, KC_HASH),
+                                            COMBO(combos_fv, KC_DLR),
+                                            COMBO(combos_gb, KC_PERC),
+                                            COMBO(combos_hn, KC_CIRC),
+                                            COMBO(combos_jm, KC_AMPR),
+                                            COMBO(combos_kcomm, KC_ASTR),
+                                            COMBO(combos_ldot, KC_GRV),
+                                            COMBO(combos_quotslsh, KC_TILD),
                                             COMBO(combos_nm, KC_HOME),
                                             COMBO(combos_mcomm, KC_PGDN),
                                             COMBO(combos_commdot, KC_PGUP),
-                                            COMBO(combos_dotslsh, KC_END)};
+                                            COMBO(combos_dotslsh, KC_END),
+                                            COMBO(combos_bbspc, KC_PIPE),
+                                            COMBO(combos_nspc, KC_BSLS)};
 // clang-format on
 
 bool caps_word_press_user(uint16_t keycode) {
