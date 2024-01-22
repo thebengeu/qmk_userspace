@@ -11,7 +11,7 @@ uint8_t mod_config(uint8_t mod) {
 
 #ifdef CONSOLE_ENABLE
 void keyboard_post_init_user(void) {
-    debug_enable=true;
+    debug_enable = true;
 }
 #endif
 
