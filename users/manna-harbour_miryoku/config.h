@@ -9,11 +9,11 @@
 
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 200
+#define TAPPING_TERM 175
 
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
+#define QUICK_TAP_TERM_PER_KEY
 
 // Auto Shift
 #define NO_AUTO_SHIFT_ALPHA
@@ -34,6 +34,6 @@
 
 // Thumb Combos
 #if defined (MIRYOKU_KLUDGE_THUMBCOMBOS)
-  #define COMBO_TERM 200
+  #define COMBO_TERM 50
   #define EXTRA_SHORT_COMBOS
 #endif
