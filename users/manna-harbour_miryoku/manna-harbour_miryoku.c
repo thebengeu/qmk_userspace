@@ -242,6 +242,16 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     return TAPPING_TERM;
 }
 
+bool achordion_eager_mod(uint8_t mod) {
+    switch (mod) {
+        case MOD_LCTL:
+        case MOD_LSFT:
+            return true;
+    }
+
+    return false;
+}
+
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LALT_T(KC_L):
