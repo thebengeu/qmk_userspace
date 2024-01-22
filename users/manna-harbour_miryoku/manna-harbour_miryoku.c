@@ -180,15 +180,7 @@ bool caps_word_press_user(uint16_t keycode) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!process_achordion(keycode, record)) {
-        return false;
-    }
-
-    if (!process_sentence_case(keycode, record)) {
-        return false;
-    }
-
-    return true;
+    return process_achordion(keycode, record) && process_sentence_case(keycode, record);
 }
 
 void matrix_scan_user(void) {
