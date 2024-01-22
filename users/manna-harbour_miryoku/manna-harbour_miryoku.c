@@ -15,6 +15,7 @@
 #include "manna-harbour_miryoku.h"
 
 #include "features/achordion.h"
+#include "features/sentence_case.h"
 
 // Additional Features double tap guard
 
@@ -180,6 +181,10 @@ bool caps_word_press_user(uint16_t keycode) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_achordion(keycode, record)) {
+        return false;
+    }
+
+    if (!process_sentence_case(keycode, record)) {
         return false;
     }
 
