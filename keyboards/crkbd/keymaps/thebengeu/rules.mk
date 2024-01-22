@@ -1,3 +1,4 @@
+LTO_ENABLE = yes
 OLED_ENABLE = no
 PS2_DRIVER = interrupt
 PS2_ENABLE = yes
