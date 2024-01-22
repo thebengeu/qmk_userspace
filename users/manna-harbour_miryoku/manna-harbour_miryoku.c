@@ -208,41 +208,23 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
                     return true;
             }
             break;
-        case LT(U_FUN, KC_DEL):
-        case LT(U_NUM, KC_BSPC):
-        case LT(U_SYM, KC_ENT):
-            switch (other_keycode) {
-                case KC_Q:
-                case LALT_T(KC_S):
-                case LCTL_T(KC_D):
-                case LGUI_T(KC_A):
-                case LSFT_T(KC_F):
-                    return true;
-            }
-            break;
-        case LT(U_NAV, KC_SPACE):
-            switch (other_keycode) {
-                case KC_H:
-                    return true;
-            }
-        case LT(U_MOUSE, KC_TAB):
-            switch (other_keycode) {
-                case KC_P:
-                case LALT_T(KC_L):
-                case LCTL_T(KC_K):
-                case LGUI_T(KC_QUOT):
-                case LSFT_T(KC_J):
-                    return true;
-            }
-            break;
-        case MEH_T(KC_ESC):
-            return true;
     }
 
     return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+    switch (tap_hold_keycode) {
+        case LT(U_FUN, KC_DEL):
+        case LT(U_MEDIA, KC_ESC):
+        case LT(U_MOUSE, KC_TAB):
+        case LT(U_NAV, KC_SPACE):
+        case LT(U_NUM, KC_BSPC):
+        case LT(U_SYM, KC_ENT):
+        case MEH_T(KC_ESC):
+            return 0;
+    }
+
     return TAPPING_TERM;
 }
 
