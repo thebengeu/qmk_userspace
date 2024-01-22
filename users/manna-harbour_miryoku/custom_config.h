@@ -34,7 +34,7 @@ KC_TRNS,           KC_TRNS,           KC_BTN3,           KC_BTN1,           KC_B
 #define MIRYOKU_LAYER_NAV \
 KC_PGUP,           KC_HOME,           KC_UP,             KC_END,            KC_INS,            U_NA,              TD(U_TD_U_BASE),   TD(U_TD_U_EXTRA),  TD(U_TD_U_TAP),    QK_BOOT,           \
 KC_PGDN,           KC_LEFT,           KC_DOWN,           KC_RGHT,           CW_TOGG,           KC_CAPS,           OSM(MOD_LSFT),     OSM(MOD_LCTL),     OSM(MOD_LALT),     OSM(MOD_LGUI),     \
-U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_NA,              TD(U_TD_U_NAV),    TD(U_TD_U_NUM),    KC_ALGR,           U_NA,              \
+U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             KC_BSLS,           TD(U_TD_U_NAV),    TD(U_TD_U_NUM),    KC_ALGR,           U_NA,              \
 U_NP,              U_NP,              QK_AREP,           KC_BSPC,           KC_ENT,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MOUSE \
@@ -46,7 +46,7 @@ U_NP,              U_NP,              KC_BTN3,           KC_BTN1,           KC_B
 #define MIRYOKU_LAYER_NUM \
 QK_BOOT,           TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_LBRC,           KC_1,              KC_2,              KC_3,              KC_RBRC,           \
 OSM(MOD_LGUI),     OSM(MOD_LALT),     OSM(MOD_LCTL),     OSM(MOD_LSFT),     KC_RCTL,           KC_EQL,            KC_4,              KC_5,              KC_6,              KC_SCLN,           \
-U_NA,              KC_ALGR,           TD(U_TD_U_NAV),    TD(U_TD_U_NUM),    U_NA,              KC_BSLS,           KC_7,              KC_8,              KC_9,              KC_GRV,            \
+U_NA,              KC_ALGR,           TD(U_TD_U_NAV),    TD(U_TD_U_NUM),    KC_PIPE,           KC_BSLS,           KC_7,              KC_8,              KC_9,              KC_GRV,            \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_MINS,           KC_0,              MEH_T(KC_DOT),     U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
