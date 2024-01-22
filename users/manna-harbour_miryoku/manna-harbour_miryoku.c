@@ -238,6 +238,10 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
     return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+    return TAPPING_TERM;
+}
+
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LALT_T(KC_L):
