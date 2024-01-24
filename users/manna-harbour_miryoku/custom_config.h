@@ -48,7 +48,7 @@ U_NP,              U_NP,              KC_MUTE,           KC_MPLY,           KC_M
 #define MIRYOKU_LAYER_NUM \
 G(KC_Q),           G(KC_W),           G(KC_GRV),         SHIFT_GUI_TAB,     GUI_TAB,           KC_LBRC,           KC_1,              KC_2,              KC_3,              KC_RBRC,           \
 OSM(MOD_LGUI),     OSM(MOD_LALT),     OSM(MOD_LCTL),     OSM(MOD_LSFT),     KC_RCTL,           KC_EQL,            KC_4,              KC_5,              KC_6,              KC_SCLN,           \
-U_NA,              U_NA,              U_NA,              U_NA,              KC_PIPE,           KC_BSLS,           KC_7,              KC_8,              KC_9,              KC_GRV,            \
+U_UND,             U_CUT,             U_CPY,             U_PST,             KC_PIPE,           KC_BSLS,           KC_7,              KC_8,              KC_9,              KC_GRV,            \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_MINS,           KC_0,              MEH_T(KC_DOT),     U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
