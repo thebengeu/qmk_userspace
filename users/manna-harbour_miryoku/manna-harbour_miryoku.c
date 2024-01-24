@@ -141,11 +141,35 @@ bool caps_word_press_user(uint16_t keycode) {
     }
 }
 
+bool is_gui_tab_active = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case GUI_TAB:
+        case SHIFT_GUI_TAB: {
+            uint16_t tab_or_shift_tab = keycode == GUI_TAB ? KC_TAB : S(KC_TAB);
+
+            if (record->event.pressed) {
+                if (!is_gui_tab_active) {
+                    is_gui_tab_active = true;
+                    register_code(KC_LGUI);
+                }
+                register_code16(tab_or_shift_tab);
+            } else {
+                unregister_code16(tab_or_shift_tab);
+            }
+        } break;
+    }
+
     return process_achordion(keycode, record) && process_sentence_case(keycode, record);
 }
 
 void matrix_scan_user(void) {
+    if (is_gui_tab_active && !layer_state_is(U_NUM)) {
+        unregister_code(KC_LGUI);
+        is_gui_tab_active = false;
+    }
+
     achordion_task();
 }
 

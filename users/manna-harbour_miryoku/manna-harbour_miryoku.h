@@ -11,6 +11,11 @@ MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
 };
 
+enum custom_keycodes {
+  GUI_TAB = SAFE_RANGE,
+  SHIFT_GUI_TAB
+};
+
 #define U_MACRO_VA_ARGS(macro, ...) macro(__VA_ARGS__)
 
 #define U_NP KC_NO // key is not present
