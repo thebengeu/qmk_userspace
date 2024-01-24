@@ -40,9 +40,9 @@ U_UND,             U_CUT,             U_CPY,             U_PST,             U_RD
 U_NP,              U_NP,              KC_BTN3,           KC_BTN1,           KC_BTN2,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MEDIA \
-U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              \
-KC_MPRV,           KC_VOLD,           KC_VOLU,           KC_MNXT,           U_NU,              U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
-U_NU,              U_NU,              U_NU,              U_NU,              OU_AUTO,           U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              \
+U_NA,              U_NA,              KC_VOLU,           U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              QK_BOOT,           \
+U_NA,              KC_MPRV,           KC_VOLD,           KC_MNXT,           U_NU,              U_NA,              OSM(MOD_LSFT),     OSM(MOD_LCTL),     OSM(MOD_LALT),     OSM(MOD_LGUI),     \
+U_NU,              U_NU,              U_NU,              U_NU,              U_NU,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              \
 U_NP,              U_NP,              KC_MUTE,           KC_MPLY,           KC_MSTP,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NUM \
