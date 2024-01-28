@@ -212,12 +212,6 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 }
 
 bool achordion_eager_mod(uint8_t mod) {
-    switch (mod) {
-        case MOD_LCTL:
-        case MOD_LSFT:
-            return true;
-    }
-
     return false;
 }
 
