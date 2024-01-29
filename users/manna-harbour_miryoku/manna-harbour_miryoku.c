@@ -202,6 +202,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
             break;
         case LGUI_T(KC_QUOT):
             switch (other_keycode) {
+                case KC_H:
                 case LALT_T(KC_L):
                 case LT(U_NAV, KC_SPC):
                     return true;
