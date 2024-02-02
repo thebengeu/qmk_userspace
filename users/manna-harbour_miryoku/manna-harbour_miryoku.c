@@ -68,14 +68,6 @@ const uint16_t PROGMEM combos_nm[]              = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM combos_mcomm[]           = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combos_commdot[]         = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combos_dotslsh[]         = {KC_DOT, LT(U_BUTTON, KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combos_abspc[]           = {LGUI_T(KC_A), LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_sbspc[]           = {LALT_T(KC_S), LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_dbspc[]           = {LCTL_T(KC_D), LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_fbspc[]           = {LSFT_T(KC_F), LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_jspc[]            = {LSFT_T(KC_J), LT(U_NAV, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_kspc[]            = {LCTL_T(KC_K), LT(U_NAV, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_lspc[]            = {LALT_T(KC_L), LT(U_NAV, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_quotspc[]         = {LGUI_T(KC_QUOT), LT(U_NAV, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_bbspc[]           = {KC_B, LT(U_NUM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combos_nspc[]            = {KC_N, LT(U_NAV, KC_SPC), COMBO_END};
 
@@ -125,14 +117,6 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(U_F
                                             COMBO(combos_mcomm, KC_PGDN),
                                             COMBO(combos_commdot, KC_PGUP),
                                             COMBO(combos_dotslsh, KC_END),
-                                            COMBO(combos_abspc, OSM(MOD_LGUI)),
-                                            COMBO(combos_sbspc, OSM(MOD_LALT)),
-                                            COMBO(combos_dbspc, OSM(MOD_LCTL)),
-                                            COMBO(combos_fbspc, OSM(MOD_LSFT)),
-                                            COMBO(combos_jspc, OSM(MOD_LSFT)),
-                                            COMBO(combos_kspc, OSM(MOD_LCTL)),
-                                            COMBO(combos_lspc, OSM(MOD_LALT)),
-                                            COMBO(combos_quotspc, OSM(MOD_LGUI)),
                                             COMBO(combos_bbspc, KC_PIPE),
                                             COMBO(combos_nspc, KC_BSLS)};
 // clang-format on
