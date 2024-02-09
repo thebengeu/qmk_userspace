@@ -2,7 +2,7 @@
 # https://github.com/manna-harbour/miryoku
 
 AUTO_SHIFT_ENABLE = no
-BOOTMAGIC_ENABLE = no
+BOOTMAGIC_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 COMMAND_ENABLE = no

@@ -3,6 +3,7 @@
     "build_targets": [
         ["crkbd", "thebengeu"],
         ["crkbd/rev1/plus", "plus"],
+        ["hazel/bad_wings", "thebengeu"],
         ["keyboardio/atreus", "thebengeu"]
     ]
 }
