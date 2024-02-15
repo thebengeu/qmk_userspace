@@ -52,7 +52,7 @@ U_UND,             U_CUT,         U_CPY,         U_PST,             KC_PIPE,    
 U_NP,              U_NP,          U_NA,          U_NA,              U_NA,             KC_MINS,            KC_0,             MEH_T(KC_DOT), U_NP,          U_NP
 
 #define MIRYOKU_LAYER_SYM \
-QK_BOOT,           U_NA,          U_NA,          U_NA,              U_NA,             KC_LCBR,            KC_EXLM,          KC_AT,         KC_HASH,       KC_RCBR,             \
+QK_BOOT,           U_NA,          U_NA,          S(C(KC_TAB)),      C(KC_TAB),        KC_LCBR,            KC_EXLM,          KC_AT,         KC_HASH,       KC_RCBR,             \
 OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     U_NA,             KC_PLUS,            KC_DLR,           KC_PERC,       KC_CIRC,       KC_COLN,             \
 U_NA,              U_NA,          U_NA,          U_NA,              U_NA,             KC_PIPE,            KC_AMPR,          KC_ASTR,       KC_LPRN,       KC_TILD,             \
 U_NP,              U_NP,          U_NA,          U_NA,              U_NA,             KC_UNDS,            KC_LPRN,          KC_RPRN,       U_NP,          U_NP
