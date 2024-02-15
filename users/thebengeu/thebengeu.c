@@ -1,39 +1,77 @@
-// Copyright 2022 Manna Harbour
-// https://github.com/manna-harbour/miryoku
-
-// This program is free software: you can redistribute it and/or modify it under
-// the terms of the GNU General Public License as published by the Free Software
-// Foundation, either version 2 of the License, or (at your option) any later
-// version. This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-// FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-// details. You should have received a copy of the GNU General Public License
-// along with this program. If not, see <http://www.gnu.org/licenses/>.
-
+#include <stdint.h>
 #include QMK_KEYBOARD_H
 
-#include "manna-harbour_miryoku.h"
+#include "thebengeu.h"
 
 #include "features/achordion.h"
 #include "features/sentence_case.h"
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-#define MIRYOKU_X(LAYER, STRING) [U_##LAYER] = U_MACRO_VA_ARGS(LAYOUT_miryoku, MIRYOKU_LAYER_##LAYER),
-    MIRYOKU_LAYER_LIST
-#undef MIRYOKU_X
-};
+enum layers { _BASE, _BUTTON, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN };
 
-const uint16_t PROGMEM thumbcombos_base_right[] = {LT(U_SYM, KC_ENT), LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_base_left[]  = {LT(U_NAV, KC_SPC), LT(U_MOUSE, KC_TAB), COMBO_END};
+// clang-format off
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  [_BASE] = LAYOUT_split_3x5_3(
+    KC_Q,              KC_W,          KC_E,          KC_R,              KC_T,             KC_Y,               KC_U,             KC_I,          KC_O,          KC_P,
+    LGUI_T(KC_A),      LALT_T(KC_S),  LCTL_T(KC_D),  LSFT_T(KC_F),      RCTL_T(KC_G),     KC_H,               LSFT_T(KC_J),     LCTL_T(KC_K),  LALT_T(KC_L),  LGUI_T(KC_QUOT),
+    LT(_BUTTON,KC_Z),  KC_X,          KC_C,          KC_V,              KC_B,             KC_N,               KC_M,             KC_COMM,       KC_DOT,        LT(_BUTTON,KC_SLSH),
+                                      QK_REP,        LT(_NUM,KC_BSPC),  LT(_SYM,KC_ENT),  LT(_MOUSE,KC_TAB),  LT(_NAV,KC_SPC),  MEH_T(KC_ESC)
+  ),
+  [_BUTTON] = LAYOUT_split_3x5_3(
+    KC_TRNS,           KC_TRNS,       KC_TRNS,       KC_TRNS,           KC_TRNS,          KC_TRNS,            KC_TRNS,          KC_TRNS,       KC_TRNS,       KC_TRNS,
+    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     KC_RCTL,          KC_TRNS,            KC_TRNS,          KC_TRNS,       KC_TRNS,       KC_TRNS,
+    KC_TRNS,           U_CUT,         U_CPY,         U_PST,             KC_TRNS,          KC_TRNS,            KC_TRNS,          KC_TRNS,       KC_TRNS,       KC_TRNS,
+                                      KC_BTN3,       KC_BTN1,           KC_BTN2,          KC_TRNS,            KC_TRNS,          KC_TRNS
+  ),
+  [_NAV] = LAYOUT_split_3x5_3(
+    KC_PGUP,           KC_HOME,       KC_UP,         KC_END,            KC_INS,           U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
+    KC_PGDN,           KC_LEFT,       KC_DOWN,       KC_RGHT,           CW_TOGG,          KC_CAPS,            OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
+    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            KC_BSLS,            U_NA,             U_NA,          U_NA,          U_NA,
+                                      QK_AREP,       KC_BSPC,           KC_ENT,           U_NA,               U_NA,             U_NA
+  ),
+  [_MOUSE] = LAYOUT_split_3x5_3(
+    KC_WH_U,           KC_WH_L,       KC_MS_U,       KC_WH_R,           U_NU,             U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
+    KC_WH_D,           KC_MS_L,       KC_MS_D,       KC_MS_R,           KC_RCTL,          U_NA,               OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
+    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            U_NA,               U_NA,             U_NA,          U_NA,          U_NA,
+                                      KC_BTN3,       KC_BTN1,           KC_BTN2,          U_NA,               U_NA,             U_NA
+  ),
+  [_MEDIA] = LAYOUT_split_3x5_3(
+    U_NA,              U_NA,          KC_VOLU,       U_NA,              U_NA,             U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
+    U_NA,              KC_MPRV,       KC_VOLD,       KC_MNXT,           U_NU,             U_NA,               OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
+    U_NU,              U_NU,          U_NU,          U_NU,              U_NU,             U_NA,               U_NA,             U_NA,          U_NA,          U_NA,
+                                      KC_MUTE,       KC_MPLY,           KC_MSTP,          U_NA,               U_NA,             U_NA
+  ),
+  [_NUM] = LAYOUT_split_3x5_3(
+    G(KC_Q),           G(KC_W),       G(KC_GRV),     SHIFT_GUI_TAB,     GUI_TAB,          KC_LBRC,            KC_1,             KC_2,          KC_3,          KC_RBRC,
+    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     KC_RCTL,          KC_EQL,             KC_4,             KC_5,          KC_6,          KC_SCLN,
+    U_UND,             U_CUT,         U_CPY,         U_PST,             KC_PIPE,          KC_BSLS,            KC_7,             KC_8,          KC_9,          KC_GRV,
+                                      U_NA,          U_NA,              U_NA,             KC_MINS,            KC_0,             MEH_T(KC_DOT)
+  ),
+  [_SYM] = LAYOUT_split_3x5_3(
+    QK_BOOT,           U_NA,          U_NA,          S(C(KC_TAB)),      C(KC_TAB),        KC_LCBR,            KC_EXLM,          KC_AT,         KC_HASH,       KC_RCBR,
+    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     U_NA,             KC_PLUS,            KC_DLR,           KC_PERC,       KC_CIRC,       KC_COLN,
+    U_NA,              U_NA,          U_NA,          U_NA,              U_NA,             KC_PIPE,            KC_AMPR,          KC_ASTR,       KC_LPRN,       KC_TILD,
+                                      U_NA,          U_NA,              U_NA,             KC_UNDS,            KC_LPRN,          KC_RPRN
+  ),
+  [_FUN] = LAYOUT_split_3x5_3(
+    QK_BOOT,           U_NA,          U_NA,          U_NA,              DT_UP,            KC_PSCR,            KC_F1,            KC_F2,         KC_F3,         KC_F10,
+    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     DT_PRNT,          KC_SCRL,            KC_F4,            KC_F5,         KC_F6,         KC_F11,
+    U_NA,              U_NA,          U_NA,          U_NA,              DT_DOWN,          KC_PAUS,            KC_F7,            KC_F8,         KC_F9,         KC_F12,
+                                      U_NA,          U_NA,              U_NA,             KC_TAB,             KC_SPC,           KC_APP
+  )
+};
+// clang-format on
+
+const uint16_t PROGMEM thumbcombos_base_right[] = {LT(_SYM, KC_ENT), LT(_NUM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_base_left[]  = {LT(_NAV, KC_SPC), LT(_MOUSE, KC_TAB), COMBO_END};
 const uint16_t PROGMEM thumbcombos_nav[]        = {KC_ENT, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_mouse[]      = {KC_BTN2, KC_BTN1, COMBO_END};
 const uint16_t PROGMEM thumbcombos_media[]      = {KC_MSTP, KC_MPLY, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num[]        = {KC_0, KC_MINS, COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym[]        = {KC_UNDS, KC_LPRN, COMBO_END};
 const uint16_t PROGMEM thumbcombos_fun[]        = {KC_SPC, KC_TAB, COMBO_END};
-const uint16_t PROGMEM combos_cut[]             = {LT(U_BUTTON, KC_Z), KC_X, COMBO_END};
-const uint16_t PROGMEM combos_copy[]            = {LT(U_BUTTON, KC_Z), KC_C, COMBO_END};
-const uint16_t PROGMEM combos_paste[]           = {LT(U_BUTTON, KC_Z), KC_V, COMBO_END};
+const uint16_t PROGMEM combos_cut[]             = {LT(_BUTTON, KC_Z), KC_X, COMBO_END};
+const uint16_t PROGMEM combos_copy[]            = {LT(_BUTTON, KC_Z), KC_C, COMBO_END};
+const uint16_t PROGMEM combos_paste[]           = {LT(_BUTTON, KC_Z), KC_V, COMBO_END};
 const uint16_t PROGMEM combos_qw[]              = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combos_we[]              = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM combos_er[]              = {KC_E, KC_R, COMBO_END};
@@ -54,7 +92,7 @@ const uint16_t PROGMEM combos_lo[]              = {LALT_T(KC_L), KC_O, COMBO_END
 const uint16_t PROGMEM combos_quotp[]           = {LGUI_T(KC_QUOT), KC_P, COMBO_END};
 const uint16_t PROGMEM combos_fg[]              = {LSFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]              = {KC_H, LSFT_T(KC_J), COMBO_END};
-const uint16_t PROGMEM combos_az[]              = {LGUI_T(KC_A), LT(U_BUTTON, KC_Z), COMBO_END};
+const uint16_t PROGMEM combos_az[]              = {LGUI_T(KC_A), LT(_BUTTON, KC_Z), COMBO_END};
 const uint16_t PROGMEM combos_sx[]              = {LALT_T(KC_S), KC_X, COMBO_END};
 const uint16_t PROGMEM combos_dc[]              = {LCTL_T(KC_D), KC_C, COMBO_END};
 const uint16_t PROGMEM combos_fv[]              = {LSFT_T(KC_F), KC_V, COMBO_END};
@@ -63,17 +101,17 @@ const uint16_t PROGMEM combos_hn[]              = {KC_H, KC_N, COMBO_END};
 const uint16_t PROGMEM combos_jm[]              = {LSFT_T(KC_J), KC_M, COMBO_END};
 const uint16_t PROGMEM combos_kcomm[]           = {LCTL_T(KC_K), KC_COMM, COMBO_END};
 const uint16_t PROGMEM combos_ldot[]            = {LALT_T(KC_L), KC_DOT, COMBO_END};
-const uint16_t PROGMEM combos_quotslsh[]        = {LGUI_T(KC_QUOT), LT(U_BUTTON, KC_SLSH), COMBO_END};
+const uint16_t PROGMEM combos_quotslsh[]        = {LGUI_T(KC_QUOT), LT(_BUTTON, KC_SLSH), COMBO_END};
 const uint16_t PROGMEM combos_nm[]              = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM combos_mcomm[]           = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combos_commdot[]         = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combos_dotslsh[]         = {KC_DOT, LT(U_BUTTON, KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combos_bbspc[]           = {KC_B, LT(U_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_nspc[]            = {KC_N, LT(U_NAV, KC_SPC), COMBO_END};
+const uint16_t PROGMEM combos_dotslsh[]         = {KC_DOT, LT(_BUTTON, KC_SLSH), COMBO_END};
+const uint16_t PROGMEM combos_bbspc[]           = {KC_B, LT(_NUM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM combos_nspc[]            = {KC_N, LT(_NAV, KC_SPC), COMBO_END};
 
 // clang-format off
-combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
-                                            COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
+combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(_FUN, KC_DEL)),
+                                            COMBO(thumbcombos_base_left, LT(_MEDIA, KC_ESC)),
                                             COMBO(thumbcombos_nav, KC_DEL),
                                             COMBO(thumbcombos_mouse, KC_BTN3),
                                             COMBO(thumbcombos_media, KC_MUTE),
@@ -165,7 +203,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-    if (is_gui_tab_active && !layer_state_is(U_NUM)) {
+    if (is_gui_tab_active && !layer_state_is(_NUM)) {
         unregister_code(KC_LGUI);
         is_gui_tab_active = false;
     }
@@ -176,7 +214,7 @@ void matrix_scan_user(void) {
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
     switch (tap_hold_keycode) {
         case LGUI_T(KC_A):
-        case LT(U_BUTTON, KC_Z):
+        case LT(_BUTTON, KC_Z):
             switch (other_keycode) {
                 case KC_C:
                 case KC_V:
@@ -188,7 +226,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
             switch (other_keycode) {
                 case KC_H:
                 case LALT_T(KC_L):
-                case LT(U_NAV, KC_SPC):
+                case LT(_NAV, KC_SPC):
                     return true;
             }
             break;
@@ -199,12 +237,12 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     switch (tap_hold_keycode) {
-        case LT(U_FUN, KC_DEL):
-        case LT(U_MEDIA, KC_ESC):
-        case LT(U_MOUSE, KC_TAB):
-        case LT(U_NAV, KC_SPACE):
-        case LT(U_NUM, KC_BSPC):
-        case LT(U_SYM, KC_ENT):
+        case LT(_FUN, KC_DEL):
+        case LT(_MEDIA, KC_ESC):
+        case LT(_MOUSE, KC_TAB):
+        case LT(_NAV, KC_SPACE):
+        case LT(_NUM, KC_BSPC):
+        case LT(_SYM, KC_ENT):
         case MEH_T(KC_ESC):
             return 0;
     }
