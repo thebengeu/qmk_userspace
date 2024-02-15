@@ -23,40 +23,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_BTN3,       KC_BTN1,           KC_BTN2,          KC_TRNS,            KC_TRNS,          KC_TRNS
   ),
   [_NAV] = LAYOUT_split_3x5_3(
-    KC_PGUP,           KC_HOME,       KC_UP,         KC_END,            KC_INS,           U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
+    KC_PGUP,           KC_HOME,       KC_UP,         KC_END,            KC_INS,           KC_NO,              KC_NO,            KC_NO,         KC_NO,         QK_BOOT,
     KC_PGDN,           KC_LEFT,       KC_DOWN,       KC_RGHT,           CW_TOGG,          KC_CAPS,            OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
-    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            KC_BSLS,            U_NA,             U_NA,          U_NA,          U_NA,
-                                      QK_AREP,       KC_BSPC,           KC_ENT,           U_NA,               U_NA,             U_NA
+    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            KC_BSLS,            KC_NO,            KC_NO,         KC_NO,         KC_NO,
+                                      QK_AREP,       KC_BSPC,           KC_ENT,           KC_NO,              KC_NO,            KC_NO
   ),
   [_MOUSE] = LAYOUT_split_3x5_3(
-    KC_WH_U,           KC_WH_L,       KC_MS_U,       KC_WH_R,           U_NU,             U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
-    KC_WH_D,           KC_MS_L,       KC_MS_D,       KC_MS_R,           KC_RCTL,          U_NA,               OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
-    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            U_NA,               U_NA,             U_NA,          U_NA,          U_NA,
-                                      KC_BTN3,       KC_BTN1,           KC_BTN2,          U_NA,               U_NA,             U_NA
+    KC_WH_U,           KC_WH_L,       KC_MS_U,       KC_WH_R,           KC_NO,            KC_NO,              KC_NO,            KC_NO,         KC_NO,         QK_BOOT,
+    KC_WH_D,           KC_MS_L,       KC_MS_D,       KC_MS_R,           KC_RCTL,          KC_NO,              OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
+    U_UND,             U_CUT,         U_CPY,         U_PST,             U_RDO,            KC_NO,              KC_NO,            KC_NO,         KC_NO,         KC_NO,
+                                      KC_BTN3,       KC_BTN1,           KC_BTN2,          KC_NO,              KC_NO,            KC_NO
   ),
   [_MEDIA] = LAYOUT_split_3x5_3(
-    U_NA,              U_NA,          KC_VOLU,       U_NA,              U_NA,             U_NA,               U_NA,             U_NA,          U_NA,          QK_BOOT,
-    U_NA,              KC_MPRV,       KC_VOLD,       KC_MNXT,           U_NU,             U_NA,               OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
-    U_NU,              U_NU,          U_NU,          U_NU,              U_NU,             U_NA,               U_NA,             U_NA,          U_NA,          U_NA,
-                                      KC_MUTE,       KC_MPLY,           KC_MSTP,          U_NA,               U_NA,             U_NA
+    KC_NO,             KC_NO,         KC_VOLU,       KC_NO,             KC_NO,            KC_NO,              KC_NO,            KC_NO,         KC_NO,         QK_BOOT,
+    KC_NO,             KC_MPRV,       KC_VOLD,       KC_MNXT,           KC_NO,            KC_NO,              OSM(MOD_LSFT),    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI),
+    KC_NO,             KC_NO,         KC_NO,         KC_NO,             KC_NO,            KC_NO,              KC_NO,            KC_NO,         KC_NO,         KC_NO,
+                                      KC_MUTE,       KC_MPLY,           KC_MSTP,          KC_NO,              KC_NO,            KC_NO
   ),
   [_NUM] = LAYOUT_split_3x5_3(
     G(KC_Q),           G(KC_W),       G(KC_GRV),     SHIFT_GUI_TAB,     GUI_TAB,          KC_LBRC,            KC_1,             KC_2,          KC_3,          KC_RBRC,
     OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     KC_RCTL,          KC_EQL,             KC_4,             KC_5,          KC_6,          KC_SCLN,
     U_UND,             U_CUT,         U_CPY,         U_PST,             KC_PIPE,          KC_BSLS,            KC_7,             KC_8,          KC_9,          KC_GRV,
-                                      U_NA,          U_NA,              U_NA,             KC_MINS,            KC_0,             MEH_T(KC_DOT)
+                                      KC_NO,         KC_NO,             KC_NO,            KC_MINS,            KC_0,             MEH_T(KC_DOT)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
-    QK_BOOT,           U_NA,          U_NA,          S(C(KC_TAB)),      C(KC_TAB),        KC_LCBR,            KC_EXLM,          KC_AT,         KC_HASH,       KC_RCBR,
-    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     U_NA,             KC_PLUS,            KC_DLR,           KC_PERC,       KC_CIRC,       KC_COLN,
-    U_NA,              U_NA,          U_NA,          U_NA,              U_NA,             KC_PIPE,            KC_AMPR,          KC_ASTR,       KC_LPRN,       KC_TILD,
-                                      U_NA,          U_NA,              U_NA,             KC_UNDS,            KC_LPRN,          KC_RPRN
+    QK_BOOT,           KC_NO,         KC_NO,         S(C(KC_TAB)),      C(KC_TAB),        KC_LCBR,            KC_EXLM,          KC_AT,         KC_HASH,       KC_RCBR,
+    OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     KC_NO,            KC_PLUS,            KC_DLR,           KC_PERC,       KC_CIRC,       KC_COLN,
+    KC_NO,             KC_NO,         KC_NO,         KC_NO,             KC_NO,            KC_PIPE,            KC_AMPR,          KC_ASTR,       KC_LPRN,       KC_TILD,
+                                      KC_NO,         KC_NO,             KC_NO,            KC_UNDS,            KC_LPRN,          KC_RPRN
   ),
   [_FUN] = LAYOUT_split_3x5_3(
-    QK_BOOT,           U_NA,          U_NA,          U_NA,              DT_UP,            KC_PSCR,            KC_F1,            KC_F2,         KC_F3,         KC_F10,
+    QK_BOOT,           KC_NO,         KC_NO,         KC_NO,             DT_UP,            KC_PSCR,            KC_F1,            KC_F2,         KC_F3,         KC_F10,
     OSM(MOD_LGUI),     OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),     DT_PRNT,          KC_SCRL,            KC_F4,            KC_F5,         KC_F6,         KC_F11,
-    U_NA,              U_NA,          U_NA,          U_NA,              DT_DOWN,          KC_PAUS,            KC_F7,            KC_F8,         KC_F9,         KC_F12,
-                                      U_NA,          U_NA,              U_NA,             KC_TAB,             KC_SPC,           KC_APP
+    KC_NO,             KC_NO,         KC_NO,         KC_NO,             DT_DOWN,          KC_PAUS,            KC_F7,            KC_F8,         KC_F9,         KC_F12,
+                                      KC_NO,         KC_NO,             KC_NO,            KC_TAB,             KC_SPC,           KC_APP
   )
 };
 // clang-format on
