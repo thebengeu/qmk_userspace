@@ -1,6 +1,3 @@
-# Copyright 2019 Manna Harbour
-# https://github.com/manna-harbour/miryoku
-
 AUTO_SHIFT_ENABLE = no
 BOOTMAGIC_ENABLE = yes
 CAPS_WORD_ENABLE = yes
@@ -10,7 +7,7 @@ CONSOLE_ENABLE = no
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 GRAVE_ESC_ENABLE = no
-INTROSPECTION_KEYMAP_C = manna-harbour_miryoku.c
+INTROSPECTION_KEYMAP_C = thebengeu.c
 KEY_OVERRIDE_ENABLE = no
 MAGIC_ENABLE = no
 MOUSEKEY_ENABLE = yes

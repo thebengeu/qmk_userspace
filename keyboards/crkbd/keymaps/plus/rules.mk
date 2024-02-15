@@ -1,3 +1,3 @@
 RGBLIGHT_ENABLE = no
-USER_NAME := manna-harbour_miryoku
+USER_NAME := thebengeu
 WPM_ENABLE = yes
