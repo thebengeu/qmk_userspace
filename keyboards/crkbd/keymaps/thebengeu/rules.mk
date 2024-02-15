@@ -3,4 +3,3 @@ PS2_DRIVER = interrupt
 PS2_ENABLE = yes
 PS2_MOUSE_ENABLE = yes
 RGBLIGHT_ENABLE = no
-WPM_ENABLE = yes
