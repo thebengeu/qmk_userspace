@@ -22,7 +22,7 @@ layers:
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
           - { tap: /, hold: Button, shifted: "?" }
-        - - Repeat
+        - - Rep
           - { tap: $$mdi:backspace-outline$$, hold: Num }
           - { tap: $$mdi:keyboard-return$$, hold: Sym }
           - { tap: $$mdi:keyboard-tab$$, hold: Mouse }
@@ -59,14 +59,14 @@ layers:
           - { tap: ▽, type: trans }
           - { tap: ▽, type: trans }
           - { tap: ▽, type: held }
-        - - Middle Button
-          - Left Button
-          - Right Button
+        - - Mid Btn
+          - Left Btn
+          - Right Btn
           - { tap: ▽, type: trans }
           - { tap: ▽, type: trans }
           - { tap: ▽, type: trans }
     Nav:
-        - [Page Up, Home, $$mdi:arrow-up$$, End, Insert, "", "", "", "", Boot]
+        - [Page Up, Home, $$mdi:arrow-up$$, End, Ins, "", "", "", "", Boot]
         - - Page Down
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
@@ -78,7 +78,7 @@ layers:
           - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
           - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
         - [Undo, Cut, Copy, Paste, Redo, \, "", "", "", ""]
-        - - Alternate Repeat
+        - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:keyboard-return$$
           - ""
@@ -106,7 +106,7 @@ layers:
           - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
           - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
         - [Undo, Cut, Copy, Paste, Redo, "", "", "", "", ""]
-        - [Middle Button, Left Button, Right Button, { type: held }, "", ""]
+        - [Mid Btn, Left Btn, Right Btn, { type: held }, "", ""]
     Media:
         - ["", "", $$mdi:volume-high$$, "", "", "", "", "", "", Boot]
         - - ""
@@ -128,8 +128,8 @@ layers:
           - ""
     Num:
         - - Quit App
-          - Close Window
-          - Switch Window
+          - Close Win
+          - Switch Win
           - Prev App
           - Next App
           - "["
@@ -173,7 +173,7 @@ layers:
           - ""
           - ""
           - ""
-          - Increase Tapping Term
+          - Tap Term Up
           - Print Screen
           - F1
           - F2
@@ -183,13 +183,13 @@ layers:
           - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
           - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
           - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - Print Tapping Term
+          - Tap Term Print
           - Scroll Lock
           - F4
           - F5
           - F6
           - F11
-        - ["", "", "", "", Decrease Tapping Term, Pause Break, F7, F8, F9, F12]
+        - ["", "", "", "", Tap Term Down, Pause Break, F7, F8, F9, F12]
         - - ""
           - { type: held }
           - { type: held }
@@ -201,7 +201,7 @@ combos:
       key: { tap: $$mdi:backspace-reverse-outline$$, hold: Fun }
       layers: [Base]
     - key_positions: [33, 34]
-      key: { tap: Esc, hold: Media }
+      key: { tap: $$mdi:keyboard-esc$$, hold: Media }
       layers: [Base]
     - key_positions: [31, 32]
       key: $$mdi:backspace-reverse-outline$$
@@ -260,46 +260,100 @@ combos:
     - key_positions: [0, 10]
       key: +
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [1, 11]
       key: "="
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [2, 12]
       key: "{"
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [3, 13]
       key: "["
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [4, 14]
       key: (
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [5, 15]
       key: )
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [6, 16]
       key: "]"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [7, 17]
       key: "}"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [8, 18]
       key: ;
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [9, 19]
       key: ":"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
     - key_positions: [13, 14]
       key: _
       layers: [Base]
+      height: 16
+      width: 18
     - key_positions: [15, 16]
       key: "-"
       layers: [Base]
+      height: 16
+      width: 18
     - key_positions: [10, 20]
       key: "!"
       layers: [Base]
       align: left
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [11, 21]
       key: "@"
@@ -307,7 +361,7 @@ combos:
       align: left
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [12, 22]
       key: "#"
@@ -315,7 +369,7 @@ combos:
       align: left
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [13, 23]
       key: $
@@ -323,7 +377,7 @@ combos:
       align: left
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [14, 24]
       key: "%"
@@ -331,7 +385,7 @@ combos:
       align: left
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [15, 25]
       key: ^
@@ -339,7 +393,7 @@ combos:
       align: right
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [16, 26]
       key: "&"
@@ -347,7 +401,7 @@ combos:
       align: right
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [17, 27]
       key: "*"
@@ -355,7 +409,7 @@ combos:
       align: right
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [18, 28]
       key: "`"
@@ -363,7 +417,7 @@ combos:
       align: right
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [19, 29]
       key: "~"
@@ -371,7 +425,7 @@ combos:
       align: right
       dendron: false
       height: 16
-      offset: -0.3
+      offset: -0.25
       width: 18
     - key_positions: [25, 26]
       key: Home
@@ -388,12 +442,13 @@ combos:
     - key_positions: [24, 31]
       key: "|"
       layers: [Base]
+      height: 16
+      width: 18
     - key_positions: [25, 34]
       key: \
       layers: [Base]
+      height: 16
+      width: 18
 draw_config:
     combo_h: 28
     combo_w: 30
-    key_h: 66
-    key_w: 70
-    shrink_wide_legends: 6
