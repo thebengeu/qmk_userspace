@@ -66,11 +66,11 @@ layers:
           - { tap: ▽, type: trans }
           - { tap: ▽, type: trans }
     Nav:
-        - [Page Up, Home, Up, End, Insert, "", "", "", "", Boot]
+        - [Page Up, Home, $$mdi:arrow-up$$, End, Insert, "", "", "", "", Boot]
         - - Page Down
-          - Left
-          - Down
-          - Right
+          - $$mdi:arrow-left$$
+          - $$mdi:arrow-down$$
+          - $$mdi:arrow-right$$
           - Caps Word
           - Caps Lock
           - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
@@ -209,6 +209,7 @@ combos:
     - key_positions: [31, 32]
       key: Mid Btn
       layers: [Mouse]
+      align: bottom
     - key_positions: [31, 32]
       key: $$mdi:volume-low$$
       layers: [Media]
@@ -233,28 +234,28 @@ combos:
       layers: [Base]
       draw_separate: true
     - key_positions: [0, 1]
-      key: Wheel Left
+      key: WH_L
       layers: [Base]
     - key_positions: [1, 2]
-      key: Wheel Up
+      key: WH_U
       layers: [Base]
     - key_positions: [2, 3]
-      key: Wheel Down
+      key: WH_D
       layers: [Base]
     - key_positions: [3, 4]
-      key: Wheel Right
+      key: WH_R
       layers: [Base]
     - key_positions: [5, 6]
-      key: Left
+      key: $$mdi:arrow-left$$
       layers: [Base]
     - key_positions: [6, 7]
-      key: Up
+      key: $$mdi:arrow-up$$
       layers: [Base]
     - key_positions: [7, 8]
-      key: Down
+      key: $$mdi:arrow-down$$
       layers: [Base]
     - key_positions: [8, 9]
-      key: Right
+      key: $$mdi:arrow-right$$
       layers: [Base]
     - key_positions: [0, 10]
       key: +
@@ -293,43 +294,93 @@ combos:
       key: "-"
       layers: [Base]
     - key_positions: [10, 20]
-      key: !
+      key: "!"
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [11, 21]
       key: "@"
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [12, 22]
       key: "#"
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [13, 23]
       key: $
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [14, 24]
       key: "%"
       layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [15, 25]
       key: ^
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [16, 26]
       key: "&"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [17, 27]
       key: "*"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [18, 28]
       key: "`"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [19, 29]
       key: "~"
       layers: [Base]
+      align: right
+      dendron: false
+      height: 16
+      offset: -0.3
+      width: 18
     - key_positions: [25, 26]
       key: Home
       layers: [Base]
     - key_positions: [26, 27]
-      key: Page Down
+      key: PgDn
       layers: [Base]
     - key_positions: [27, 28]
-      key: Page Up
+      key: PgUp
       layers: [Base]
     - key_positions: [28, 29]
       key: End
@@ -341,11 +392,8 @@ combos:
       key: \
       layers: [Base]
 draw_config:
-    combo_h: 38
-    combo_w: 40
-    inner_pad_h: 14
-    inner_pad_w: 14
-    key_h: 92
-    key_w: 96
+    combo_h: 28
+    combo_w: 30
+    key_h: 66
+    key_w: 70
     shrink_wide_legends: 6
-    small_pad: 6
