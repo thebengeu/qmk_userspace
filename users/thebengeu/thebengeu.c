@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-const uint16_t PROGMEM thumbcombos_base_right[] = {LT(_SYM, KC_ENT), LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_base_left[]  = {LT(_NAV, KC_SPC), LT(_MOUSE, KC_TAB), COMBO_END};
+const uint16_t PROGMEM thumbcombos_base_left[]  = {LT(_SYM, KC_ENT), LT(_NUM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_base_right[] = {LT(_NAV, KC_SPC), LT(_MOUSE, KC_TAB), COMBO_END};
 const uint16_t PROGMEM thumbcombos_nav[]        = {KC_ENT, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_mouse[]      = {KC_BTN2, KC_BTN1, COMBO_END};
 const uint16_t PROGMEM thumbcombos_media[]      = {KC_MSTP, KC_MPLY, COMBO_END};
@@ -109,8 +109,8 @@ const uint16_t PROGMEM combos_bbspc[]           = {KC_B, LT(_NUM, KC_BSPC), COMB
 const uint16_t PROGMEM combos_nspc[]            = {KC_N, LT(_NAV, KC_SPC), COMBO_END};
 
 // clang-format off
-combo_t                key_combos[]      = {COMBO(thumbcombos_base_right, LT(_FUN, KC_DEL)),
-                                            COMBO(thumbcombos_base_left, LT(_MEDIA, KC_ESC)),
+combo_t                key_combos[]      = {COMBO(thumbcombos_base_left, LT(_FUN, KC_DEL)),
+                                            COMBO(thumbcombos_base_right, LT(_MEDIA, KC_ESC)),
                                             COMBO(thumbcombos_nav, KC_DEL),
                                             COMBO(thumbcombos_mouse, KC_BTN3),
                                             COMBO(thumbcombos_media, KC_MUTE),
