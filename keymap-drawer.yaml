@@ -1,4 +1,4 @@
-layout: { qmk_keyboard: hazel/bad_wings }
+layout: { qmk_info_json: info.json }
 layers:
     Base:
         - [Q, W, E, R, T, Y, U, I, O, P]
