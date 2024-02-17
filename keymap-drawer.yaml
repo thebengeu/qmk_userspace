@@ -1,7 +1,7 @@
 layout: { qmk_info_json: info.json }
 layers:
     Base:
-        - [Q, W, E, R, T, Y, U, I, O, P]
+        - [{ tap: Q, hold: Sym }, W, E, R, T, Y, U, I, O, { tap: P, hold: Num }]
         - - { tap: A, hold: $$mdi:apple-keyboard-command$$ }
           - { tap: S, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: D, hold: $$mdi:apple-keyboard-control$$ }
@@ -12,7 +12,7 @@ layers:
           - { tap: K, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: L, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "'", hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: Z, hold: Button }
+        - - { tap: Z, hold: Fun }
           - X
           - C
           - V
@@ -21,244 +21,165 @@ layers:
           - M
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
-          - { tap: /, hold: Button, shifted: "?" }
+          - { tap: /, hold: Adj, shifted: "?" }
         - - Rep
           - { tap: $$mdi:backspace-outline$$, hold: Num }
-          - { tap: $$mdi:keyboard-return$$, hold: Sym }
-          - { tap: $$mdi:keyboard-tab$$, hold: Mouse }
-          - { tap: $$mdi:keyboard-space$$, hold: Nav }
+          - { tap: $$mdi:keyboard-return$$, hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: $$mdi:keyboard-tab$$, hold: Fun }
+          - { tap: $$mdi:keyboard-space$$, hold: Sym }
           - { tap: $$mdi:keyboard-esc$$, hold: Meh }
-    Button:
-        - - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-        - - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
+    Fun:
+        - - "Wheel ↑"
+          - "Wheel ←"
+          - "Mouse ↑"
+          - "Wheel →"
+          - Boot
+          - $$mdi:volume-low$$
+          - ⌘1
+          - ⌘2
+          - ⌘3
+          - $$mdi:play-pause$$
+        - - "Wheel ↓"
+          - "Mouse ←"
+          - "Mouse ↓"
+          - "Mouse →"
           - Fn
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-        - - { tap: ▽, type: held }
-          - Cut
-          - Copy
-          - Paste
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: held }
+          - $$mdi:volume-medium$$
+          - { tap: ⌘4, hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: $$mdi:volume-high$$, hold: $$mdi:apple-keyboard-command$$ }
+        - [
+              { tap: $$mdi:undo$$, type: held },
+              $$mdi:content-cut$$,
+              $$mdi:content-copy$$,
+              $$mdi:content-paste$$,
+              $$mdi:redo$$,
+              $$mdi:skip-backward$$,
+              ⌘7,
+              ⌘8,
+              ⌘9,
+              $$mdi:skip-forward$$,
+          ]
         - - Mid Btn
           - Left Btn
           - Right Btn
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-          - { tap: ▽, type: trans }
-    Nav:
-        - [Page Up, Home, $$mdi:arrow-up$$, End, Ins, "", "", "", "", Boot]
-        - - Page Down
-          - $$mdi:arrow-left$$
-          - $$mdi:arrow-down$$
-          - $$mdi:arrow-right$$
-          - Caps Word
-          - Caps Lock
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-        - [Undo, Cut, Copy, Paste, Redo, \, "", "", "", ""]
-        - - Alt Rep
-          - $$mdi:backspace-outline$$
-          - $$mdi:keyboard-return$$
+          - { tap: Layer Lock, type: held }
           - ""
-          - { type: held }
-          - ""
-    Mouse:
-        - - Wheel Up
-          - Wheel Left
-          - Mouse Up
-          - Wheel Right
-          - ""
-          - ""
-          - ""
-          - ""
-          - ""
-          - Boot
-        - - Wheel Down
-          - Mouse Left
-          - Mouse Down
-          - Mouse Right
-          - Fn
-          - ""
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-        - [Undo, Cut, Copy, Paste, Redo, "", "", "", "", ""]
-        - [Mid Btn, Left Btn, Right Btn, { type: held }, "", ""]
-    Media:
-        - ["", "", $$mdi:volume-high$$, "", "", "", "", "", "", Boot]
-        - - ""
-          - $$mdi:skip-backward$$
-          - $$mdi:volume-medium$$
-          - $$mdi:skip-forward$$
-          - ""
-          - ""
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-        - ["", "", "", "", "", "", "", "", "", ""]
-        - - $$mdi:volume-low$$
-          - $$mdi:play-pause$$
-          - $$mdi:stop$$
-          - { type: held }
-          - { type: held }
           - ""
     Num:
-        - - Quit App
+        - - "~"
           - Close Win
-          - Switch Win
-          - Prev App
-          - Next App
+          - Prev Tab
+          - Next Tab
+          - "`"
           - "["
           - "1"
           - "2"
           - "3"
-          - "]"
-        - - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - Fn
-          - "="
+          - { tap: "]", type: held }
+        - - { tap: "{", hold: $$mdi:apple-keyboard-command$$ }
+          - { tap: "}", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: (, hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: ), hold: $$mdi:apple-keyboard-shift$$ }
+          - ":"
+          - +
           - "4"
           - "5"
           - "6"
-          - ;
-        - [Undo, Cut, Copy, Paste, "|", \, "7", "8", "9", "`"]
+          - { tap: "=", hold: => }
+        - ["#", "*", ^, { tap: $, hold: "${}" }, "%", ",", "7", "8", "9", .]
         - - ""
-          - { type: held }
+          - { tap: Layer Lock, type: held }
           - ""
           - "-"
-          - "0"
-          - { tap: ., hold: Meh }
+          - { tap: $$mdi:keyboard-space$$, hold: Adj }
+          - { tap: "0", hold: Meh }
     Sym:
-        - [Boot, Zoom Out, Zoom In, Prev Tab, Next Tab, "{", "!", "@", "#", "}"]
-        - - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
+        - [
+              { tap: PgUp, type: held },
+              Home,
+              $$mdi:arrow-up$$,
+              End,
+              "",
+              F1,
+              F2,
+              F3,
+              F4,
+              F5,
+          ]
+        - - PgDn
+          - $$mdi:arrow-left$$
+          - $$mdi:arrow-down$$
+          - $$mdi:arrow-right$$
+          - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
+          - "@"
+          - { tap: _, hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: "|", hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: "&", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "!", hold: $$mdi:apple-keyboard-command$$ }
+        - - F11
+          - F12
+          - \
+          - ;
           - ""
-          - +
-          - $
-          - "%"
-          - ^
-          - ":"
-        - ["", "", "", "", "", "|", "&", "*", (, "~"]
-        - ["", "", { type: held }, _, (, )]
-    Fun:
-        - - Boot
-          - ""
-          - ""
-          - ""
-          - Tap Term Up
-          - Print Screen
-          - F1
-          - F2
-          - F3
-          - F10
-        - - { tap: $$mdi:apple-keyboard-command$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-option$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-control$$, hold: sticky }
-          - { tap: $$mdi:apple-keyboard-shift$$, hold: sticky }
-          - Tap Term Print
-          - Scroll Lock
-          - F4
-          - F5
           - F6
-          - F11
-        - ["", "", "", "", Tap Term Down, Pause Break, F7, F8, F9, F12]
-        - - ""
-          - { type: held }
-          - { type: held }
-          - $$mdi:keyboard-tab$$
-          - $$mdi:keyboard-space$$
-          - App
+          - F7
+          - F8
+          - F9
+          - F10
+        - [
+              Alt Rep,
+              $$mdi:backspace-outline$$,
+              $$mdi:backspace-reverse-outline$$,
+              "",
+              { tap: Layer Lock, type: held },
+              "",
+          ]
+    Adj:
+        - ["", "", "", "", "", "", "", "", "", ""]
+        - ["", "", "", "", "", "", "", "", "", ""]
+        - ["", "", "", "", "", "", "", "", "", { type: held }]
+        - ["", "", "", "", { type: held }, ""]
 combos:
-    - key_positions: [31, 32]
-      key: { tap: $$mdi:backspace-reverse-outline$$, hold: Fun }
-      layers: [Base]
-    - key_positions: [33, 34]
-      key: { tap: $$mdi:keyboard-esc$$, hold: Media }
+    - key_positions: [30, 31]
+      key: Alt Rep
       layers: [Base]
     - key_positions: [31, 32]
-      key: $$mdi:backspace-reverse-outline$$
-      layers: [Nav]
-    - key_positions: [31, 32]
-      key: Mid Btn
-      layers: [Mouse]
-      align: bottom
-    - key_positions: [31, 32]
-      key: $$mdi:volume-low$$
-      layers: [Media]
-    - key_positions: [33, 34]
-      key: { tap: ., hold: Meh }
-      layers: [Num]
-    - key_positions: [33, 34]
-      key: )
-      layers: [Sym]
-    - key_positions: [33, 34]
-      key: App
-      layers: [Fun]
-    - key_positions: [20, 21]
-      key: Cut
+      key: Rep
       layers: [Base]
-    - key_positions: [20, 22]
-      key: Copy
+    - key_positions: [33, 34]
+      key: { tap: $$mdi:keyboard-esc$$, hold: Meh }
       layers: [Base]
-      draw_separate: true
-    - key_positions: [20, 23]
-      key: Paste
+    - key_positions: [34, 35]
+      key: { tap: CW, hold: Adj }
       layers: [Base]
-      draw_separate: true
     - key_positions: [0, 1]
-      key: WH_L
+      key: "~"
       layers: [Base]
     - key_positions: [1, 2]
-      key: WH_U
+      key: "`"
       layers: [Base]
     - key_positions: [2, 3]
-      key: WH_D
+      key: Home
       layers: [Base]
     - key_positions: [3, 4]
-      key: WH_R
+      key: PgUp
       layers: [Base]
     - key_positions: [5, 6]
-      key: $$mdi:arrow-left$$
+      key: PgDn
       layers: [Base]
     - key_positions: [6, 7]
-      key: $$mdi:arrow-up$$
+      key: End
       layers: [Base]
     - key_positions: [7, 8]
-      key: $$mdi:arrow-down$$
+      key: "="
       layers: [Base]
     - key_positions: [8, 9]
-      key: $$mdi:arrow-right$$
+      key: +
       layers: [Base]
     - key_positions: [0, 10]
-      key: +
+      key: "_"
       layers: [Base]
       align: left
       dendron: false
@@ -266,14 +187,6 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [1, 11]
-      key: "="
-      layers: [Base]
-      align: left
-      dendron: false
-      height: 16
-      offset: -0.25
-      width: 18
-    - key_positions: [2, 12]
       key: "{"
       layers: [Base]
       align: left
@@ -281,8 +194,16 @@ combos:
       height: 16
       offset: -0.25
       width: 18
-    - key_positions: [3, 13]
+    - key_positions: [2, 12]
       key: "["
+      layers: [Base]
+      align: left
+      dendron: false
+      height: 16
+      offset: -0.25
+      width: 18
+    - key_positions: [3, 13]
+      key: $$mdi:arrow-left$$
       layers: [Base]
       align: left
       dendron: false
@@ -306,7 +227,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [6, 16]
-      key: "]"
+      key: $$mdi:arrow-right$$
       layers: [Base]
       align: right
       dendron: false
@@ -314,7 +235,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [7, 17]
-      key: "}"
+      key: "]"
       layers: [Base]
       align: right
       dendron: false
@@ -322,7 +243,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [8, 18]
-      key: ;
+      key: "}"
       layers: [Base]
       align: right
       dendron: false
@@ -330,7 +251,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [9, 19]
-      key: ":"
+      key: "-"
       layers: [Base]
       align: right
       dendron: false
@@ -338,12 +259,12 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [13, 14]
-      key: _
+      key: $$mdi:arrow-up$$
       layers: [Base]
       height: 16
       width: 18
     - key_positions: [15, 16]
-      key: "-"
+      key: $$mdi:arrow-down$$
       layers: [Base]
       height: 16
       width: 18
@@ -412,7 +333,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [18, 28]
-      key: "`"
+      key: "'"
       layers: [Base]
       align: right
       dendron: false
@@ -420,32 +341,48 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [19, 29]
-      key: "~"
+      key: '"'
       layers: [Base]
       align: right
       dendron: false
       height: 16
       offset: -0.25
       width: 18
+    - key_positions: [20, 21]
+      key: Cut
+      layers: [Base]
+    - key_positions: [21, 22]
+      key: Copy
+      layers: [Base]
+    - key_positions: [21, 23]
+      key: Paste
+      layers: [Base]
+      align: bottom
+    - key_positions: [22, 23]
+      key: "Whl ←"
+      layers: [Base]
+    - key_positions: [23, 24]
+      key: "Whl ↑"
+      layers: [Base]
     - key_positions: [25, 26]
-      key: Home
+      key: "Whl ↓"
       layers: [Base]
     - key_positions: [26, 27]
-      key: PgDn
+      key: "Whl →"
       layers: [Base]
     - key_positions: [27, 28]
-      key: PgUp
+      key: ":"
       layers: [Base]
     - key_positions: [28, 29]
-      key: End
+      key: ;
       layers: [Base]
     - key_positions: [24, 31]
-      key: "|"
+      key: \
       layers: [Base]
       height: 16
       width: 18
     - key_positions: [25, 34]
-      key: \
+      key: "|"
       layers: [Base]
       height: 16
       width: 18

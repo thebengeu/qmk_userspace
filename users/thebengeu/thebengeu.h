@@ -2,7 +2,8 @@
 
 enum custom_keycodes {
   GUI_TAB = SAFE_RANGE,
-  SHIFT_GUI_TAB
+  SHIFT_GUI_TAB,
+  LLOCK
 };
 
 #define U_RDO SCMD(KC_Z)

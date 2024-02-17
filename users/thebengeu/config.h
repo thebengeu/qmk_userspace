@@ -1,5 +1,6 @@
 #pragma once
 
+#define CAPS_WORD_INVERT_ON_SHIFT
 #define COMBO_TERM 25
 #define EXTRA_SHORT_COMBOS
 #define MOUSEKEY_DELAY          0

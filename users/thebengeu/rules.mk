@@ -17,6 +17,7 @@ OLED_ENABLE = no
 REPEAT_KEY_ENABLE = yes
 SPACE_CADET_ENABLE = no
 SRC += features/achordion.c
+SRC += features/layer_lock.c
 SRC += features/sentence_case.c
 TAP_DANCE_ENABLE = no
 UNICODE_ENABLE = no
