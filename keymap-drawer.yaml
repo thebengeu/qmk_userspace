@@ -66,7 +66,7 @@ layers:
           - ""
           - ""
     Num:
-        - - { tap: "~", hold: ~/ }
+        - - "%"
           - Close Win
           - Prev Tab
           - Next Tab
@@ -90,24 +90,24 @@ layers:
           - "*"
           - ^
           - { tap: $, hold: "${}" }
-          - "%"
+          - Num Word
           - ","
           - "7"
           - "8"
           - "9"
           - { tap: ., hold: ../ }
-        - - ""
-          - { tap: Layer Lock, type: held }
-          - ""
-          - { tap: "-", hold: "--" }
-          - { tap: "0", hold: Adj }
+        - - $$mdi:keyboard-esc$$
+          - { tap: /, type: held }
+          - $$mdi:keyboard-return$$
+          - { tap: "-", hold: Adj }
+          - { tap: "0", hold: Sym }
           - { tap: $$mdi:keyboard-space$$, hold: Meh }
     Sym:
         - - { tap: PgUp, type: held }
           - Home
           - $$mdi:arrow-up$$
           - End
-          - ""
+          - { tap: "~", hold: ~/ }
           - F1
           - F2
           - F3
@@ -117,7 +117,7 @@ layers:
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
           - $$mdi:arrow-right$$
-          - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
+          - ;
           - "@"
           - { tap: _, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: "|", hold: $$mdi:apple-keyboard-control$$ }
@@ -125,9 +125,9 @@ layers:
           - { tap: "!", hold: $$mdi:apple-keyboard-command$$ }
         - - F11
           - F12
-          - { tap: \, hold: \\ }
-          - ;
           - ""
+          - { tap: \, hold: \\ }
+          - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
           - F6
           - F7
           - F8
@@ -152,7 +152,7 @@ layers:
           - ""
         - ["", "", "", "", "", "", "", "", "", ""]
         - ["", "", "", "", "", "", "", "", "", { type: held }]
-        - ["", "", "", "", { type: held }, ""]
+        - ["", "", "", { type: held }, "", ""]
 combos:
     - key_positions: [30, 31]
       key: Alt Rep
@@ -167,10 +167,10 @@ combos:
       key: Caps Word
       layers: [Base]
     - key_positions: [0, 1]
-      key: "~"
+      key: "%"
       layers: [Base]
     - key_positions: [1, 2]
-      key: "`"
+      key: "~"
       layers: [Base]
     - key_positions: [2, 3]
       key: Home
@@ -337,7 +337,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [14, 24]
-      key: "%"
+      key: "`"
       layers: [Base]
       align: left
       dendron: false
@@ -421,6 +421,9 @@ combos:
     - key_positions: [28, 29]
       key: ;
       layers: [Base]
+    - key_positions: [23, 30]
+      key: Num Word
+      layers: [Base]
     - key_positions: [24, 31]
       key: +
       layers: [Base]
@@ -428,6 +431,11 @@ combos:
       width: 18
     - key_positions: [25, 34]
       key: "-"
+      layers: [Base]
+      height: 16
+      width: 18
+    - key_positions: [26, 35]
+      key: $$mdi:backspace-reverse-outline$$
       layers: [Base]
       height: 16
       width: 18
