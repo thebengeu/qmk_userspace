@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_SYM] = LAYOUT_split_3x5_3(
     KC_PGUP,        KC_HOME,        KC_UP,          KC_END,         KC_CAPS,          KC_F1,         KC_F2,           KC_F3,           KC_F4,          KC_F5,
-    KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,CW_TOGG),    KC_AT,         SFT_T(KC_UNDS),  CTL_T(KC_PIPE),  ALT_T(KC_AMPR), GUI_T(KC_EXLM),
+    KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,CW_TOGG),    LT(0,KC_AT),   SFT_T(KC_UNDS),  CTL_T(KC_PIPE),  ALT_T(KC_AMPR), GUI_T(KC_EXLM),
     KC_F11,         KC_F12,         KC_BSLS,        KC_SCLN,        KC_NO,            KC_F6,         KC_F7,           KC_F8,           KC_F9,          KC_F10,
                                                     QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,           LLOCK,           KC_NO
   ),
@@ -135,7 +135,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_dc, KC_CIRC),
                                             COMBO(combos_fv, LT(0, KC_DLR)),
                                             COMBO(combos_gb, KC_PERC),
-                                            COMBO(combos_hn, KC_AT),
+                                            COMBO(combos_hn, LT(0,KC_AT)),
                                             COMBO(combos_jm, KC_UNDS),
                                             COMBO(combos_kcomm, KC_PIPE),
                                             COMBO(combos_ldot, KC_AMPR),
@@ -314,6 +314,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if (record->event.pressed) {
                     SEND_STRING("${}");
                     tap_code(KC_LEFT);
+                }
+                return false;
+            }
+            return true;
+        case LT(0, KC_AT):
+            if (record->tap.count) {
+                if (record->event.pressed) {
+                    tap_code16(KC_AT);
+                    return false;
+                }
+            } else {
+                if (record->event.pressed) {
+                    SEND_STRING("beng@bengeu.com");
                 }
                 return false;
             }
