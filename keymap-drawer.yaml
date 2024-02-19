@@ -49,18 +49,16 @@ layers:
           - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: $$mdi:volume-high$$, hold: $$mdi:apple-keyboard-command$$ }
-        - [
-              { tap: $$mdi:undo$$, type: held },
-              $$mdi:content-cut$$,
-              $$mdi:content-copy$$,
-              $$mdi:content-paste$$,
-              $$mdi:redo$$,
-              $$mdi:skip-backward$$,
-              ⌘7,
-              ⌘8,
-              ⌘9,
-              $$mdi:skip-forward$$,
-          ]
+        - - { tap: $$mdi:undo$$, type: held }
+          - $$mdi:content-cut$$
+          - $$mdi:content-copy$$
+          - $$mdi:content-paste$$
+          - $$mdi:redo$$
+          - $$mdi:skip-backward$$
+          - ⌘7
+          - ⌘8
+          - ⌘9
+          - $$mdi:skip-forward$$
         - - Mid Btn
           - Left Btn
           - Right Btn
@@ -68,12 +66,12 @@ layers:
           - ""
           - ""
     Num:
-        - - "~"
+        - - { tap: "~", hold: ~/ }
           - Close Win
           - Prev Tab
           - Next Tab
-          - "`"
-          - "["
+          - { tap: "`", hold: "```" }
+          - { tap: "[", hold: "[]" }
           - "1"
           - "2"
           - "3"
@@ -83,31 +81,38 @@ layers:
           - { tap: (, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: ), hold: $$mdi:apple-keyboard-shift$$ }
           - ":"
-          - +
+          - { tap: +, hold: ++ }
           - "4"
           - "5"
           - "6"
           - { tap: "=", hold: => }
-        - ["#", "*", ^, { tap: $, hold: "${}" }, "%", ",", "7", "8", "9", .]
+        - - "#"
+          - "*"
+          - ^
+          - { tap: $, hold: "${}" }
+          - "%"
+          - ","
+          - "7"
+          - "8"
+          - "9"
+          - { tap: ., hold: ../ }
         - - ""
           - { tap: Layer Lock, type: held }
           - ""
-          - "-"
-          - { tap: $$mdi:keyboard-space$$, hold: Adj }
-          - { tap: "0", hold: Meh }
+          - { tap: "-", hold: "--" }
+          - { tap: "0", hold: Adj }
+          - { tap: $$mdi:keyboard-space$$, hold: Meh }
     Sym:
-        - [
-              { tap: PgUp, type: held },
-              Home,
-              $$mdi:arrow-up$$,
-              End,
-              "",
-              F1,
-              F2,
-              F3,
-              F4,
-              F5,
-          ]
+        - - { tap: PgUp, type: held }
+          - Home
+          - $$mdi:arrow-up$$
+          - End
+          - ""
+          - F1
+          - F2
+          - F3
+          - F4
+          - F5
         - - PgDn
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
@@ -120,7 +125,7 @@ layers:
           - { tap: "!", hold: $$mdi:apple-keyboard-command$$ }
         - - F11
           - F12
-          - \
+          - { tap: \, hold: \\ }
           - ;
           - ""
           - F6
@@ -128,16 +133,23 @@ layers:
           - F8
           - F9
           - F10
-        - [
-              Alt Rep,
-              $$mdi:backspace-outline$$,
-              $$mdi:backspace-reverse-outline$$,
-              "",
-              { tap: Layer Lock, type: held },
-              "",
-          ]
+        - - Alt Rep
+          - $$mdi:backspace-outline$$
+          - $$mdi:backspace-reverse-outline$$
+          - ""
+          - { tap: Layer Lock, type: held }
+          - ""
     Adj:
-        - ["", "", "", "", "", "", "", "", "", ""]
+        - - Tap Term Down
+          - Tap Term Print
+          - Tap Term Up
+          - ""
+          - ""
+          - ""
+          - ""
+          - ""
+          - ""
+          - ""
         - ["", "", "", "", "", "", "", "", "", ""]
         - ["", "", "", "", "", "", "", "", "", { type: held }]
         - ["", "", "", "", { type: held }, ""]

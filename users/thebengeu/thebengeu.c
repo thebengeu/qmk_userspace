@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x5_3(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,             KC_Y,          KC_U,            KC_I,            KC_O,          LT(_NUM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),     KC_H,          SFT_T(KC_J),     CTL_T(KC_K),     ALT_T(KC_L),   GUI_T(KC_QUOT),
-    LT(_FUN,KC_Z),  KC_X,           KC_C,           KC_V,           KC_B,             KC_N,          KC_M,            KC_COMM,         KC_DOT,        LT(_ADJ,KC_SLSH),
+    LT(_FUN,KC_Z),  KC_X,           KC_C,           KC_V,           KC_B,             KC_N,          KC_M,            LT(0,KC_COMM),   LT(0,KC_DOT),  LT(_ADJ,KC_SLSH),
                                                     QK_REP,         LT(_NUM,KC_BSPC), SFT_T(KC_ENT), LT(_FUN,KC_TAB), LT(_SYM,KC_SPC), MEH_T(KC_ESC)
   ),
   [_FUN] = LAYOUT_split_3x5_3(
@@ -23,22 +23,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,           KC_NO,           KC_NO
   ),
   [_NUM] = LAYOUT_split_3x5_3(
-    KC_TILD,        G(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      KC_GRV,           KC_LBRC,       KC_1,            KC_2,            KC_3,           KC_RBRC,
-    GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LPRN), SFT_T(KC_RPRN), KC_COLN,          KC_PLUS,       KC_4,            KC_5,            KC_6,           LT(0, KC_EQL),
-    KC_HASH,        KC_ASTR,        KC_CIRC,        LT(0,KC_DLR),   KC_PERC,          KC_COMM,       KC_7,            KC_8,            KC_9,           KC_DOT,
-                                                    KC_NO,          LLOCK,            KC_NO,         KC_MINS,         LT(_ADJ,KC_SPC), MEH_T(KC_0)
+    LT(1,KC_TILD),  G(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      LT(0,KC_GRV),     LT(0,KC_LBRC), KC_1,            KC_2,            KC_3,           KC_RBRC,
+    GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LPRN), SFT_T(KC_RPRN), KC_COLN,          LT(1,KC_PLUS), KC_4,            KC_5,            KC_6,           LT(0,KC_EQL),
+    LT(0,KC_HASH),  KC_ASTR,        KC_CIRC,        LT(0,KC_DLR),   KC_PERC,          KC_COMM,       KC_7,            KC_8,            KC_9,           LT(0,KC_DOT),
+                                                    KC_NO,          LLOCK,            KC_NO,         LT(0,KC_MINS),   LT(_ADJ,KC_0),   MEH_T(KC_SPC)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
-    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,         KC_CAPS,          KC_F1,         KC_F2,           KC_F3,           KC_F4,          KC_F5,
+    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,         KC_NO,            KC_F1,         KC_F2,           KC_F3,           KC_F4,          KC_F5,
     KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,CW_TOGG),    LT(0,KC_AT),   SFT_T(KC_UNDS),  CTL_T(KC_PIPE),  ALT_T(KC_AMPR), GUI_T(KC_EXLM),
-    KC_F11,         KC_F12,         KC_BSLS,        KC_SCLN,        KC_NO,            KC_F6,         KC_F7,           KC_F8,           KC_F9,          KC_F10,
+    KC_F11,         KC_F12,         LT(0,KC_BSLS),  KC_SCLN,        KC_NO,            KC_F6,         KC_F7,           KC_F8,           KC_F9,          KC_F10,
                                                     QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,           LLOCK,           KC_NO
   ),
   [_ADJ] = LAYOUT_split_3x5_3(
+    DT_DOWN,        DT_PRNT,        DT_UP,          KC_NO,          KC_NO,            KC_NO,         KC_NO,           KC_NO,           KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,           KC_NO,           KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,           KC_NO,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,           KC_NO,           KC_NO,          KC_NO,
-                                                    KC_NO,          KC_NO,            KC_NO,         KC_NO,           KC_NO,           KC_NO
+                                                    KC_NO,          KC_NO,            KC_NO,         KC_NO,           LLOCK,           KC_NO
   )
 };
 // clang-format on
@@ -81,8 +81,8 @@ const uint16_t PROGMEM combos_fv[]                    = {SFT_T(KC_F), KC_V, COMB
 const uint16_t PROGMEM combos_gb[]                    = {RCTL_T(KC_G), KC_B, COMBO_END};
 const uint16_t PROGMEM combos_hn[]                    = {KC_H, KC_N, COMBO_END};
 const uint16_t PROGMEM combos_jm[]                    = {SFT_T(KC_J), KC_M, COMBO_END};
-const uint16_t PROGMEM combos_kcomm[]                 = {CTL_T(KC_K), KC_COMM, COMBO_END};
-const uint16_t PROGMEM combos_ldot[]                  = {ALT_T(KC_L), KC_DOT, COMBO_END};
+const uint16_t PROGMEM combos_kcomm[]                 = {CTL_T(KC_K), LT(0, KC_COMM), COMBO_END};
+const uint16_t PROGMEM combos_ldot[]                  = {ALT_T(KC_L), LT(0, KC_DOT), COMBO_END};
 const uint16_t PROGMEM combos_quotslsh[]              = {GUI_T(KC_QUOT), LT(_ADJ, KC_SLSH), COMBO_END};
 const uint16_t PROGMEM combos_zx[]                    = {LT(_FUN, KC_Z), KC_X, COMBO_END};
 const uint16_t PROGMEM combos_xc[]                    = {KC_X, KC_C, COMBO_END};
@@ -91,10 +91,10 @@ const uint16_t PROGMEM combos_cv[]                    = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combos_cb[]                    = {KC_C, KC_B, COMBO_END};
 const uint16_t PROGMEM combos_vb[]                    = {KC_V, KC_B, COMBO_END};
 const uint16_t PROGMEM combos_nm[]                    = {KC_N, KC_M, COMBO_END};
-const uint16_t PROGMEM combos_ncomm[]                 = {KC_N, KC_COMM, COMBO_END};
-const uint16_t PROGMEM combos_mcomm[]                 = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM combos_commdot[]               = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combos_dotslsh[]               = {KC_DOT, LT(_ADJ, KC_SLSH), COMBO_END};
+const uint16_t PROGMEM combos_ncomm[]                 = {KC_N, LT(0, KC_COMM), COMBO_END};
+const uint16_t PROGMEM combos_mcomm[]                 = {KC_M, LT(0, KC_COMM), COMBO_END};
+const uint16_t PROGMEM combos_commdot[]               = {LT(0, KC_COMM), LT(0, KC_DOT), COMBO_END};
+const uint16_t PROGMEM combos_dotslsh[]               = {LT(0, KC_DOT), LT(_ADJ, KC_SLSH), COMBO_END};
 const uint16_t PROGMEM combos_bbspc[]                 = {KC_B, LT(_NUM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combos_nspc[]                  = {KC_N, LT(_SYM, KC_SPC), COMBO_END};
 
@@ -106,8 +106,8 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(thumbcombos_sym_left, QK_AREP),
                                             COMBO(thumbcombos_num_right, MEH_T(KC_0)),
                                             COMBO(thumbcombos_fun_left, KC_BTN3),
-                                            COMBO(combos_qw, KC_TILD),
-                                            COMBO(combos_we, KC_GRV),
+                                            COMBO(combos_qw, LT(1, KC_TILD)),
+                                            COMBO(combos_we, LT(0, KC_GRV)),
                                             COMBO(combos_er, KC_HOME),
                                             COMBO(combos_et, KC_PGDN),
                                             COMBO(combos_rt, KC_PGUP),
@@ -116,9 +116,9 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_ui, KC_END),
                                             COMBO(combos_io, S(C(KC_TAB))),
                                             COMBO(combos_op, C(KC_TAB)),
-                                            COMBO(combos_aq, KC_LCBR),
-                                            COMBO(combos_sw, KC_LBRC),
-                                            COMBO(combos_de, KC_LPRN),
+                                            COMBO(combos_aq, LT(1, KC_LCBR)),
+                                            COMBO(combos_sw, LT(0, KC_LBRC)),
+                                            COMBO(combos_de, LT(0, KC_LPRN)),
                                             COMBO(combos_fr, KC_LEFT),
                                             COMBO(combos_gt, KC_COLN),
                                             COMBO(combos_hy, LT(0, KC_EQL)),
@@ -130,16 +130,16 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_fg, KC_UP),
                                             COMBO(combos_hj, KC_DOWN),
                                             COMBO(combos_hk, KC_UP),
-                                            COMBO(combos_az, KC_HASH),
+                                            COMBO(combos_az, LT(0, KC_HASH)),
                                             COMBO(combos_sx, KC_ASTR),
                                             COMBO(combos_dc, KC_CIRC),
                                             COMBO(combos_fv, LT(0, KC_DLR)),
                                             COMBO(combos_gb, KC_PERC),
-                                            COMBO(combos_hn, LT(0,KC_AT)),
-                                            COMBO(combos_jm, KC_UNDS),
-                                            COMBO(combos_kcomm, KC_PIPE),
-                                            COMBO(combos_ldot, KC_AMPR),
-                                            COMBO(combos_quotslsh, KC_EXLM),
+                                            COMBO(combos_hn, LT(0, KC_AT)),
+                                            COMBO(combos_jm, LT(1, KC_UNDS)),
+                                            COMBO(combos_kcomm, LT(1, KC_PIPE)),
+                                            COMBO(combos_ldot, LT(0, KC_AMPR)),
+                                            COMBO(combos_quotslsh, LT(0, KC_EXLM)),
                                             COMBO(combos_zx, U_CUT),
                                             COMBO(combos_xc, U_CPY),
                                             COMBO(combos_xv, U_PST),
@@ -149,10 +149,10 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_nm, KC_WH_D),
                                             COMBO(combos_ncomm, KC_WH_U),
                                             COMBO(combos_mcomm, KC_WH_R),
-                                            COMBO(combos_commdot, KC_BSLS),
+                                            COMBO(combos_commdot, LT(0, KC_BSLS)),
                                             COMBO(combos_dotslsh, KC_SCLN),
-                                            COMBO(combos_bbspc, KC_PLUS),
-                                            COMBO(combos_nspc, KC_MINS)};
+                                            COMBO(combos_bbspc, LT(1, KC_PLUS)),
+                                            COMBO(combos_nspc, LT(0, KC_MINS))};
 // clang-format on
 
 bool caps_word_press_user(uint16_t keycode) {
@@ -175,14 +175,33 @@ bool caps_word_press_user(uint16_t keycode) {
     }
 }
 
-static bool process_tap_or_long_press_key(keyrecord_t *record, const char *string) {
+static bool process_tap_or_long_press_key(keyrecord_t *record, const char *string, const char *shifted_string) {
+    const uint8_t mods         = get_mods();
+    const uint8_t oneshot_mods = get_oneshot_mods();
+
     if (record->tap.count == 0) {
         if (record->event.pressed) {
-            SEND_STRING(string);
+            if (shifted_string && (mods | oneshot_mods) & MOD_MASK_SHIFT) {
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                unregister_mods(MOD_MASK_SHIFT);
+                SEND_STRING(shifted_string);
+                register_mods(mods);
+            } else {
+                SEND_STRING(string);
+            }
         }
         return false;
     }
     return true;
+}
+
+static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const char *string, uint16_t keycode) {
+    if (record->tap.count && record->event.pressed) {
+        tap_code16(keycode);
+        return false;
+    }
+
+    return process_tap_or_long_press_key(record, string, NULL);
 }
 
 bool is_gui_tab_active = false;
@@ -212,12 +231,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code16(tab_or_shift_tab);
             }
         } break;
-        case LT(_ADJ, CW_TOGG):
-            if (record->tap.count && record->event.pressed) {
-                caps_word_toggle();
-                return false;
-            }
-            break;
         case GUI_T(KC_LCBR):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_LCBR);
@@ -297,35 +310,56 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             }
             return true;
-        case LT(0, KC_DLR):
+        case LT(0, KC_HASH):
             if (record->tap.count) {
                 if (record->event.pressed) {
-                    tap_code16(KC_DLR);
+                    tap_code16(KC_HASH);
                     return false;
                 }
             } else {
                 if (record->event.pressed) {
-                    SEND_STRING("${}");
-                    tap_code(KC_LEFT);
+                    SEND_STRING("# ");
+                    set_oneshot_mods(MOD_BIT(KC_LSFT));
                 }
                 return false;
             }
             return true;
+        case LT(0, KC_AMPR):
+            return process_tap_or_long_press_shifted_key(record, "&& ", KC_AMPR);
         case LT(0, KC_AT):
-            if (record->tap.count) {
-                if (record->event.pressed) {
-                    tap_code16(KC_AT);
-                    return false;
-                }
-            } else {
-                if (record->event.pressed) {
-                    SEND_STRING("beng@bengeu.com");
-                }
-                return false;
-            }
-            return true;
+            return process_tap_or_long_press_shifted_key(record, "beng@bengeu.com", KC_AT);
+        case LT(0, KC_BSLS):
+            return process_tap_or_long_press_shifted_key(record, "\\\\", KC_BSLS);
+        case LT(0, KC_COMM):
+            return process_tap_or_long_press_key(record, ", ", "<= ");
+        case LT(0, KC_DLR):
+            return process_tap_or_long_press_shifted_key(record, "${}" SS_TAP(X_LEFT), KC_DLR);
+        case LT(0, KC_DOT):
+            return process_tap_or_long_press_key(record, "../", ">= ");
         case LT(0, KC_EQL):
-            return process_tap_or_long_press_key(record, "=> ");
+            return process_tap_or_long_press_key(record, "=> ", "++ ");
+        case LT(0, KC_EXLM):
+            return process_tap_or_long_press_shifted_key(record, "!== ", KC_EXLM);
+        case LT(0, KC_GRV):
+            return process_tap_or_long_press_key(record, "```", "~/");
+        case LT(0, KC_LBRC):
+            return process_tap_or_long_press_key(record, "[]" SS_TAP(X_LEFT), "{}" SS_TAP(X_LEFT));
+        case LT(1, KC_LCBR):
+            return process_tap_or_long_press_shifted_key(record, "{}" SS_TAP(X_LEFT), KC_LCBR);
+        case LT(0, KC_LPRN):
+            return process_tap_or_long_press_shifted_key(record, "()" SS_TAP(X_LEFT), KC_LPRN);
+        case LT(0, KC_MINS):
+            return process_tap_or_long_press_key(record, "--", "__");
+        case LT(1, KC_PIPE):
+            return process_tap_or_long_press_shifted_key(record, "|| ", KC_PIPE);
+        case LT(1, KC_PLUS):
+            return process_tap_or_long_press_shifted_key(record, "++ ", KC_PLUS);
+        case LT(0, KC_SLSH):
+            return process_tap_or_long_press_key(record, "// ", "?? ");
+        case LT(1, KC_TILD):
+            return process_tap_or_long_press_shifted_key(record, "~/", KC_TILD);
+        case LT(1, KC_UNDS):
+            return process_tap_or_long_press_shifted_key(record, "__", KC_UNDS);
     }
 
     return process_achordion(keycode, record) && process_sentence_case(keycode, record);
