@@ -152,7 +152,7 @@ combos:
       key: { tap: $$mdi:keyboard-esc$$, hold: Meh }
       layers: [Base]
     - key_positions: [34, 35]
-      key: { tap: CW, hold: Adj }
+      key: Caps Word
       layers: [Base]
     - key_positions: [0, 1]
       key: "~"
