@@ -192,6 +192,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (is_caps_word_on() && get_repeat_key_count() > 0 && record->event.pressed) {
+        tap_code16(KC_UNDS);
+        return false;
+    }
+
     switch (keycode) {
         case GUI_TAB:
         case SHIFT_GUI_TAB: {
@@ -276,18 +281,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case ALT_T(G(KC_6)):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(G(KC_6));
-                return false;
-            }
-            break;
-        case SFT_T(KC_ENT):
-            if (is_caps_word_on() && record->tap.count && record->event.pressed) {
-                tap_code16(KC_UNDS);
-                return false;
-            }
-            break;
-        case LT(_FUN, KC_TAB):
-            if (is_caps_word_on() && record->tap.count && record->event.pressed) {
-                tap_code(KC_MINS);
                 return false;
             }
             break;
