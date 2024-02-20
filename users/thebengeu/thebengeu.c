@@ -29,13 +29,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUM] = LAYOUT_split_3x5_3(
     LT(1,KC_TILD),  G(KC_W),        S(C(KC_TAB)),   C(KC_TAB),        LT(0,KC_GRV),  KC_PERC,          KC_1,            KC_2,           KC_3,           KC_ASTR,
     GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LPRN), SFT_T(KC_RPRN),   KC_COLN,       LT(1,KC_PLUS),    KC_4,            KC_5,           KC_6,           LT(0,KC_EQL),
-    KC_NO,          KC_NO,          LT(0,KC_BSLS),  NW_TOGG,          KC_NO,         KC_COMM,          KC_7,            KC_8,           KC_9,           LT(0,KC_DOT),
+    KC_NO,          KC_NO,          LT(1,KC_PIPE),  NW_TOGG,          KC_NO,         KC_COMM,          KC_7,            KC_8,           KC_9,           LT(0,KC_DOT),
                                     KC_ESC,         KC_SLSH,          KC_ENT,        LT(_FUN,KC_MINS), LT(_SYM,KC_0),   MEH_T(KC_SPC)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
     KC_PGUP,        KC_HOME,        KC_UP,          KC_END,           LT(0,KC_AMPR), KC_NO,            LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
     KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,         KC_SCLN,       KC_CIRC,          SFT_T(KC_LBRC),  CTL_T(KC_RBRC), ALT_T(KC_UNDS), GUI_T(KC_DLR),
-    KC_NO,          KC_NO,          LT(1,KC_PIPE),  LT(0,CW_TOGG),    KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          LT(0,KC_BSLS),  LT(0,CW_TOGG),    KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,          KC_NO,
                                     QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,            LLOCK,           KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3(
