@@ -1,5 +1,9 @@
 #include <stdint.h>
 
+#ifdef CONSOLE_ENABLE
+#    include "print.h"
+#endif
+
 #include "thebengeu.h"
 
 #include "features/achordion.h"
@@ -257,6 +261,11 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
 bool is_gui_tab_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef CONSOLE_ENABLE
+    const bool is_combo = record->event.type == COMBO_EVENT;
+    uprintf("0x%04X,%u,%u,%u,%u,0x%02X,0x%02X,%u\n", keycode, is_combo ? 254 : record->event.key.row, is_combo ? 254 : record->event.key.col, get_highest_layer(layer_state), record->event.pressed, get_mods(), get_oneshot_mods(), record->tap.count);
+#endif
+
     if (!process_layer_lock(keycode, record, LLOCK)) {
         return false;
     }
