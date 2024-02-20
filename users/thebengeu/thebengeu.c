@@ -15,34 +15,34 @@ enum layers { _BASE, _FUN, _NUM, _SYM, _ADJ };
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x5_3(
-    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,             KC_Y,          KC_U,             KC_I,            KC_O,          LT(_NUM,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),     KC_H,          SFT_T(KC_J),      CTL_T(KC_K),     ALT_T(KC_L),   GUI_T(KC_QUOT),
-    LT(_FUN,KC_Z),  KC_X,           KC_C,           KC_V,           KC_B,             KC_N,          KC_M,             LT(0,KC_COMM),   LT(0,KC_DOT),  LT(_ADJ,KC_SLSH),
-                                                    QK_REP,         LT(_NUM,KC_BSPC), SFT_T(KC_ENT), LT(_FUN,KC_TAB),  LT(_SYM,KC_SPC), MEH_T(KC_ESC)
+    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,             KC_T,          KC_Y,             KC_U,            KC_I,           KC_O,          LT(_NUM,KC_P),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),      RCTL_T(KC_G),  KC_H,             SFT_T(KC_J),     CTL_T(KC_K),    ALT_T(KC_L),   GUI_T(KC_QUOT),
+    LT(_FUN,KC_Z),  KC_X,           KC_C,           KC_V,             KC_B,          KC_N,             KC_M,            LT(0,KC_COMM),  LT(0,KC_DOT),  LT(_ADJ,KC_SLSH),
+                                    QK_REP,         LT(_NUM,KC_BSPC), SFT_T(KC_ENT), LT(_FUN,KC_TAB),  LT(_SYM,KC_SPC), MEH_T(KC_ESC)
   ),
   [_FUN] = LAYOUT_split_3x5_3(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,        QK_BOOT,          KC_MUTE,       G(KC_1),          G(KC_2),         G(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_RCTL,          KC_VOLD,       SFT_T(G(KC_4)),   CTL_T(G(KC_5)),  ALT_T(G(KC_6)), GUI_T(KC_VOLU),
-    U_UND,          U_CUT,          U_CPY,          U_PST,          U_RDO,            KC_MPRV,       G(KC_7),          G(KC_8),         G(KC_9),        KC_MNXT,
-                                                    KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,            KC_NO,           KC_NO
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          QK_BOOT,       KC_MUTE,          G(KC_1),         G(KC_2),        G(KC_3),        KC_MPLY,
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       KC_VOLD,          SFT_T(G(KC_4)),  CTL_T(G(KC_5)), ALT_T(G(KC_6)), GUI_T(KC_VOLU),
+    U_UND,          U_CUT,          U_CPY,          U_PST,            U_RDO,         KC_MPRV,          G(KC_7),         G(KC_8),        G(KC_9),        KC_MNXT,
+                                    KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,            KC_NO,           KC_NO
   ),
   [_NUM] = LAYOUT_split_3x5_3(
-    KC_PERC,        G(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      LT(0,KC_GRV),     LT(0,KC_LBRC), KC_1,             KC_2,            KC_3,           KC_RBRC,
-    GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LPRN), SFT_T(KC_RPRN), KC_COLN,          LT(1,KC_PLUS), KC_4,             KC_5,            KC_6,           LT(0,KC_EQL),
-    LT(0,KC_HASH),  KC_ASTR,        KC_CIRC,        LT(0,KC_DLR),   NW_TOGG,          KC_COMM,       KC_7,             KC_8,            KC_9,           LT(0,KC_DOT),
-                                                    KC_ESC,         KC_SLSH,          KC_ENT,        LT(_ADJ,KC_MINS), LT(_SYM,KC_0),   MEH_T(KC_SPC)
+    KC_PERC,        G(KC_W),        S(C(KC_TAB)),   C(KC_TAB),        LT(0,KC_GRV),  LT(0,KC_LBRC),    KC_1,            KC_2,           KC_3,           KC_RBRC,
+    GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LPRN), SFT_T(KC_RPRN),   KC_COLN,       LT(1,KC_PLUS),    KC_4,            KC_5,           KC_6,           LT(0,KC_EQL),
+    LT(0,KC_HASH),  KC_ASTR,        KC_CIRC,        LT(0,KC_DLR),     NW_TOGG,       KC_COMM,          KC_7,            KC_8,           KC_9,           LT(0,KC_DOT),
+                                    KC_ESC,         KC_SLSH,          KC_ENT,        LT(_ADJ,KC_MINS), LT(_SYM,KC_0),   MEH_T(KC_SPC)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
-    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,         LT(1,KC_TILD),    KC_F1,         KC_F2,            KC_F3,           KC_F4,          KC_F5,
-    KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_SCLN,          LT(0,KC_AT),   SFT_T(KC_UNDS),   CTL_T(KC_PIPE),  ALT_T(KC_AMPR), GUI_T(KC_EXLM),
-    KC_F11,         KC_F12,         KC_NO,          LT(0,KC_BSLS),  LT(0,CW_TOGG),    KC_F6,         KC_F7,            KC_F8,           KC_F9,          KC_F10,
-                                                    QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,            LLOCK,           KC_NO
+    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,           LT(1,KC_TILD), KC_F1,            KC_F2,           KC_F3,          KC_F4,          KC_F5,
+    KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,         KC_SCLN,       LT(0,KC_AT),      SFT_T(KC_UNDS),  CTL_T(KC_PIPE), ALT_T(KC_AMPR), GUI_T(KC_EXLM),
+    KC_F11,         KC_F12,         KC_NO,          LT(0,KC_BSLS),    LT(0,CW_TOGG), KC_F6,            KC_F7,           KC_F8,          KC_F9,          KC_F10,
+                                    QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,            LLOCK,           KC_NO
   ),
   [_ADJ] = LAYOUT_split_3x5_3(
-    DT_DOWN,        DT_PRNT,        DT_UP,          KC_NO,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,
-                                                    KC_NO,          KC_NO,            KC_NO,         KC_NO,            LLOCK,           KC_NO
+    DT_DOWN,        DT_PRNT,        DT_UP,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,            KC_NO,         KC_NO,            KC_NO,           KC_NO,          KC_NO,          KC_NO,
+                                    KC_NO,          KC_NO,            KC_NO,         KC_NO,            LLOCK,           KC_NO
   )
 };
 // clang-format on
@@ -91,7 +91,6 @@ const uint16_t PROGMEM combos_ldot[]                  = {ALT_T(KC_L), LT(0, KC_D
 const uint16_t PROGMEM combos_quotslsh[]              = {GUI_T(KC_QUOT), LT(_ADJ, KC_SLSH), COMBO_END};
 const uint16_t PROGMEM combos_zx[]                    = {LT(_FUN, KC_Z), KC_X, COMBO_END};
 const uint16_t PROGMEM combos_xc[]                    = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combos_xv[]                    = {KC_X, KC_V, COMBO_END};
 const uint16_t PROGMEM combos_cv[]                    = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combos_cb[]                    = {KC_C, KC_B, COMBO_END};
 const uint16_t PROGMEM combos_vb[]                    = {KC_V, KC_B, COMBO_END};
@@ -148,21 +147,20 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_kcomm, LT(1, KC_PIPE)),
                                             COMBO(combos_ldot, LT(0, KC_AMPR)),
                                             COMBO(combos_quotslsh, LT(0, KC_EXLM)),
-                                            COMBO(combos_zx, U_CUT),
-                                            COMBO(combos_xc, U_CPY),
-                                            COMBO(combos_xv, U_PST),
+                                            COMBO(combos_zx, LT(0, KC_BSLS)),
+                                            COMBO(combos_xc, KC_SCLN),
                                             COMBO(combos_cv, KC_WH_L),
                                             COMBO(combos_cb, KC_WH_D),
                                             COMBO(combos_vb, KC_WH_U),
                                             COMBO(combos_nm, KC_WH_D),
                                             COMBO(combos_ncomm, KC_WH_U),
                                             COMBO(combos_mcomm, KC_WH_R),
-                                            COMBO(combos_commdot, LT(0, KC_BSLS)),
-                                            COMBO(combos_dotslsh, KC_SCLN),
+                                            COMBO(combos_commdot, LT(1, KC_PLUS)),
+                                            COMBO(combos_dotslsh, KC_RCTL),
                                             COMBO(combos_vrep, NW_TOGG),
-                                            COMBO(combos_bbspc, LT(1, KC_PLUS)),
+                                            COMBO(combos_bbspc, KC_DEL),
                                             COMBO(combos_nspc, LT(0, KC_MINS)),
-                                            COMBO(combos_mesc, KC_DEL)};
+                                            COMBO(combos_mesc, G(KC_W))};
 // clang-format on
 
 static bool is_num_word_on = false;
