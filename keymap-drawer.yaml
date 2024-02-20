@@ -88,7 +88,7 @@ layers:
           - { tap: "=", hold: => }
         - - ""
           - ""
-          - { tap: \, hold: \\ }
+          - { tap: "|", hold: "||" }
           - Num Word
           - ""
           - ","
@@ -125,7 +125,7 @@ layers:
           - { tap: $, hold: $$mdi:apple-keyboard-command$$ }
         - - ""
           - ""
-          - { tap: "|", hold: "||" }
+          - { tap: \, hold: \\ }
           - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
           - ""
           - ""
