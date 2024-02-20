@@ -15,9 +15,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
-void caps_word_set_user(bool active) {
-    pimoroni_trackball_set_rgbw(active ? 0xff : 0, 0, 0, 0);
-}
+// void caps_word_set_user(bool active) {
+//     pimoroni_trackball_set_rgbw(active ? 0xff : 0, 0, 0, 0);
+// }
 
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
 void pointing_device_init_user(void) {
