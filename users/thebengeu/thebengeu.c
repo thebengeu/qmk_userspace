@@ -119,7 +119,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_et, KC_PGDN),
                                             COMBO(combos_rt, KC_PGUP),
                                             COMBO(combos_yu, KC_PGDN),
-                                            COMBO(combos_yi, KC_PGDN),
+                                            COMBO(combos_yi, KC_PGUP),
                                             COMBO(combos_ui, KC_END),
                                             COMBO(combos_io, S(C(KC_TAB))),
                                             COMBO(combos_op, C(KC_TAB)),
