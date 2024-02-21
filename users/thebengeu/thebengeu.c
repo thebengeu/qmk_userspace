@@ -21,9 +21,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     QK_REP,         LT(_NUM,KC_BSPC), SFT_T(KC_ENT), LT(_MS,KC_TAB),   LT(_SYM,KC_SPC), MEH_T(KC_ESC)
   ),
   [_MS] = LAYOUT_split_3x5_3(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          QK_BOOT,       KC_VOLU,          G(KC_1),         G(KC_2),        G(KC_3),        G(KC_4),
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       KC_VOLD,          KC_LSFT,         KC_LCTL,        KC_LALT,        KC_LGUI,
-    U_UND,          U_CUT,          U_CPY,          U_PST,            U_RDO,         KC_MUTE,          KC_MPRV,         KC_MPLY,        KC_MNXT,        KC_MSTP,
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          QK_BOOT,       KC_MUTE,          G(KC_1),         G(KC_2),        G(KC_3),        KC_MPLY,
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       KC_VOLD,          SFT_T(G(KC_4)),  CTL_T(G(KC_5)), ALT_T(G(KC_6)), GUI_T(KC_VOLU),
+    U_UND,          U_CUT,          U_CPY,          U_PST,            U_RDO,         KC_MPRV,          G(KC_7),         G(KC_8),        G(KC_9),        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,            KC_NO,           KC_NO
   ),
   [_NUM] = LAYOUT_split_3x5_3(
