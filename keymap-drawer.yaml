@@ -34,31 +34,31 @@ layers:
           - "Mouse ↑"
           - "Wheel →"
           - Boot
-          - $$mdi:volume-high$$
+          - $$mdi:volume-low$$
           - ⌘1
           - ⌘2
           - ⌘3
-          - ⌘4
+          - $$mdi:play-pause$$
         - - "Wheel ↓"
           - "Mouse ←"
           - "Mouse ↓"
           - "Mouse →"
           - Fn
           - $$mdi:volume-medium$$
-          - $$mdi:apple-keyboard-shift$$
-          - $$mdi:apple-keyboard-control$$
-          - $$mdi:apple-keyboard-option$$
-          - $$mdi:apple-keyboard-command$$
+          - { tap: ⌘4, hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: $$mdi:volume-high$$, hold: $$mdi:apple-keyboard-command$$ }
         - - { tap: $$mdi:undo$$, type: held }
           - $$mdi:content-cut$$
           - $$mdi:content-copy$$
           - $$mdi:content-paste$$
           - $$mdi:redo$$
-          - $$mdi:volume-low$$
           - $$mdi:skip-backward$$
-          - $$mdi:play-pause$$
+          - ⌘7
+          - ⌘8
+          - ⌘9
           - $$mdi:skip-forward$$
-          - $$mdi:stop$$
         - - Mid Btn
           - Left Btn
           - Right Btn
