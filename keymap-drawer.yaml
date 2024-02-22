@@ -86,11 +86,11 @@ layers:
           - "5"
           - "6"
           - ":"
-        - - ⌘`
-          - "Prev App"
+        - - "Prev App"
+          - "Next App"
           - { tap: Num Word, hold: $$mdi:apple-keyboard-caps$$ }
           - { tap: "~", hold: ~/ }
-          - "Next App"
+          - Switch Win
           - ","
           - "7"
           - "8"
@@ -127,12 +127,12 @@ layers:
           - "Close Split"
           - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
           - { tap: "`", hold: "```" }
-          - ""
+          - "Split Vert"
           - ""
           - "*"
           - { tap: "&", hold: "&&" }
           - ""
-          - "Split Vert"
+          - ""
         - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
