@@ -123,8 +123,8 @@ layers:
           - { tap: "[", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "]", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
-        - - ""
-          - ""
+        - - "Split Horz"
+          - "Close Split"
           - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
           - { tap: "`", hold: "```" }
           - ""
@@ -132,7 +132,7 @@ layers:
           - "*"
           - { tap: "&", hold: "&&" }
           - ""
-          - ""
+          - "Split Vert"
         - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
