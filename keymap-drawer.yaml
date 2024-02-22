@@ -128,11 +128,11 @@ layers:
           - Caps Word
           - { tap: "`", hold: "```" }
           - "Split Vert"
-          - ""
+          - $$mdi:keyboard-tab$$
           - "*"
           - { tap: "&", hold: "&&" }
-          - ""
-          - ""
+          - $$mdi:keyboard-space$$
+          - $$mdi:keyboard-return$$
         - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
