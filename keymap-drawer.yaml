@@ -70,8 +70,8 @@ layers:
           - Close Tab
           - Prev Tab
           - Next Tab
-          - ""
-          - ""
+          - Back
+          - Fwd
           - "1"
           - "2"
           - "3"
