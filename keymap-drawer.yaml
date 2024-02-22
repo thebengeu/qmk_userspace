@@ -182,7 +182,7 @@ combos:
       key: { tap: "_", hold: Fun }
       layers: [Base]
     - key_positions: [34, 35]
-      key: { tap: NW, hold: Caps }
+      key: { tap: "-", hold: -- }
       layers: [Base]
     - key_positions: [0, 1]
       key: Prev Tab
@@ -451,6 +451,16 @@ combos:
     - key_positions: [27, 28]
       key: "*"
       layers: [Base]
+    - key_positions: [27, 29]
+      key: Fn
+      layers: [Base]
+      align: bottom
+      offset: 0.75
+    - key_positions: [26, 28]
+      key: Close Split
+      layers: [Base]
+      align: bottom
+      offset: 0.25
     - key_positions: [28, 29]
       key: "&"
       layers: [Base]
@@ -459,17 +469,27 @@ combos:
       layers: [Base]
       align: right
       offset: 0.25
+    - key_positions: [23, 31]
+      key: Split Horz
+      layers: [Base]
+      align: bottom
+      offset: 0.25
     - key_positions: [24, 31]
       key: Prev App
       layers: [Base]
     - key_positions: [15, 34]
-      key: "-"
+      key: { tap: NW, hold: Caps }
       layers: [Base]
       align: left
       offset: 0.25
     - key_positions: [25, 34]
       key: Next App
       layers: [Base]
+    - key_positions: [26, 34]
+      key: Split Vert
+      layers: [Base]
+      align: bottom
+      offset: 0.25
 draw_config:
     combo_h: 28
     combo_w: 30
