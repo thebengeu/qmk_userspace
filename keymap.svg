@@ -621,8 +621,9 @@ path.combo {
 <path d="M433,140 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h18" class="combo"/>
 <path d="M433,140 v50 a6.0,6.0 0 0 0 6.0,6.0 h18" class="combo"/>
 <rect rx="6" ry="6" x="418" y="126" width="30" height="28" class="combo"/>
-<text x="433" y="140" class="combo tap">NW</text>
-<text x="433" y="152" class="combo hold">Caps</text>
+<text x="433" y="140" class="combo tap">
+<tspan x="433" dy="-0.6em">Num</tspan><tspan x="433" dy="1.2em">Word</tspan>
+</text>
 </g>
 <g class="combo combopos-56">
 <rect rx="6" ry="6" x="461" y="154" width="30" height="28" class="combo"/>
@@ -923,9 +924,8 @@ path.combo {
 <g transform="translate(140, 140)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Num</tspan><tspan x="0" dy="1.2em">Word</tspan>
+<tspan x="0" dy="-0.6em">Num</tspan><tspan x="0" dy="1.2em">Word</tspan>
 </text>
-<use href="#mdi:apple-keyboard-caps" xlink:href="#mdi:apple-keyboard-caps" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-caps"/>
 </g>
 <g transform="translate(196, 140)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1009,6 +1009,7 @@ path.combo {
 </g>
 <g transform="translate(252, 28)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:apple-keyboard-caps" xlink:href="#mdi:apple-keyboard-caps" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:apple-keyboard-caps"/>
 </g>
 <g transform="translate(476, 28)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1091,9 +1092,8 @@ path.combo {
 <g transform="translate(140, 140)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Caps</tspan><tspan x="0" dy="1.2em">Word</tspan>
+<tspan x="0" dy="-0.6em">Caps</tspan><tspan x="0" dy="1.2em">Word</tspan>
 </text>
-<use href="#mdi:apple-keyboard-caps" xlink:href="#mdi:apple-keyboard-caps" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-caps"/>
 </g>
 <g transform="translate(196, 140)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

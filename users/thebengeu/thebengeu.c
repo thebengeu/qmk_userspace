@@ -29,13 +29,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUM] = LAYOUT_split_3x5_3(
     KC_PERC,        G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),     G(KC_LBRC),      G(KC_RBRC),       KC_1,            KC_2,           KC_3,           LT(0,KC_DLR),
     GUI_T(KC_LCBR), ALT_T(U_RCBR),  CTL_T(KC_LPRN), SFT_T(KC_RPRN),   LT(1,KC_PLUS),   LT(0,KC_EQL),     KC_4,            KC_5,           KC_6,           KC_COLN,
-    SHIFT_GUI_TAB,  GUI_TAB,        LT(0,NW_TOGG),  LT(1,KC_TILD),    G(KC_GRV),       LT(0,KC_COMM),    KC_7,            KC_8,           KC_9,           LT(0,KC_DOT),
+    SHIFT_GUI_TAB,  GUI_TAB,        NW_TOGG,        LT(1,KC_TILD),    G(KC_GRV),       LT(0,KC_COMM),    KC_7,            KC_8,           KC_9,           LT(0,KC_DOT),
                                     KC_ESC,         KC_BSPC,          KC_ENT,          LT(0,KC_MINS),    LT(_SYM,KC_0),   MEH_T(KC_SPC)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
-    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,           KC_NO,           KC_NO,            LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_CIRC,
+    KC_PGUP,        KC_HOME,        KC_UP,          KC_END,           KC_CAPS,         KC_NO,            LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_CIRC,
     KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,         LT(0,KC_BSLS),   LT(1,KC_PIPE),    SFT_T(KC_UNDS),  CTL_T(KC_LBRC), ALT_T(KC_RBRC), GUI_T(KC_SCLN),
-    LSA(KC_MINS),   LSA(KC_X),      LT(0,CW_TOGG),  LT(0,KC_GRV),     LSA(KC_BSLS),    KC_NO,            KC_ASTR,         LT(0,KC_AMPR),  KC_NO,          KC_NO,
+    LSA(KC_MINS),   LSA(KC_X),      CW_TOGG,        LT(0,KC_GRV),     LSA(KC_BSLS),    KC_NO,            KC_ASTR,         LT(0,KC_AMPR),  KC_NO,          KC_NO,
                                     QK_AREP,        KC_BSPC,          KC_DEL,          KC_NO,            LLOCK,           KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3(
@@ -175,7 +175,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_gbspc, KC_DEL),
                                             COMBO(combos_vbspc, LSA(KC_MINS)),
                                             COMBO(combos_bbspc, LSG(KC_TAB)),
-                                            COMBO(combos_hspc, LT(0, NW_TOGG)),
+                                            COMBO(combos_hspc, NW_TOGG),
                                             COMBO(combos_nspc, G(KC_TAB)),
                                             COMBO(combos_mspc, LSA(KC_BSLS))};
 // clang-format on
@@ -372,33 +372,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             }
             break;
-        case LT(0, CW_TOGG):
-            if (record->tap.count) {
-                if (record->event.pressed) {
-                    caps_word_toggle();
-                    return false;
-                }
-            } else {
-                if (record->event.pressed) {
-                    tap_code(KC_CAPS);
-                }
+        case NW_TOGG:
+            if (record->event.pressed) {
+                is_num_word_on = true;
+                caps_word_toggle();
                 return false;
             }
-            return true;
-        case LT(0, NW_TOGG):
-            if (record->tap.count) {
-                if (record->event.pressed) {
-                    is_num_word_on = true;
-                    caps_word_toggle();
-                    return false;
-                }
-            } else {
-                if (record->event.pressed) {
-                    tap_code(KC_CAPS);
-                }
-                return false;
-            }
-            return true;
+            break;
         case LT(0, KC_HASH):
             if (record->tap.count) {
                 if (record->event.pressed) {

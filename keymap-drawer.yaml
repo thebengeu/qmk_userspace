@@ -88,7 +88,7 @@ layers:
           - ":"
         - - "Prev App"
           - "Next App"
-          - { tap: Num Word, hold: $$mdi:apple-keyboard-caps$$ }
+          - Num Word
           - { tap: "~", hold: ~/ }
           - Switch Win
           - ","
@@ -107,7 +107,7 @@ layers:
           - Home
           - $$mdi:arrow-up$$
           - End
-          - ""
+          - $$mdi:apple-keyboard-caps$$
           - ""
           - { tap: "!", hold: "!==" }
           - "@"
@@ -125,7 +125,7 @@ layers:
           - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
         - - "Split Horz"
           - "Close Split"
-          - { tap: Caps Word, hold: $$mdi:apple-keyboard-caps$$ }
+          - Caps Word
           - { tap: "`", hold: "```" }
           - "Split Vert"
           - ""
@@ -478,7 +478,7 @@ combos:
       key: Prev App
       layers: [Base]
     - key_positions: [15, 34]
-      key: { tap: NW, hold: Caps }
+      key: Num Word
       layers: [Base]
       align: left
       offset: 0.25
