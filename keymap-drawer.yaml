@@ -182,7 +182,7 @@ combos:
       key: { tap: "_", hold: Fun }
       layers: [Base]
     - key_positions: [34, 35]
-      key: { tap: "-", hold: -- }
+      key: { tap: "-", hold: Hyper }
       layers: [Base]
     - key_positions: [0, 1]
       key: Prev Tab
