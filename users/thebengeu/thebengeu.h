@@ -1,10 +1,13 @@
 #pragma once
 
 enum custom_keycodes {
-  GUI_TAB = SAFE_RANGE,
-  SHIFT_GUI_TAB,
+  GUI_4 = SAFE_RANGE,
+  GUI_5,
+  GUI_6,
+  GUI_TAB,
   LLOCK,
   NW_TOGG,
+  SHIFT_GUI_TAB,
   U_RCBR
 };
 
