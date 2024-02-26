@@ -302,7 +302,7 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
 }
 
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
-    if ((mods & MOD_MASK_ALT)) {
+    if (mods == MOD_BIT(KC_LALT)) {
         switch (keycode) {
             case KC_H:
                 return A(KC_L);
@@ -315,14 +315,23 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         }
     }
 
-    if ((mods & MOD_MASK_CTRL)) {
+    if (mods == (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT))) {
         switch (keycode) {
-            case KC_R:
-                return KC_U;
+            case LT(_MS, KC_TAB):
+                return C(KC_TAB);
         }
     }
 
-    if ((mods & MOD_MASK_SHIFT)) {
+    if (mods == MOD_BIT(KC_LCTL)) {
+        switch (keycode) {
+            case KC_R:
+                return KC_U;
+            case LT(_MS, KC_TAB):
+                return S(C(KC_TAB));
+        }
+    }
+
+    if (mods == MOD_BIT(KC_LSFT)) {
         switch (keycode) {
             case LT(_NUM, KC_SPC):
                 return KC_SPC;
