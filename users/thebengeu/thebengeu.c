@@ -394,14 +394,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    if (record->event.pressed) {
+    if (((!IS_QK_MOD_TAP(keycode) && !IS_QK_LAYER_TAP(keycode)) || record->tap.count) && record->event.pressed) {
+        if (last_keycode_after_brc) {
+            last_brc               = 0;
+            last_keycode_after_brc = 0;
+        }
+
         if (keycode == CTL_T(KC_LBRC) || keycode == LT(0, KC_LBRC)) {
             last_brc = KC_LBRC;
         } else if (keycode == SFT_T(KC_RBRC) || keycode == KC_RBRC) {
             last_brc = KC_RBRC;
-        } else if (last_keycode_after_brc) {
-            last_brc               = 0;
-            last_keycode_after_brc = 0;
         } else if (last_brc) {
             last_keycode_after_brc = keycode;
         }
