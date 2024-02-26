@@ -163,7 +163,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_op, LT(0, KC_HASH)),
                                             COMBO(combos_aq, LT(1, KC_LCBR)),
                                             COMBO(combos_sw, KC_RCBR),
-                                            COMBO(combos_de, KC_LBRC),
+                                            COMBO(combos_de, LT(0, KC_LBRC)),
                                             COMBO(combos_fr, KC_RBRC),
                                             COMBO(combos_gt, KC_SCLN),
                                             COMBO(combos_hy, LT(1, KC_PLUS)),
@@ -265,7 +265,7 @@ bool caps_word_press_user(uint16_t keycode) {
 }
 
 void tap_code16_caps_word(uint16_t keycode) {
-    if (!caps_word_press_user(keycode)) {
+    if (is_caps_word_on() && !caps_word_press_user(keycode)) {
         caps_word_off();
     }
 
@@ -301,15 +301,17 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
     return process_tap_or_long_press_key(record, string, NULL);
 }
 
+uint16_t last_brc               = 0;
+uint16_t last_keycode_after_brc = 0;
+
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
     switch (mods) {
         case 0:
+            if (keycode == last_keycode_after_brc) {
+                return keycode;
+            }
+
             switch (keycode) {
-                case CTL_T(KC_D):
-                case SFT_T(KC_F):
-                case KC_H:
-                case LT(_NUM, KC_Q):
-                    return keycode;
                 case KC_U:
                     return C(KC_R);
                 case G(KC_W):
@@ -384,71 +386,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (keycode == last_keycode_after_brc && get_repeat_key_count() != 0) {
+        if (record->event.pressed) {
+            tap_code16_caps_word(get_repeat_key_count() > 0 ? last_brc : last_brc == KC_LBRC ? KC_RBRC : KC_LBRC);
+            tap_code16_caps_word(last_keycode_after_brc);
+        }
+        return false;
+    }
+
+    if (record->event.pressed) {
+        if (keycode == CTL_T(KC_LBRC) || keycode == LT(0, KC_LBRC)) {
+            last_brc = KC_LBRC;
+        } else if (keycode == SFT_T(KC_RBRC) || keycode == KC_RBRC) {
+            last_brc = KC_RBRC;
+        } else if (last_keycode_after_brc) {
+            last_brc               = 0;
+            last_keycode_after_brc = 0;
+        } else if (last_brc) {
+            last_keycode_after_brc = keycode;
+        }
+    }
+
     switch (keycode) {
-        case CTL_T(KC_D):
-            if (get_last_mods()) {
-                break;
-            }
-            if (get_repeat_key_count() > 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("]d");
-                }
-                return false;
-            } else if (get_repeat_key_count() < 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("[d");
-                }
-                return false;
-            }
-            break;
-        case SFT_T(KC_F):
-            if (get_last_mods()) {
-                break;
-            }
-            if (get_repeat_key_count() > 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("]f");
-                }
-                return false;
-            } else if (get_repeat_key_count() < 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("[f");
-                }
-                return false;
-            }
-            break;
-        case KC_H:
-            if (get_last_mods()) {
-                break;
-            }
-            if (get_repeat_key_count() > 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("]h");
-                }
-                return false;
-            } else if (get_repeat_key_count() < 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("[h");
-                }
-                return false;
-            }
-            break;
-        case LT(_NUM, KC_Q):
-            if (get_last_mods()) {
-                break;
-            }
-            if (get_repeat_key_count() > 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("]q");
-                }
-                return false;
-            } else if (get_repeat_key_count() < 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("[q");
-                }
-                return false;
-            }
-            break;
         case GUI_TAB:
         case SHIFT_GUI_TAB: {
             uint16_t tab_or_shift_tab = keycode == GUI_TAB ? KC_TAB : S(KC_TAB);
