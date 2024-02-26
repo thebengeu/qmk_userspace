@@ -407,6 +407,69 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         } else if (last_brc) {
             last_keycode_after_brc = keycode;
         }
+
+        switch (keycode) {
+            case GUI_T(KC_LPRN):
+                tap_code16_caps_word(KC_LPRN);
+                return false;
+            case ALT_T(KC_RPRN):
+                tap_code16_caps_word(KC_RPRN);
+                return false;
+            case CTL_T(NW_TOGG):
+                is_num_word_on = true;
+                caps_word_toggle();
+                return false;
+            case SFT_T(KC_ASTR):
+                tap_code16_caps_word(KC_ASTR);
+                return false;
+            case GUI_T(KC_LCBR):
+                tap_code16_caps_word(KC_LCBR);
+                return false;
+            case ALT_T(KC_RCBR):
+                tap_code16_caps_word(KC_RCBR);
+                return false;
+            case SFT_T(KC_LPRN):
+                tap_code16_caps_word(KC_LPRN);
+                return false;
+            case CTL_T(KC_RPRN):
+                tap_code16_caps_word(KC_RPRN);
+                return false;
+            case GUI_T(KC_COLN):
+                tap_code16_caps_word(KC_COLN);
+                return false;
+            case SFT_T(GUI_4):
+                tap_code16_caps_word(G(KC_4));
+                return false;
+            case CTL_T(GUI_5):
+                tap_code16_caps_word(G(KC_5));
+                return false;
+            case ALT_T(GUI_6):
+                tap_code16_caps_word(G(KC_6));
+                return false;
+            case GUI_T(CW_TOGG):
+                caps_word_toggle();
+                return false;
+            case LT(_FUN, KC_UNDS):
+                tap_code16_caps_word(KC_UNDS);
+                return false;
+            case LT(_MEH_NUM, KC_AMPR):
+                tap_code16_caps_word(KC_AMPR);
+                return false;
+            case NW_COLN:
+                is_num_word_on = true;
+                caps_word_on();
+                tap_code16_caps_word(KC_COLN);
+                return false;
+            case NW_DLR:
+                is_num_word_on = true;
+                caps_word_on();
+                tap_code16_caps_word(KC_DLR);
+                return false;
+            case NW_TOGG:
+                is_num_word_on = true;
+                caps_word_toggle();
+                return false;
+        }
     }
 
     switch (keycode) {
@@ -424,120 +487,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code16(tab_or_shift_tab);
             }
         } break;
-        case GUI_T(KC_LPRN):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_LPRN);
-                return false;
-            }
-            break;
-        case ALT_T(KC_RPRN):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_RPRN);
-                return false;
-            }
-            break;
-        case CTL_T(NW_TOGG):
-            if (record->tap.count && record->event.pressed) {
-                is_num_word_on = true;
-                caps_word_toggle();
-                return false;
-            }
-            break;
-        case SFT_T(KC_ASTR):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_ASTR);
-                return false;
-            }
-            break;
-        case GUI_T(KC_LCBR):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_LCBR);
-                return false;
-            }
-            break;
-        case ALT_T(KC_RCBR):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_RCBR);
-                return false;
-            }
-            break;
-        case SFT_T(KC_LPRN):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_LPRN);
-                return false;
-            }
-            break;
-        case CTL_T(KC_RPRN):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_RPRN);
-                return false;
-            }
-            break;
-        case GUI_T(KC_COLN):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_COLN);
-                return false;
-            }
-            break;
-        case SFT_T(GUI_4):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(G(KC_4));
-                return false;
-            }
-            break;
-        case CTL_T(GUI_5):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(G(KC_5));
-                return false;
-            }
-            break;
-        case ALT_T(GUI_6):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(G(KC_6));
-                return false;
-            }
-            break;
-        case GUI_T(CW_TOGG):
-            if (record->tap.count && record->event.pressed) {
-                caps_word_toggle();
-                return false;
-            }
-            break;
-        case LT(_FUN, KC_UNDS):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_UNDS);
-                return false;
-            }
-            break;
-        case LT(_MEH_NUM, KC_AMPR):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16_caps_word(KC_AMPR);
-                return false;
-            }
-            break;
-        case NW_COLN:
-            if (record->event.pressed) {
-                is_num_word_on = true;
-                caps_word_on();
-                tap_code16_caps_word(KC_COLN);
-                return false;
-            }
-            break;
-        case NW_DLR:
-            if (record->event.pressed) {
-                is_num_word_on = true;
-                caps_word_on();
-                tap_code16_caps_word(KC_DLR);
-                return false;
-            }
-            break;
-        case NW_TOGG:
-            if (record->event.pressed) {
-                is_num_word_on = true;
-                caps_word_toggle();
-                return false;
-            }
-            break;
         case LT(0, KC_HASH):
             if (record->tap.count) {
                 if (record->event.pressed) {
