@@ -302,57 +302,53 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
 }
 
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
-    if (mods == MOD_BIT(KC_LALT)) {
-        switch (keycode) {
-            case KC_H:
-                return A(KC_L);
-            case SFT_T(KC_J):
-                return A(KC_K);
-            case CTL_T(KC_K):
-                return A(KC_J);
-            case ALT_T(KC_L):
-                return A(KC_H);
-        }
-    }
-
-    if (mods == (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT))) {
-        switch (keycode) {
-            case LT(_MS, KC_TAB):
-                return C(KC_TAB);
-        }
-    }
-
-    if (mods == MOD_BIT(KC_LCTL)) {
-        switch (keycode) {
-            case KC_R:
-                return KC_U;
-            case LT(_MS, KC_TAB):
-                return S(C(KC_TAB));
-        }
-    }
-
-    if (mods == MOD_BIT(KC_LSFT)) {
-        switch (keycode) {
-            case LT(_NUM, KC_SPC):
-                return KC_SPC;
-        }
-    }
-
-    if (mods) {
-        return KC_TRNS;
-    }
-
-    switch (keycode) {
-        case CTL_T(KC_D):
-        case KC_E:
-        case SFT_T(KC_F):
-        case KC_H:
-        case LT(_NUM, KC_Q):
-            return keycode;
-        case KC_U:
-            return C(KC_R);
-        case LT(_NUM, KC_SPC):
-            return S(KC_SPC);
+    switch (mods) {
+        case 0:
+            switch (keycode) {
+                case CTL_T(KC_D):
+                case KC_E:
+                case SFT_T(KC_F):
+                case KC_H:
+                case LT(_NUM, KC_Q):
+                    return keycode;
+                case KC_U:
+                    return C(KC_R);
+                case LT(_NUM, KC_SPC):
+                    return S(KC_SPC);
+            }
+            break;
+        case MOD_BIT(KC_LALT):
+            switch (keycode) {
+                case KC_H:
+                    return A(KC_L);
+                case SFT_T(KC_J):
+                    return A(KC_K);
+                case CTL_T(KC_K):
+                    return A(KC_J);
+                case ALT_T(KC_L):
+                    return A(KC_H);
+            }
+            break;
+        case MOD_BIT(KC_LCTL):
+            switch (keycode) {
+                case KC_R:
+                    return KC_U;
+                case LT(_MS, KC_TAB):
+                    return S(C(KC_TAB));
+            }
+            break;
+        case MOD_BIT(KC_LSFT):
+            switch (keycode) {
+                case LT(_NUM, KC_SPC):
+                    return KC_SPC;
+            }
+            break;
+        case MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT):
+            switch (keycode) {
+                case LT(_MS, KC_TAB):
+                    return C(KC_TAB);
+            }
+            break;
     }
 
     return KC_TRNS;
