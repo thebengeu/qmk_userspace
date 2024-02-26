@@ -6,9 +6,11 @@ enum custom_keycodes {
   GUI_6,
   GUI_TAB,
   LLOCK,
+  NW_COLN,
+  NW_DLR,
   NW_TOGG,
-  SHIFT_GUI_TAB,
-  U_RCBR
+  RCBR,
+  SHIFT_GUI_TAB
 };
 
 #define U_RDO SCMD(KC_Z)

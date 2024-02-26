@@ -91,11 +91,11 @@ layers:
           - Caps Word
           - ^
           - Switch Win
-          - ""
+          - $$mdi:apple-keyboard-caps$$
           - { tap: $, hold: "${}" }
-          - ""
-          - ""
-          - ""
+          - "Close Split"
+          - "Split Horz"
+          - "Split Vert"
         - - ""
           - { tap: Layer Lock, type: held }
           - ""
@@ -107,8 +107,8 @@ layers:
           - Home
           - $$mdi:arrow-up$$
           - End
-          - ""
-          - { tap: $, hold: "${}" }
+          - "NW :"
+          - "NW $"
           - "1"
           - "2"
           - "3"
@@ -117,17 +117,17 @@ layers:
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
           - $$mdi:arrow-right$$
-        - - { tap: "~", hold: ~/ }
+          - { tap: "~", hold: ~/ }
           - { tap: +, hold: ++ }
           - { tap: "4", hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: "5", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "6", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "0", hold: $$mdi:apple-keyboard-command$$ }
-        - - "Split Horz"
-          - "Close Split"
+        - - { tap: "(", hold: "()" }
+          - ")"
           - Num Word
           - "*"
-          - "Split Vert"
+          - { tap: /, hold: // }
           - ","
           - "7"
           - "8"
@@ -136,9 +136,9 @@ layers:
         - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
-          - ""
-          - { tap: Layer Lock, type: held }
-          - ""
+          - $$mdi:keyboard-tab$$
+          - { tap: $$mdi:keyboard-space$$, hold: Sym }
+          - $$mdi:keyboard-esc$$
     Fun:
         - - ""
           - "F10"
@@ -178,12 +178,21 @@ combos:
     - key_positions: [31, 32]
       key: { tap: CW, hold: Cmd }
       layers: [Base]
+    - key_positions: [31, 32]
+      key: $$mdi:keyboard-return$$
+      layers: [Num]
     - key_positions: [33, 34]
       key: { tap: "_", hold: Fun }
       layers: [Base]
+    - key_positions: [33, 34]
+      key: "_"
+      layers: [Num]
     - key_positions: [34, 35]
       key: { tap: "-", hold: Hyper }
       layers: [Base]
+    - key_positions: [34, 35]
+      key: "-"
+      layers: [Num]
     - key_positions: [0, 1]
       key: Prev Tab
       layers: [Base]
@@ -452,7 +461,7 @@ combos:
       key: "&"
       layers: [Base]
     - key_positions: [27, 29]
-      key: $$mdi:apple-keyboard-shift$$
+      key: "NW $"
       layers: [Base]
       align: bottom
       offset: 0.75
@@ -462,7 +471,7 @@ combos:
       align: bottom
       offset: 0.25
     - key_positions: [28, 29]
-      key: "Fn"
+      key: "NW :"
       layers: [Base]
     - key_positions: [14, 31]
       key: $$mdi:backspace-reverse-outline$$
