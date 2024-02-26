@@ -65,6 +65,43 @@ layers:
           - { tap: Layer Lock, type: held }
           - ""
           - ""
+    Num:
+        - - { tap: PgUp, type: held }
+          - Home
+          - $$mdi:arrow-up$$
+          - End
+          - "NW :"
+          - "NW $"
+          - "1"
+          - "2"
+          - "3"
+          - "%"
+        - - PgDn
+          - $$mdi:arrow-left$$
+          - $$mdi:arrow-down$$
+          - $$mdi:arrow-right$$
+          - { tap: "~", hold: ~/ }
+          - { tap: +, hold: ++ }
+          - { tap: "4", hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: "5", hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: "6", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "0", hold: $$mdi:apple-keyboard-command$$ }
+        - - { tap: "(", hold: "()" }
+          - ")"
+          - Num Word
+          - "*"
+          - { tap: /, hold: // }
+          - ","
+          - "7"
+          - "8"
+          - "9"
+          - { tap: ., hold: ../ }
+        - - Alt Rep
+          - $$mdi:backspace-outline$$
+          - $$mdi:backspace-reverse-outline$$
+          - $$mdi:keyboard-tab$$
+          - { tap: $$mdi:keyboard-space$$, hold: Sym, type: held }
+          - $$mdi:keyboard-esc$$
     Sym:
         - - { tap: \, hold: \\ }
           - Close Tab
@@ -102,43 +139,6 @@ layers:
           - { tap: "-", hold: -- }
           - { tap: "_", hold: Fun }
           - { tap: "&", hold: Meh }
-    Num:
-        - - { tap: PgUp, type: held }
-          - Home
-          - $$mdi:arrow-up$$
-          - End
-          - "NW :"
-          - "NW $"
-          - "1"
-          - "2"
-          - "3"
-          - "%"
-        - - PgDn
-          - $$mdi:arrow-left$$
-          - $$mdi:arrow-down$$
-          - $$mdi:arrow-right$$
-          - { tap: "~", hold: ~/ }
-          - { tap: +, hold: ++ }
-          - { tap: "4", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: "5", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "6", hold: $$mdi:apple-keyboard-option$$ }
-          - { tap: "0", hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: "(", hold: "()" }
-          - ")"
-          - Num Word
-          - "*"
-          - { tap: /, hold: // }
-          - ","
-          - "7"
-          - "8"
-          - "9"
-          - { tap: ., hold: ../ }
-        - - Alt Rep
-          - $$mdi:backspace-outline$$
-          - $$mdi:backspace-reverse-outline$$
-          - $$mdi:keyboard-tab$$
-          - { tap: $$mdi:keyboard-space$$, hold: Sym }
-          - $$mdi:keyboard-esc$$
     Fun:
         - - ""
           - "F10"
