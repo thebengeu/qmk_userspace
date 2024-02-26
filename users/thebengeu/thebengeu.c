@@ -301,6 +301,31 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
     return process_tap_or_long_press_key(record, string, NULL);
 }
 
+uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    if ((mods & MOD_MASK_CTRL)) {
+        switch (keycode) {
+            case KC_R:
+                return KC_U;
+        }
+    }
+
+    if (mods) {
+        return KC_TRNS;
+    }
+
+    switch (keycode) {
+        case CTL_T(KC_D):
+        case SFT_T(KC_F):
+        case KC_H:
+        case LT(_NUM, KC_Q):
+            return keycode;
+        case KC_U:
+            return C(KC_R);
+    }
+
+    return KC_TRNS;
+}
+
 bool is_gui_tab_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -319,6 +344,70 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
+        case CTL_T(KC_D):
+            if (get_last_mods()) {
+                break;
+            }
+            if (get_repeat_key_count() > 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("]d");
+                }
+                return false;
+            } else if (get_repeat_key_count() < 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("[d");
+                }
+                return false;
+            }
+            break;
+        case SFT_T(KC_F):
+            if (get_last_mods()) {
+                break;
+            }
+            if (get_repeat_key_count() > 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("]f");
+                }
+                return false;
+            } else if (get_repeat_key_count() < 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("[f");
+                }
+                return false;
+            }
+            break;
+        case KC_H:
+            if (get_last_mods()) {
+                break;
+            }
+            if (get_repeat_key_count() > 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("]h");
+                }
+                return false;
+            } else if (get_repeat_key_count() < 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("[h");
+                }
+                return false;
+            }
+            break;
+        case LT(_NUM, KC_Q):
+            if (get_last_mods()) {
+                break;
+            }
+            if (get_repeat_key_count() > 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("]q");
+                }
+                return false;
+            } else if (get_repeat_key_count() < 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("[q");
+                }
+                return false;
+            }
+            break;
         case GUI_TAB:
         case SHIFT_GUI_TAB: {
             uint16_t tab_or_shift_tab = keycode == GUI_TAB ? KC_TAB : S(KC_TAB);
