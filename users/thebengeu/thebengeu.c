@@ -135,6 +135,7 @@ const uint16_t PROGMEM combos_bbspc[]                 = {KC_B, LT(_SYM, KC_BSPC)
 const uint16_t PROGMEM combos_hspc[]                  = {KC_H, LT(_NUM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_nspc[]                  = {KC_N, LT(_NUM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_mspc[]                  = {KC_M, LT(_NUM, KC_SPC), COMBO_END};
+const uint16_t PROGMEM combos_undsampr[]              = {LT(_FUN, KC_UNDS), LT(_MEH_NUM, KC_AMPR), COMBO_END};
 
 // clang-format off
 combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK_AREP),
@@ -199,7 +200,8 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_bbspc, LSG(KC_TAB)),
                                             COMBO(combos_hspc, NW_TOGG),
                                             COMBO(combos_nspc, G(KC_TAB)),
-                                            COMBO(combos_mspc, LSA(KC_BSLS))};
+                                            COMBO(combos_mspc, LSA(KC_BSLS)),
+                                            COMBO(combos_undsampr, LT(_HYPR_NUM, KC_SPC))};
 // clang-format on
 
 static bool is_num_word_on = false;
