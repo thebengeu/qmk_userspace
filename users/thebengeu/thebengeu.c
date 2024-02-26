@@ -309,6 +309,13 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         }
     }
 
+    if ((mods & MOD_MASK_SHIFT)) {
+        switch (keycode) {
+            case LT(_NUM, KC_SPC):
+                return KC_SPC;
+        }
+    }
+
     if (mods) {
         return KC_TRNS;
     }
@@ -321,6 +328,8 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
             return keycode;
         case KC_U:
             return C(KC_R);
+        case LT(_NUM, KC_SPC):
+            return S(KC_SPC);
     }
 
     return KC_TRNS;
