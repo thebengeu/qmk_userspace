@@ -306,7 +306,6 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case 0:
             switch (keycode) {
                 case CTL_T(KC_D):
-                case KC_E:
                 case SFT_T(KC_F):
                 case KC_H:
                 case LT(_NUM, KC_Q):
@@ -384,22 +383,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else if (get_repeat_key_count() < 0) {
                 if (record->event.pressed) {
                     SEND_STRING("[d");
-                }
-                return false;
-            }
-            break;
-        case KC_E:
-            if (get_last_mods()) {
-                break;
-            }
-            if (get_repeat_key_count() > 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("]e");
-                }
-                return false;
-            } else if (get_repeat_key_count() < 0) {
-                if (record->event.pressed) {
-                    SEND_STRING("[e");
                 }
                 return false;
             }
