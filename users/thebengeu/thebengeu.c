@@ -10,7 +10,7 @@
 #include "features/layer_lock.h"
 #include "features/sentence_case.h"
 
-enum layers { _BASE, _MS, _SYM, _NUM, _FUN, _MEH, _HYPR, _MEH_NUM, _HYPR_NUM };
+enum layers { _BASE, _MS, _NUM, _SYM, _FUN, _MEH, _HYPR, _MEH_NUM, _HYPR_NUM };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -26,17 +26,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U_UND,          U_CUT,       U_CPY,          U_PST,            U_RDO,         KC_MPRV,        G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
                                  KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,          KC_NO,            KC_NO
   ),
-  [_SYM] = LAYOUT_split_3x5_3(
-    LT(0,KC_BSLS),  G(KC_W),     LSG(KC_LBRC),   LSG(KC_RBRC),     G(KC_LBRC),    G(KC_RBRC),     LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
-    GUI_T(KC_LCBR), ALT_T(RCBR), CTL_T(KC_LBRC), SFT_T(KC_RBRC),   KC_SCLN,       LT(0,KC_EQL),   SFT_T(KC_LPRN),   CTL_T(KC_RPRN), ALT_T(KC_GRV),  GUI_T(KC_COLN),
-    SHIFT_GUI_TAB,  GUI_TAB,     CW_TOGG,        KC_CIRC,          G(KC_GRV),     KC_CAPS,        LT(0,KC_DLR),     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),
-                                 KC_NO,          LLOCK,            KC_NO,         LT(0,KC_MINS),  LT(_FUN,KC_UNDS), LT(_MEH_NUM,KC_AMPR)
-  ),
   [_NUM] = LAYOUT_split_3x5_3(
     KC_PGUP,        KC_HOME,     KC_UP,          KC_END,           NW_COLN,       NW_DLR,         KC_1,             KC_2,           KC_3,           KC_PERC,
     KC_PGDN,        KC_LEFT,     KC_DOWN,        KC_RIGHT,         LT(1,KC_TILD), LT(1,KC_PLUS),  SFT_T(KC_4),      CTL_T(KC_5),    ALT_T(KC_6),    GUI_T(KC_0),
     LT(1,KC_LPRN),  KC_RPRN,     NW_TOGG,        KC_ASTR,          LT(0,KC_BSLS), LT(0,KC_COMM),  KC_7,             KC_8,           KC_9,           LT(0,KC_DOT),
                                  QK_AREP,        KC_BSPC,          KC_DEL,        KC_TAB,         LT(_SYM,KC_SPC),  KC_ESC
+  ),
+  [_SYM] = LAYOUT_split_3x5_3(
+    LT(0,KC_BSLS),  G(KC_W),     LSG(KC_LBRC),   LSG(KC_RBRC),     G(KC_LBRC),    G(KC_RBRC),     LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
+    GUI_T(KC_LCBR), ALT_T(RCBR), CTL_T(KC_LBRC), SFT_T(KC_RBRC),   KC_SCLN,       LT(0,KC_EQL),   SFT_T(KC_LPRN),   CTL_T(KC_RPRN), ALT_T(KC_GRV),  GUI_T(KC_COLN),
+    SHIFT_GUI_TAB,  GUI_TAB,     CW_TOGG,        KC_CIRC,          G(KC_GRV),     KC_CAPS,        LT(0,KC_DLR),     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),
+                                 KC_NO,          LLOCK,            KC_NO,         LT(0,KC_MINS),  LT(_FUN,KC_UNDS), LT(_MEH_NUM,KC_AMPR)
   ),
   [_FUN] = LAYOUT_split_3x5_3(
     KC_NO,          KC_F10,      KC_F11,         KC_F12,           KC_NO,         KC_NO,          KC_F1,            KC_F2,          KC_F3,          KC_NO,
