@@ -302,6 +302,19 @@ static bool process_tap_or_long_press_shifted_key(keyrecord_t *record, const cha
 }
 
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    if ((mods & MOD_MASK_ALT)) {
+        switch (keycode) {
+            case KC_H:
+                return A(KC_L);
+            case SFT_T(KC_J):
+                return A(KC_K);
+            case CTL_T(KC_K):
+                return A(KC_J);
+            case ALT_T(KC_L):
+                return A(KC_H);
+        }
+    }
+
     if ((mods & MOD_MASK_CTRL)) {
         switch (keycode) {
             case KC_R:
@@ -322,6 +335,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 
     switch (keycode) {
         case CTL_T(KC_D):
+        case KC_E:
         case SFT_T(KC_F):
         case KC_H:
         case LT(_NUM, KC_Q):
@@ -365,6 +379,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else if (get_repeat_key_count() < 0) {
                 if (record->event.pressed) {
                     SEND_STRING("[d");
+                }
+                return false;
+            }
+            break;
+        case KC_E:
+            if (get_last_mods()) {
+                break;
+            }
+            if (get_repeat_key_count() > 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("]e");
+                }
+                return false;
+            } else if (get_repeat_key_count() < 0) {
+                if (record->event.pressed) {
+                    SEND_STRING("[e");
                 }
                 return false;
             }
