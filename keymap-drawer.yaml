@@ -86,10 +86,10 @@ layers:
           - { tap: "5", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "6", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "0", hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: "(", hold: "()" }
-          - ")"
-          - Num Word
-          - "*"
+        - - { tap: "(", hold: $$mdi:apple-keyboard-command$$ }
+          - { tap: ")", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "Num Word", hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: "*", hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: /, hold: // }
           - ","
           - "7"
