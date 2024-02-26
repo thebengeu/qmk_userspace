@@ -416,6 +416,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16_caps_word(KC_RPRN);
                 return false;
             case CTL_T(NW_TOGG):
+            case NW_TOGG:
                 is_num_word_on = true;
                 caps_word_toggle();
                 return false;
@@ -464,10 +465,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 is_num_word_on = true;
                 caps_word_on();
                 tap_code16_caps_word(KC_DLR);
-                return false;
-            case NW_TOGG:
-                is_num_word_on = true;
-                caps_word_toggle();
                 return false;
         }
     }
