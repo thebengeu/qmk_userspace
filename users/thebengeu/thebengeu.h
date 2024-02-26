@@ -9,7 +9,6 @@ enum custom_keycodes {
   NW_COLN,
   NW_DLR,
   NW_TOGG,
-  RCBR,
   SHIFT_GUI_TAB
 };
 
