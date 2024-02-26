@@ -478,7 +478,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-    if (is_gui_tab_active && !layer_state_is(_NUM)) {
+    if (is_gui_tab_active && !layer_state_is(_SYM)) {
         unregister_code(KC_LGUI);
         is_gui_tab_active = false;
     }
