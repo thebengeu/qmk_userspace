@@ -612,7 +612,7 @@ path.combo {
 <path d="M224,239 h22 a6.0,6.0 0 0 0 6.0,-6.0 v-18" class="combo"/>
 <rect rx="6" ry="6" x="209" y="225" width="30" height="28" class="combo"/>
 <text x="224" y="239" class="combo tap">
-<tspan x="224" dy="-0.6em">Split</tspan><tspan x="224" dy="1.2em">Horz</tspan>
+<tspan x="224" dy="-0.6em">Split</tspan><tspan x="224" dy="1.2em">Vert</tspan>
 </text>
 </g>
 <g class="combo combopos-54">
@@ -640,7 +640,7 @@ path.combo {
 <path d="M504,239 h-22 a6.0,6.0 0 0 1 -6.0,-6.0 v-18" class="combo"/>
 <rect rx="6" ry="6" x="489" y="225" width="30" height="28" class="combo"/>
 <text x="504" y="239" class="combo tap">
-<tspan x="504" dy="-0.6em">Split</tspan><tspan x="504" dy="1.2em">Vert</tspan>
+<tspan x="504" dy="-0.6em">Split</tspan><tspan x="504" dy="1.2em">Horz</tspan>
 </text>
 </g>
 </g>
@@ -1143,7 +1143,7 @@ path.combo {
 <g transform="translate(588, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Close</tspan><tspan x="0" dy="1.2em">Split</tspan>
+<tspan x="0" dy="-0.6em">Split</tspan><tspan x="0" dy="1.2em">Vert</tspan>
 </text>
 </g>
 <g transform="translate(644, 140)" class="key keypos-28">
@@ -1155,7 +1155,7 @@ path.combo {
 <g transform="translate(700, 140)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Split</tspan><tspan x="0" dy="1.2em">Vert</tspan>
+<tspan x="0" dy="-0.6em">Close</tspan><tspan x="0" dy="1.2em">Split</tspan>
 </text>
 </g>
 <g transform="translate(196, 196)" class="key keypos-30">
