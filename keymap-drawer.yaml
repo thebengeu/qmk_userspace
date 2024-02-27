@@ -130,9 +130,9 @@ layers:
           - Switch Win
           - $$mdi:apple-keyboard-caps$$
           - { tap: $, hold: "${}" }
-          - "Close Split"
-          - "Split Horz"
           - "Split Vert"
+          - "Split Horz"
+          - "Close Split"
         - - ""
           - { tap: Layer Lock, type: held }
           - ""
@@ -479,7 +479,7 @@ combos:
       align: right
       offset: 0.25
     - key_positions: [23, 31]
-      key: Split Horz
+      key: Split Vert
       layers: [Base]
       align: bottom
       offset: 0.25
@@ -495,7 +495,7 @@ combos:
       key: Next App
       layers: [Base]
     - key_positions: [26, 34]
-      key: Split Vert
+      key: Split Horz
       layers: [Base]
       align: bottom
       offset: 0.25

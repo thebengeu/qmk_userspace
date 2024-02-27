@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYM] = LAYOUT_split_3x5_3(
     LT(0,KC_BSLS),  G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),     G(KC_LBRC),    G(KC_RBRC),     LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
     GUI_T(KC_LCBR), ALT_T(KC_RCBR), CTL_T(KC_LBRC), SFT_T(KC_RBRC),   KC_SCLN,       LT(0,KC_EQL),   SFT_T(KC_LPRN),   CTL_T(KC_RPRN), ALT_T(KC_GRV),  GUI_T(KC_COLN),
-    SHIFT_GUI_TAB,  GUI_TAB,        CW_TOGG,        KC_CIRC,          G(KC_GRV),     KC_CAPS,        LT(0,KC_DLR),     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),
+    SHIFT_GUI_TAB,  GUI_TAB,        CW_TOGG,        KC_CIRC,          G(KC_GRV),     KC_CAPS,        LT(0,KC_DLR),     LSA(KC_BSLS),   LSA(KC_MINS),   LSA(KC_X),
                                     KC_NO,          LLOCK,            KC_NO,         LT(0,KC_MINS),  LT(_FUN,KC_UNDS), LT(_MEH_NUM,KC_AMPR)
   ),
   [_FUN] = LAYOUT_split_3x5_3(
@@ -200,11 +200,11 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_commslsh, NW_DLR),
                                             COMBO(combos_dotslsh, NW_COLN),
                                             COMBO(combos_gbspc, KC_DEL),
-                                            COMBO(combos_vbspc, LSA(KC_MINS)),
+                                            COMBO(combos_vbspc, LSA(KC_BSLS)),
                                             COMBO(combos_bbspc, LSG(KC_TAB)),
                                             COMBO(combos_hspc, NW_TOGG),
                                             COMBO(combos_nspc, G(KC_TAB)),
-                                            COMBO(combos_mspc, LSA(KC_BSLS)),
+                                            COMBO(combos_mspc, LSA(KC_MINS)),
                                             COMBO(combos_undsampr, LT(_HYPR_NUM, KC_SPC))};
 // clang-format on
 
