@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUM] = LAYOUT_split_3x5_3(
     KC_PERC,        G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),     KC_NO,         KC_NO,            KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
     GUI_T(KC_LCBR), ALT_T(RCBR),    CTL_T(KC_LPRN), SFT_T(KC_RPRN),   LT(0,KC_DLR),  LT(0,KC_EQL),     KC_4,             KC_5,           KC_6,           KC_COLN,
-    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        NW_TOGG,          KC_NO,         LT(0,KC_DOT),     KC_7,             KC_8,           KC_9,           LT(0,KC_COMM),
-                                    KC_NO,          LLOCK,            KC_NO,         LT(_FUN,KC_MINS), LT(_SYM,KC_0),    LT(_MEH_NUM,KC_SPC)
+    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        NW_TOGG,          KC_NO,         LT(0,KC_COMM),    KC_7,             KC_8,           KC_9,           KC_NO,
+                                    KC_ESC,         KC_BSPC,          KC_ENT,         LT(_FUN,KC_MINS), LT(_SYM,KC_0),    LT(_MEH_NUM,KC_DOT)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
     LT(1,KC_TILD),  KC_CIRC,        KC_UP,          LT(0,KC_AMPR),    KC_NO,         KC_NO,            LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
@@ -76,7 +76,8 @@ const uint16_t PROGMEM thumbcombos_base_left_right[]  = {LT(_NUM, KC_BSPC), SFT_
 const uint16_t PROGMEM thumbcombos_base_right_left[]  = {LT(_MS, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_right[] = {LT(_SYM, KC_SPC), LT(_MEH, KC_ESC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_left[]          = {KC_BTN1, KC_BTN2, COMBO_END};
-const uint16_t PROGMEM thumbcombos_num_right[]        = {LT(_FUN, KC_MINS), LT(_SYM, KC_0), COMBO_END};
+const uint16_t PROGMEM thumbcombos_num_right_left[]   = {LT(_FUN, KC_MINS), LT(_SYM, KC_0), COMBO_END};
+const uint16_t PROGMEM thumbcombos_num_right_right[]  = {LT(_SYM, KC_0), LT(_MEH_NUM, KC_DOT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym_left[]         = {KC_BSPC, KC_DEL, COMBO_END};
 const uint16_t PROGMEM combos_qw[]                    = {LT(_SYM, KC_Q), KC_W, COMBO_END};
 const uint16_t PROGMEM combos_qe[]                    = {LT(_SYM, KC_Q), KC_E, COMBO_END};
@@ -135,7 +136,6 @@ const uint16_t PROGMEM combos_bbspc[]                 = {KC_B, LT(_NUM, KC_BSPC)
 const uint16_t PROGMEM combos_hspc[]                  = {KC_H, LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_nspc[]                  = {KC_N, LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_mspc[]                  = {KC_M, LT(_SYM, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_0spc[]                  = {LT(_SYM, KC_0), LT(_MEH_NUM, KC_SPC), COMBO_END};
 
 // clang-format off
 combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK_AREP),
@@ -143,7 +143,8 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(thumbcombos_base_right_left, LT(_FUN,UNDS)),
                                             COMBO(thumbcombos_base_right_right, LT(_HYPR,NW_TOGG)),
                                             COMBO(thumbcombos_sym_left, KC_ENT),
-                                            COMBO(thumbcombos_num_right, LT(_FUN, UNDS)),
+                                            COMBO(thumbcombos_num_right_left, LT(_MEH_NUM, KC_SPC)),
+                                            COMBO(thumbcombos_num_right_right, LT(_HYPR_NUM, NW_TOGG)),
                                             COMBO(thumbcombos_ms_left, KC_BTN3),
                                             COMBO(combos_qw, LSG(KC_LBRC)),
                                             COMBO(combos_qe, G(KC_W)),
@@ -159,28 +160,28 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_op, LT(0, KC_HASH)),
                                             COMBO(combos_aq, LT(1, KC_LCBR)),
                                             COMBO(combos_sw, KC_RCBR),
-                                            COMBO(combos_de, LT(0, KC_LBRC)),
-                                            COMBO(combos_fr, KC_RBRC),
-                                            COMBO(combos_gt, KC_SCLN),
-                                            COMBO(combos_hy, LT(1, KC_PLUS)),
-                                            COMBO(combos_ju, LT(0, KC_LPRN)),
-                                            COMBO(combos_ki, KC_RPRN),
-                                            COMBO(combos_lo, LT(0, KC_GRV)),
+                                            COMBO(combos_de, LT(0, KC_LPRN)),
+                                            COMBO(combos_fr, KC_RPRN),
+                                            COMBO(combos_gt, LT(0, KC_DLR)),
+                                            COMBO(combos_hy, LT(0, KC_EQL)),
+                                            COMBO(combos_ju, KC_ASTR),
+                                            COMBO(combos_ki, LT(0, KC_LBRC)),
+                                            COMBO(combos_lo, KC_RBRC),
                                             COMBO(combos_quotp, KC_COLN),
                                             COMBO(combos_dg, KC_DOWN),
                                             COMBO(combos_fg, KC_UP),
                                             COMBO(combos_hj, KC_DOWN),
                                             COMBO(combos_hk, KC_UP),
-                                            COMBO(combos_az, LT(0, KC_BSLS)),
-                                            COMBO(combos_sx, KC_ASTR),
+                                            COMBO(combos_az, LT(0, KC_GRV)),
+                                            COMBO(combos_sx, LT(1, KC_TILD)),
                                             COMBO(combos_dc, KC_CIRC),
                                             COMBO(combos_fv, KC_LEFT),
-                                            COMBO(combos_gb, LT(1, KC_TILD)),
-                                            COMBO(combos_hn, LT(1, KC_PLUS)),
+                                            COMBO(combos_gb, LT(0, KC_AMPR)),
+                                            COMBO(combos_hn, LT(0, KC_MINS)),
                                             COMBO(combos_jm, KC_RIGHT),
-                                            COMBO(combos_kcomm, LT(0, KC_DLR)),
-                                            COMBO(combos_ldot, KC_PERC),
-                                            COMBO(combos_quotslsh, LT(1, KC_PIPE)),
+                                            COMBO(combos_kcomm, LT(1, KC_PLUS)),
+                                            COMBO(combos_ldot, LT(1, KC_PIPE)),
+                                            COMBO(combos_quotslsh, KC_SCLN),
                                             COMBO(combos_zx, U_CUT),
                                             COMBO(combos_zc, G(KC_GRV)),
                                             COMBO(combos_xc, U_CPY),
@@ -192,7 +193,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_ncomm, KC_WH_U),
                                             COMBO(combos_mcomm, KC_WH_R),
                                             COMBO(combos_mdot, LSA(KC_X)),
-                                            COMBO(combos_commdot, LT(0, KC_AMPR)),
+                                            COMBO(combos_commdot, KC_PERC),
                                             COMBO(combos_commslsh, NW_DLR),
                                             COMBO(combos_dotslsh, NW_COLN),
                                             COMBO(combos_gbspc, KC_DEL),
@@ -200,8 +201,7 @@ combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, QK
                                             COMBO(combos_bbspc, LSG(KC_TAB)),
                                             COMBO(combos_hspc, NW_TOGG),
                                             COMBO(combos_nspc, G(KC_TAB)),
-                                            COMBO(combos_mspc, LSA(KC_MINS)),
-                                            COMBO(combos_0spc, LT(_HYPR_NUM, NW_TOGG))};
+                                            COMBO(combos_mspc, LSA(KC_MINS))};
 // clang-format on
 
 static bool is_num_word_on = false;
