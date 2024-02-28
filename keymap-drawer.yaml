@@ -66,79 +66,79 @@ layers:
           - ""
           - ""
     Num:
-        - - { tap: PgUp, type: held }
-          - Home
-          - $$mdi:arrow-up$$
-          - End
-          - "NW :"
-          - "NW $"
-          - "1"
-          - "2"
-          - "3"
-          - "%"
-        - - PgDn
-          - $$mdi:arrow-left$$
-          - $$mdi:arrow-down$$
-          - $$mdi:arrow-right$$
-          - { tap: "~", hold: ~/ }
-          - { tap: +, hold: ++ }
-          - { tap: "4", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: "5", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "6", hold: $$mdi:apple-keyboard-option$$ }
-          - { tap: "0", hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: "(", hold: $$mdi:apple-keyboard-command$$ }
-          - { tap: ")", hold: $$mdi:apple-keyboard-option$$ }
-          - { tap: "Num Word", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "*", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: /, hold: // }
-          - ","
-          - "7"
-          - "8"
-          - "9"
-          - { tap: ., hold: ../ }
-        - - Alt Rep
-          - $$mdi:backspace-outline$$
-          - $$mdi:backspace-reverse-outline$$
-          - $$mdi:keyboard-tab$$
-          - { tap: $$mdi:keyboard-space$$, hold: Sym, type: held }
-          - $$mdi:keyboard-esc$$
-    Sym:
-        - - { tap: \, hold: \\ }
+        - - "%"
           - Close Tab
           - Prev Tab
           - Next Tab
-          - Back
-          - Fwd
+          - ""
+          - ""
+          - "1"
+          - "2"
+          - "3"
+          - { tap: "+", hold: "++", type: held }
+        - - { tap: "{", hold: $$mdi:apple-keyboard-command$$ }
+          - { tap: "}", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: (, hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: ), hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: $, hold: "${}" }
+          - { tap: "=", hold: => }
+          - "4"
+          - "5"
+          - "6"
+          - ":"
+        - - Switch Win
+          - "Prev App"
+          - "Next App"
+          - Num Word
+          - ""
+          - ""
+          - "7"
+          - "8"
+          - "9"
+          - ""
+        - - $$mdi:keyboard-esc$$
+          - { tap: $$mdi:backspace-outline$$, type: held }
+          - $$mdi:keyboard-return$$
+          - { tap: "-", hold: Fun }
+          - { tap: "0", hold: Sym }
+          - { tap: ".", hold: Meh }
+    Sym:
+        - - { tap: "~", type: held }
+          - ^
+          - $$mdi:arrow-up$$
+          - { tap: "&", hold: "&&" }
+          - ""
+          - ""
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
-          - { tap: "|", hold: "||", type: held }
-        - - { tap: "{", hold: $$mdi:apple-keyboard-command$$ }
-          - { tap: "}", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "|", hold: "||" }
+        - - { tap: "`", hold: "```" }
+          - $$mdi:arrow-left$$
+          - $$mdi:arrow-down$$
+          - $$mdi:arrow-right$$
+          - { tap: \, hold: \\ }
+          - { tap: "*", hold: Fn }
+          - { tap: "_", hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: "[", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "]", hold: $$mdi:apple-keyboard-shift$$ }
-          - ";"
-          - { tap: "=", hold: => }
-          - { tap: "(", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: ")", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "`", hold: $$mdi:apple-keyboard-option$$ }
-          - { tap: ":", hold: $$mdi:apple-keyboard-command$$ }
-        - - "Prev App"
-          - "Next App"
-          - Caps Word
-          - ^
-          - Switch Win
-          - $$mdi:apple-keyboard-caps$$
-          - { tap: $, hold: "${}" }
-          - "Split Vert"
-          - "Split Horz"
-          - "Close Split"
+          - { tap: "]", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
         - - ""
+          - "Close Split"
+          - "Split Horz"
+          - "Split Vert"
+          - ""
+          - ""
+          - Caps Word
+          - ""
+          - ""
+          - ""
+        - - Alt Rep
+          - $$mdi:backspace-outline$$
+          - $$mdi:backspace-reverse-outline$$
+          - ""
           - { tap: Layer Lock, type: held }
           - ""
-          - { tap: "-", hold: -- }
-          - { tap: "_", hold: Fun }
-          - { tap: "&", hold: Meh }
     Fun:
         - - ""
           - "F10"
@@ -180,18 +180,18 @@ combos:
       layers: [Base]
     - key_positions: [31, 32]
       key: $$mdi:keyboard-return$$
-      layers: [Num]
+      layers: [Sym]
     - key_positions: [33, 34]
       key: { tap: "_", hold: Fun }
       layers: [Base]
     - key_positions: [33, 34]
-      key: "_"
+      key: { tap: $$mdi:keyboard-space$$, hold: Meh }
       layers: [Num]
     - key_positions: [34, 35]
-      key: { tap: "-", hold: Hyper }
+      key: { tap: "NW", hold: Hyper }
       layers: [Base]
     - key_positions: [34, 35]
-      key: "-"
+      key: { tap: "NW", hold: Hyper }
       layers: [Num]
     - key_positions: [0, 1]
       key: Prev Tab
@@ -254,7 +254,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [2, 12]
-      key: "["
+      key: "("
       layers: [Base]
       align: left
       dendron: false
@@ -262,7 +262,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [3, 13]
-      key: "]"
+      key: ")"
       layers: [Base]
       align: left
       dendron: false
@@ -270,7 +270,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [4, 14]
-      key: ";"
+      key: "$"
       layers: [Base]
       align: left
       dendron: false
@@ -286,7 +286,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [6, 16]
-      key: "("
+      key: "*"
       layers: [Base]
       align: right
       dendron: false
@@ -294,7 +294,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [7, 17]
-      key: ")"
+      key: "["
       layers: [Base]
       align: right
       dendron: false
@@ -302,7 +302,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [8, 18]
-      key: "`"
+      key: "]"
       layers: [Base]
       align: right
       dendron: false
@@ -342,7 +342,7 @@ combos:
       align: top
       offset: 0.21
     - key_positions: [10, 20]
-      key: \
+      key: "`"
       layers: [Base]
       align: left
       dendron: false
@@ -350,7 +350,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [11, 21]
-      key: "*"
+      key: "~"
       layers: [Base]
       align: left
       dendron: false
@@ -374,7 +374,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [14, 24]
-      key: "~"
+      key: "&"
       layers: [Base]
       align: left
       dendron: false
@@ -382,7 +382,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [15, 25]
-      key: "+"
+      key: "-"
       layers: [Base]
       align: right
       dendron: false
@@ -398,7 +398,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [17, 27]
-      key: "$"
+      key: "+"
       layers: [Base]
       align: right
       dendron: false
@@ -406,7 +406,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [18, 28]
-      key: "%"
+      key: "|"
       layers: [Base]
       align: right
       dendron: false
@@ -414,7 +414,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [19, 29]
-      key: "|"
+      key: ";"
       layers: [Base]
       align: right
       dendron: false
@@ -458,7 +458,7 @@ combos:
       key: "Whl →"
       layers: [Base]
     - key_positions: [27, 28]
-      key: "&"
+      key: "%"
       layers: [Base]
     - key_positions: [27, 29]
       key: "NW $"
