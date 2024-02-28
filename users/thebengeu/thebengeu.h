@@ -9,7 +9,9 @@ enum custom_keycodes {
   NW_COLN,
   NW_DLR,
   NW_TOGG,
-  SHIFT_GUI_TAB
+  RCBR,
+  SHIFT_GUI_TAB,
+  UNDS
 };
 
 #define U_RDO SCMD(KC_Z)
