@@ -7,7 +7,7 @@ layers:
           - { tap: D, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: F, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: G, hold: Fn }
-          - H
+          - { tap: H, hold: Fn }
           - { tap: J, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: K, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: L, hold: $$mdi:apple-keyboard-option$$ }
@@ -44,7 +44,7 @@ layers:
           - "Mouse ↓"
           - "Mouse →"
           - Fn
-          - $$mdi:volume-medium$$
+          - { tap: $$mdi:volume-medium$$, hold: Fn }
           - { tap: ⌘4, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
@@ -107,8 +107,8 @@ layers:
           - ^
           - $$mdi:arrow-up$$
           - { tap: "&", hold: "&&" }
-          - ""
-          - ""
+          - "PgUp"
+          - "PgDn"
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
