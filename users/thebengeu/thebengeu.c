@@ -16,13 +16,13 @@ enum layers { _BASE, _MS, _NUM, _SYM, _FUN, _MEH, _HYPR, _MEH_NUM, _HYPR_NUM };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x5_3(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,             KC_T,          KC_Y,             KC_U,             KC_I,           KC_O,          LT(_NUM,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),      RCTL_T(KC_G),  KC_H,             SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),   GUI_T(KC_QUOT),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),      RCTL_T(KC_G),  RCTL_T(KC_H),     SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),   GUI_T(KC_QUOT),
     LT(_MS,KC_Z),   KC_X,           KC_C,           KC_V,             KC_B,          KC_N,             KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),  LT(_FUN,KC_SLSH),
                                     QK_REP,         LT(_NUM,KC_BSPC), SFT_T(KC_ENT), LT(_MS,KC_TAB),   LT(_SYM,KC_SPC),  LT(_MEH,KC_ESC)
   ),
   [_MS] = LAYOUT_split_3x5_3(
     KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          QK_BOOT,       KC_MUTE,          G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       KC_VOLD,          SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       RCTL_T(KC_VOLD),  SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
     U_UND,          U_CUT,          U_CPY,          U_PST,            U_RDO,         KC_MPRV,          G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,          KC_BTN2,       LLOCK,            KC_NO,            KC_NO
   ),
@@ -30,10 +30,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_PERC,        G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),     KC_NO,         KC_NO,            KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
     GUI_T(KC_LCBR), ALT_T(RCBR),    CTL_T(KC_LPRN), SFT_T(KC_RPRN),   LT(0,KC_DLR),  LT(0,KC_EQL),     KC_4,             KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        NW_TOGG,          KC_NO,         LT(0,KC_COMM),    KC_7,             KC_8,           KC_9,           KC_NO,
-                                    KC_ESC,         KC_BSPC,          KC_ENT,         LT(_FUN,KC_MINS), LT(_SYM,KC_0),    LT(_MEH_NUM,KC_DOT)
+                                    KC_ESC,         KC_BSPC,          KC_ENT,        LT(_FUN,KC_MINS), LT(_SYM,KC_0),    LT(_MEH_NUM,KC_DOT)
   ),
   [_SYM] = LAYOUT_split_3x5_3(
-    LT(1,KC_TILD),  KC_CIRC,        KC_UP,          LT(0,KC_AMPR),    KC_NO,         KC_NO,            LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
+    LT(1,KC_TILD),  KC_CIRC,        KC_UP,          LT(0,KC_AMPR),    KC_PGUP,       KC_PGDN,          LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  LT(1,KC_PIPE),
     LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,         LT(0,KC_BSLS), RCTL_T(KC_ASTR),  SFT_T(KC_UNDS),   CTL_T(KC_LBRC), ALT_T(KC_RBRC), GUI_T(KC_SCLN),
     KC_NO,          LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),     KC_NO,         KC_NO,            LT(0,CW_TOGG),    KC_NO,          KC_NO,          KC_NO,
                                     QK_AREP,        KC_BSPC,          KC_DEL,        KC_NO,            LLOCK,            KC_NO
@@ -596,9 +596,12 @@ bool achordion_eager_mod(uint8_t mod) {
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case ALT_T(KC_L):
-        case CTL_T(KC_K):
+        case RCTL_T(KC_H):
         case SFT_T(KC_J):
+        case CTL_T(KC_K):
+        case ALT_T(KC_L):
+        case RCTL_T(KC_VOLD):
+        case GUI_T(KC_VOLU):
             return QUICK_TAP_TERM;
     }
 
