@@ -1,6 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "ps2_mouse.h"
 
+#ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#    include "pointing_device/pointing_device_auto_mouse.h"
+#endif
+
 uint16_t keycode_config(uint16_t keycode) {
     return keycode;
 }
