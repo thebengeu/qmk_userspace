@@ -563,6 +563,14 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
                     return true;
             }
             break;
+        case SFT_T(KC_J):
+        case CTL_T(KC_K):
+        case ALT_T(KC_L):
+            switch (other_keycode) {
+                case LT(_MS, KC_TAB):
+                    return true;
+            }
+            break;
         case GUI_T(KC_QUOT):
             switch (other_keycode) {
                 case KC_H:
