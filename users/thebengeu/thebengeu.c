@@ -277,10 +277,10 @@ static bool process_tap_or_long_press_key(keyrecord_t *record, const char *strin
             if (shifted_string && (mods | oneshot_mods) & MOD_MASK_SHIFT) {
                 del_oneshot_mods(MOD_MASK_SHIFT);
                 unregister_mods(MOD_MASK_SHIFT);
-                SEND_STRING(shifted_string);
+                send_string(shifted_string);
                 register_mods(mods);
             } else {
-                SEND_STRING(string);
+                send_string(string);
             }
         }
         return false;
