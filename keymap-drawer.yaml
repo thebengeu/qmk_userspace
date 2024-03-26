@@ -170,7 +170,7 @@ layers:
           - "F8"
           - "F9"
           - { type: held }
-        - ["", "", "", "", { tap: Layer Lock, type: held }, ""]
+        - ["", "", "", "", "", ""]
 combos:
     - key_positions: [30, 31]
       key: Alt Rep
