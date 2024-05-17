@@ -4,6 +4,7 @@
         ["crkbd", "thebengeu"],
         ["crkbd/rev1/plus", "plus"],
         ["hazel/bad_wings", "thebengeu"],
-        ["keyboardio/atreus", "thebengeu"]
+        ["keyboardio/atreus", "thebengeu"],
+        ["stront/38keys", "thebengeu"]
     ]
 }
