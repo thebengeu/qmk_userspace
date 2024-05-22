@@ -145,31 +145,31 @@ layers:
           - "F11"
           - "F12"
           - ""
-          - ""
+          - "Hue-"
           - "F1"
           - "F2"
           - "F3"
-          - ""
+          - "Toggle RGB"
         - - $$mdi:apple-keyboard-command$$
           - $$mdi:apple-keyboard-option$$
           - $$mdi:apple-keyboard-control$$
           - $$mdi:apple-keyboard-shift$$
           - "Fn"
-          - ""
+          - "Sat-"
           - "F4"
           - "F5"
           - "F6"
-          - ""
+          - "RGB Mode Fwd"
         - - ""
           - Tap Term Print
           - Tap Term Up
           - Tap Term Down
           - ""
-          - ""
+          - "Val-"
           - "F7"
           - "F8"
           - "F9"
-          - { type: held }
+          - { tap: BL Step, type: held }
         - ["", "", "", "", "", ""]
 combos:
     - key_positions: [30, 31]
