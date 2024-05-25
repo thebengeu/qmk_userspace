@@ -66,7 +66,7 @@ layers:
           - ""
           - ""
     Num:
-        - - "%"
+        - - Quit App
           - Close Tab
           - Prev Tab
           - Next Tab
@@ -87,15 +87,15 @@ layers:
           - "6"
           - ":"
         - - Switch Win
-          - "Prev App"
-          - "Next App"
-          - Num Word
+          - Prev App
+          - Next App
+          - "%"
           - ""
           - ""
           - "7"
           - "8"
           - "9"
-          - ""
+          - Num Word
         - - $$mdi:keyboard-esc$$
           - { tap: $$mdi:backspace-outline$$, type: held }
           - $$mdi:keyboard-return$$
