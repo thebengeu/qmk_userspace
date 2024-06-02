@@ -1,6 +1,6 @@
 #pragma once
 
-#define XXX QK_BOOT
+#define XXX KC_NO
 
 #define LAYOUT_split_3x5_3( \
 K00, K01, K02, K03, K04,                K05, K06, K07, K08, K09, \
