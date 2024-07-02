@@ -22,12 +22,12 @@ layers:
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
           - { tap: /, hold: Fun, shifted: "?" }
-        - - Rep
-          - { tap: $$mdi:backspace-outline$$, hold: Sym }
+        - - ""
+          - { tap: $$mdi:backspace-outline$$, hold: Num }
           - { tap: $$mdi:keyboard-return$$, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: $$mdi:keyboard-tab$$, hold: Mouse }
-          - { tap: $$mdi:keyboard-space$$, hold: Num }
-          - { tap: $$mdi:keyboard-esc$$, hold: Meh }
+          - { tap: $$mdi:keyboard-space$$, hold: Sym }
+          - ""
     Mouse:
         - - "Wheel ↑"
           - "Wheel ←"
@@ -59,7 +59,7 @@ layers:
           - ⌘8
           - ⌘9
           - $$mdi:skip-forward$$
-        - - Mid Btn
+        - - ""
           - Left Btn
           - Right Btn
           - { tap: Layer Lock, type: held }
@@ -96,12 +96,12 @@ layers:
           - "8"
           - "9"
           - Num Word
-        - - $$mdi:keyboard-esc$$
+        - - ""
           - { tap: $$mdi:backspace-outline$$, type: held }
           - $$mdi:keyboard-return$$
           - { tap: "-", hold: Fun }
           - { tap: "0", hold: Sym }
-          - { tap: ".", hold: Meh }
+          - ""
     Sym:
         - - { tap: "~", type: held }
           - ^
@@ -133,7 +133,7 @@ layers:
           - ""
           - ""
           - ""
-        - - Alt Rep
+        - - ""
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
           - ""
@@ -172,26 +172,17 @@ layers:
           - { tap: BL Step, type: held }
         - ["", "", "", "", "", ""]
 combos:
-    - key_positions: [30, 31]
-      key: Alt Rep
-      layers: [Base]
     - key_positions: [31, 32]
-      key: { tap: CW, hold: Cmd }
+      key: { tap: CW, hold: Fun }
       layers: [Base]
     - key_positions: [31, 32]
       key: $$mdi:keyboard-return$$
       layers: [Sym]
     - key_positions: [33, 34]
-      key: { tap: "_", hold: Fun }
+      key: { tap: $$mdi:keyboard-esc$$, hold: Meh }
       layers: [Base]
     - key_positions: [33, 34]
-      key: { tap: $$mdi:keyboard-space$$, hold: Meh }
-      layers: [Num]
-    - key_positions: [34, 35]
-      key: { tap: "NW", hold: Hyper }
-      layers: [Base]
-    - key_positions: [34, 35]
-      key: { tap: "NW", hold: Hyper }
+      key: { tap: ".", hold: Meh }
       layers: [Num]
     - key_positions: [0, 1]
       key: Prev Tab
