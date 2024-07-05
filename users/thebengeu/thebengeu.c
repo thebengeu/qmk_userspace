@@ -447,6 +447,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case LT(_FUN, UNDS):
                 tap_code16_caps_word(KC_UNDS);
                 return false;
+            case LT(_MS, KC_TAB):
+                if (is_caps_word_on()) {
+                    tap_code16_caps_word(KC_UNDS);
+                    return false;
+                }
+                break;
             case NW_COLN:
                 is_num_word_on = true;
                 caps_word_on();
