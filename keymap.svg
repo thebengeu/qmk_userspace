@@ -336,7 +336,7 @@ path.combo {
 <g transform="translate(252, 196)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:backspace-outline"/>
-<text x="0" y="24" class="key hold">Sym</text>
+<text x="0" y="24" class="key hold">Num</text>
 </g>
 <g transform="translate(308, 196)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -351,7 +351,7 @@ path.combo {
 <g transform="translate(476, 196)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-space"/>
-<text x="0" y="24" class="key hold">Num</text>
+<text x="0" y="24" class="key hold">Sym</text>
 </g>
 <g transform="translate(532, 196)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
