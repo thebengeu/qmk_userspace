@@ -23,10 +23,10 @@ layers:
           - { tap: ., shifted: ">" }
           - { tap: /, hold: Fun, shifted: "?" }
         - - Rep
-          - { tap: $$mdi:backspace-outline$$, hold: Sym }
+          - { tap: $$mdi:backspace-outline$$, hold: Num }
           - { tap: $$mdi:keyboard-return$$, hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: $$mdi:keyboard-tab$$, hold: Mouse }
-          - { tap: $$mdi:keyboard-space$$, hold: Num }
+          - { tap: $$mdi:keyboard-space$$, hold: Sym }
           - { tap: $$mdi:keyboard-esc$$, hold: Meh }
     Mouse:
         - - "Wheel ↑"
