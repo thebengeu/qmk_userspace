@@ -71,7 +71,7 @@ layers:
           - Prev Tab
           - Next Tab
           - New Tab
-          - ""
+          - "*"
           - "1"
           - "2"
           - "3"
@@ -91,11 +91,11 @@ layers:
           - "Next App"
           - Num Word
           - ""
-          - ""
+          - ","
           - "7"
           - "8"
           - "9"
-          - ""
+          - "/"
         - - $$mdi:keyboard-esc$$
           - { tap: $$mdi:backspace-outline$$, type: held }
           - $$mdi:keyboard-return$$
