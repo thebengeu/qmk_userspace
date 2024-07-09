@@ -1,7 +1,7 @@
 layout: { qmk_info_json: info.json }
 layers:
     Base:
-        - [{ tap: Q, hold: Num }, W, E, R, T, Y, U, I, O, { tap: P, hold: Sym }]
+        - [{ tap: Q, hold: Sym }, W, E, R, T, Y, U, I, O, { tap: P, hold: Num }]
         - - { tap: A, hold: $$mdi:apple-keyboard-command$$ }
           - { tap: S, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: D, hold: $$mdi:apple-keyboard-control$$ }
@@ -21,7 +21,7 @@ layers:
           - M
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
-          - { tap: /, hold: Fun, shifted: "?" }
+          - { tap: /, shifted: "?" }
         - - Rep
           - { tap: $$mdi:backspace-outline$$, hold: Num }
           - { tap: $$mdi:keyboard-return$$, hold: $$mdi:apple-keyboard-shift$$ }
@@ -66,7 +66,7 @@ layers:
           - ""
           - ""
     Num:
-        - - "%"
+        - - Switch Win
           - Close Tab
           - Prev Tab
           - Next Tab
@@ -86,11 +86,11 @@ layers:
           - "5"
           - "6"
           - ":"
-        - - Switch Win
-          - "Prev App"
-          - "Next App"
+        - - "%"
+          - Prev App
+          - Next App
           - Num Word
-          - ""
+          - NW $
           - ","
           - "7"
           - "8"
@@ -106,13 +106,13 @@ layers:
         - - { tap: "~", type: held }
           - ^
           - $$mdi:arrow-up$$
-          - { tap: "&", hold: "&&" }
-          - "PgUp"
-          - "PgDn"
+          - { tap: $, hold: "${}" }
+          - Back
+          - Fwd
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
-          - { tap: "|", hold: "||" }
+          - { tap: "=>", hold: "=> {}" }
         - - { tap: "`", hold: "```" }
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
@@ -123,16 +123,16 @@ layers:
           - { tap: "[", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "]", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
-        - - "^"
+        - - { tap: "&", hold: "&&" }
           - "Close Split"
           - "Split Horz"
           - "Split Vert"
-          - { tap: $, hold: "${}" }
-          - ""
-          - Caps Word
-          - ""
-          - ""
-          - ""
+          - "NW :"
+          - Home
+          - PgDn
+          - PgUp
+          - End
+          - { tap: "|", hold: "||" }
         - - Alt Rep
           - $$mdi:backspace-outline$$
           - $$mdi:backspace-reverse-outline$$
@@ -140,7 +140,7 @@ layers:
           - { tap: Layer Lock, type: held }
           - ""
     Fun:
-        - - ""
+        - - Caps Word
           - "F10"
           - "F11"
           - "F12"
@@ -160,7 +160,7 @@ layers:
           - "F5"
           - "F6"
           - "RGB Mode Fwd"
-        - - ""
+        - - $$mdi:apple-keyboard-caps$$
           - Tap Term Print
           - Tap Term Up
           - Tap Term Down
@@ -169,7 +169,7 @@ layers:
           - "F7"
           - "F8"
           - "F9"
-          - { tap: BL Step, type: held }
+          - BL Step
         - ["", "", "", "", "", ""]
 combos:
     - key_positions: [30, 31]
@@ -374,7 +374,7 @@ combos:
       offset: -0.25
       width: 18
     - key_positions: [14, 24]
-      key: "&"
+      key: \
       layers: [Base]
       align: left
       dendron: false
@@ -461,7 +461,7 @@ combos:
       key: "%"
       layers: [Base]
     - key_positions: [27, 29]
-      key: "NW $"
+      key: $$mdi:apple-keyboard-caps$$
       layers: [Base]
       align: bottom
       offset: 0.75
@@ -471,8 +471,14 @@ combos:
       align: bottom
       offset: 0.25
     - key_positions: [28, 29]
-      key: "NW :"
+      key: "&"
       layers: [Base]
+    - key_positions: [4, 31]
+      key: Back
+      layers: [Base]
+      align: right
+      offset: 0.625
+      slide: -1
     - key_positions: [14, 31]
       key: $$mdi:backspace-reverse-outline$$
       layers: [Base]
@@ -486,8 +492,22 @@ combos:
     - key_positions: [24, 31]
       key: Prev App
       layers: [Base]
+    - key_positions: [14, 32]
+      key: NW $
+      layers: [Base]
+      align: right
+    - key_positions: [15, 33]
+      key: "NW :"
+      layers: [Base]
+      align: left
+    - key_positions: [5, 34]
+      key: Fwd
+      layers: [Base]
+      align: left
+      offset: 0.625
+      slide: -1
     - key_positions: [15, 34]
-      key: Num Word
+      key: =>
       layers: [Base]
       align: left
       offset: 0.25
