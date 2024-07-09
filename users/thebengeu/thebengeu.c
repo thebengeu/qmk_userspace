@@ -453,6 +453,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     return false;
                 }
                 break;
+            case G(KC_GRV):
+                if (is_num_word_on) {
+                    tap_code16_caps_word(KC_TILD);
+                    return false;
+                }
+                break;
             case NW_COLN:
                 is_num_word_on = true;
                 caps_word_on();
