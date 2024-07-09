@@ -123,11 +123,11 @@ layers:
           - { tap: "[", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "]", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
-        - - ""
+        - - "^"
           - "Close Split"
           - "Split Horz"
           - "Split Vert"
-          - ""
+          - { tap: $, hold: "${}" }
           - ""
           - Caps Word
           - ""
