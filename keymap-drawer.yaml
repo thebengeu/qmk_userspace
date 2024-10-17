@@ -170,7 +170,12 @@ layers:
           - "F8"
           - "F9"
           - BL Step
-        - ["", "", "", "", "", ""]
+          - { type: held }
+          - ""
+          - ""
+          - Alt Rep
+          - Rep
+          - ""
 combos:
     - key_positions: [30, 31]
       key: { tap: "_", hold: Cmd }
