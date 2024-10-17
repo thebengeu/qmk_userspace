@@ -59,9 +59,9 @@ layers:
           - ⌘8
           - ⌘9
           - $$mdi:skip-forward$$
-        - - ""
-          - ""
-          - { type: held }
+        - - "Mid Btn"
+          - "Left Btn"
+          - { tap: Right Btn, type: held }
           - Right Btn
           - Left Btn
           - ""
