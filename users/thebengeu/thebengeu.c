@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,             KC_T,          KC_Y,                KC_U,             KC_I,           KC_O,          LT(_NUM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),      RCTL_T(KC_G),  RCTL_T(KC_H),        SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),   GUI_T(KC_QUOT),
-    LT(_MS,KC_Z),   KC_X,           KC_C,           KC_V,             KC_B,          KC_N,                KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),  LT(0,KC_SLSH),
+    LT(_MS,KC_Z),   KC_X,           KC_C,           KC_V,             KC_B,          KC_N,                KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),  LT(_FUN,KC_SLSH),
                                     LT(_FUN,KC_ESC),LT(_NUM,KC_BSPC), LT(_MS,KC_ENT),LT(_MEH,KC_TAB),     LT(_SYM,KC_SPC),  KC_NO
   ),
   [_MS] = LAYOUT_split_3x5_3_custom(
@@ -224,7 +224,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
             switch (keycode) {
                 case KC_R:
                     return KC_U;
-                case LT(_MS, KC_TAB):
+                case LT(_MEH, KC_TAB):
                     return S(C(KC_TAB));
             }
             break;
@@ -242,7 +242,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
             break;
         case MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT):
             switch (keycode) {
-                case LT(_MS, KC_TAB):
+                case LT(_MEH, KC_TAB):
                     return C(KC_TAB);
             }
             break;
