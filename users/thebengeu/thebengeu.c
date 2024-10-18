@@ -77,82 +77,23 @@ const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_
 const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MEH_NUM, KC_MINS), LT(_SYM, KC_0), COMBO_END};
-const uint16_t PROGMEM thumbcombos_sym_left_left[]   = {QK_REP, KC_BSPC, COMBO_END};
-const uint16_t PROGMEM thumbcombos_sym_left_right[]  = {KC_BSPC, KC_DEL, COMBO_END};
-const uint16_t PROGMEM combos_qw[]                   = {LT(_SYM, KC_Q), KC_W, COMBO_END};
-const uint16_t PROGMEM combos_qe[]                   = {LT(_SYM, KC_Q), KC_E, COMBO_END};
-const uint16_t PROGMEM combos_we[]                   = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combos_er[]                   = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM combos_et[]                   = {KC_E, KC_T, COMBO_END};
-const uint16_t PROGMEM combos_rt[]                   = {KC_R, KC_T, COMBO_END};
-const uint16_t PROGMEM combos_yu[]                   = {KC_Y, KC_U, COMBO_END};
-const uint16_t PROGMEM combos_yi[]                   = {KC_Y, KC_I, COMBO_END};
-const uint16_t PROGMEM combos_ui[]                   = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM combos_uo[]                   = {KC_U, KC_O, COMBO_END};
-const uint16_t PROGMEM combos_io[]                   = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM combos_ip[]                   = {KC_I, LT(_NUM, KC_P), COMBO_END};
-const uint16_t PROGMEM combos_op[]                   = {KC_O, LT(_NUM, KC_P), COMBO_END};
-const uint16_t PROGMEM combos_aq[]                   = {GUI_T(KC_A), LT(_SYM, KC_Q), COMBO_END};
-const uint16_t PROGMEM combos_sw[]                   = {ALT_T(KC_S), KC_W, COMBO_END};
-const uint16_t PROGMEM combos_de[]                   = {CTL_T(KC_D), KC_E, COMBO_END};
-const uint16_t PROGMEM combos_fr[]                   = {SFT_T(KC_F), KC_R, COMBO_END};
-const uint16_t PROGMEM combos_gt[]                   = {RCTL_T(KC_G), KC_T, COMBO_END};
-const uint16_t PROGMEM combos_hy[]                   = {RCTL_T(KC_H), KC_Y, COMBO_END};
-const uint16_t PROGMEM combos_ju[]                   = {SFT_T(KC_J), KC_U, COMBO_END};
-const uint16_t PROGMEM combos_ki[]                   = {CTL_T(KC_K), KC_I, COMBO_END};
-const uint16_t PROGMEM combos_lo[]                   = {ALT_T(KC_L), KC_O, COMBO_END};
-const uint16_t PROGMEM combos_quotp[]                = {GUI_T(KC_QUOT), LT(_NUM, KC_P), COMBO_END};
-const uint16_t PROGMEM combos_dg[]                   = {CTL_T(KC_D), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
-const uint16_t PROGMEM combos_hk[]                   = {RCTL_T(KC_H), CTL_T(KC_K), COMBO_END};
-const uint16_t PROGMEM combos_az[]                   = {GUI_T(KC_A), LT(_MS, KC_Z), COMBO_END};
-const uint16_t PROGMEM combos_sx[]                   = {ALT_T(KC_S), KC_X, COMBO_END};
-const uint16_t PROGMEM combos_dc[]                   = {CTL_T(KC_D), KC_C, COMBO_END};
-const uint16_t PROGMEM combos_fv[]                   = {SFT_T(KC_F), KC_V, COMBO_END};
-const uint16_t PROGMEM combos_gb[]                   = {RCTL_T(KC_G), KC_B, COMBO_END};
-const uint16_t PROGMEM combos_hn[]                   = {RCTL_T(KC_H), KC_N, COMBO_END};
-const uint16_t PROGMEM combos_jm[]                   = {SFT_T(KC_J), KC_M, COMBO_END};
-const uint16_t PROGMEM combos_kcomm[]                = {CTL_T(KC_K), LT(0, KC_COMM), COMBO_END};
-const uint16_t PROGMEM combos_ldot[]                 = {ALT_T(KC_L), LT(0, KC_DOT), COMBO_END};
-const uint16_t PROGMEM combos_quotslsh[]             = {GUI_T(KC_QUOT), LT(0, KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combos_zx[]                   = {LT(_MS, KC_Z), KC_X, COMBO_END};
-const uint16_t PROGMEM combos_zc[]                   = {LT(_MS, KC_Z), KC_C, COMBO_END};
-const uint16_t PROGMEM combos_xc[]                   = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combos_xv[]                   = {KC_X, KC_V, COMBO_END};
-const uint16_t PROGMEM combos_cv[]                   = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combos_cb[]                   = {KC_C, KC_B, COMBO_END};
-const uint16_t PROGMEM combos_vb[]                   = {KC_V, KC_B, COMBO_END};
-const uint16_t PROGMEM combos_nm[]                   = {KC_N, KC_M, COMBO_END};
-const uint16_t PROGMEM combos_ncomm[]                = {KC_N, LT(0, KC_COMM), COMBO_END};
-const uint16_t PROGMEM combos_mcomm[]                = {KC_M, LT(0, KC_COMM), COMBO_END};
-const uint16_t PROGMEM combos_mdot[]                 = {KC_M, LT(0, KC_DOT), COMBO_END};
-const uint16_t PROGMEM combos_commdot[]              = {LT(0, KC_COMM), LT(0, KC_DOT), COMBO_END};
-const uint16_t PROGMEM combos_commslsh[]             = {LT(0, KC_COMM), LT(0, KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combos_dotslsh[]              = {LT(0, KC_DOT), LT(0, KC_SLSH), COMBO_END};
-const uint16_t PROGMEM combos_tbspc[]                = {KC_T, LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_gbspc[]                = {RCTL_T(KC_G), LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_vbspc[]                = {KC_V, LT(_NUM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combos_bbspc[]                = {KC_B, LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_gent[]                 = {RCTL_T(KC_G), LT(_MS, KC_ENT), COMBO_END};
-const uint16_t PROGMEM combos_htab[]                 = {RCTL_T(KC_H), LT(_MEH, KC_TAB), COMBO_END};
-const uint16_t PROGMEM combos_yspc[]                 = {KC_Y, LT(_SYM, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_hspc[]                 = {RCTL_T(KC_H), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM combos_nspc[]                 = {KC_N, LT(_SYM, KC_SPC), COMBO_END};
-const uint16_t PROGMEM combos_mspc[]                 = {KC_M, LT(_SYM, KC_SPC), COMBO_END};
 
 // clang-format off
-combo_t                key_combos[]      = {COMBO(thumbcombos_base_left_left, GUI_T(UNDS)),
-                                            COMBO(thumbcombos_base_left_right, SFT_T(CW_TOGG)),
-                                            COMBO(thumbcombos_base_right_left, LT(_HYPR,NW_TOGG)),
-                                            COMBO(thumbcombos_ms_right, KC_BTN3),
-                                            COMBO(thumbcombos_num_left_left, KC_TAB),
-                                            COMBO(thumbcombos_num_left_right, KC_SPC),
-                                            COMBO(thumbcombos_num_right, LT(_HYPR_NUM, KC_DOT)),
-                                            COMBO(combos_fg, QK_AREP),
-                                            COMBO(combos_hj, QK_REP),
-                                            COMBO(combos_bbspc, LT(0, KC_LBRC)),
-                                            COMBO(combos_nspc, LT(0, KC_RBRC))};
+combo_t key_combos[] = {COMBO(thumbcombos_base_left_left, GUI_T(UNDS)),
+                        COMBO(thumbcombos_base_left_right, SFT_T(CW_TOGG)),
+                        COMBO(thumbcombos_base_right_left, LT(_HYPR,NW_TOGG)),
+                        COMBO(thumbcombos_ms_right, KC_BTN3),
+                        COMBO(thumbcombos_num_left_left, KC_TAB),
+                        COMBO(thumbcombos_num_left_right, KC_SPC),
+                        COMBO(thumbcombos_num_right, LT(_HYPR_NUM, KC_DOT)),
+                        COMBO(combos_fg, QK_AREP),
+                        COMBO(combos_hj, QK_REP),
+                        COMBO(combos_bbspc, LT(0, KC_LBRC)),
+                        COMBO(combos_nspc, LT(0, KC_RBRC))};
 // clang-format on
 
 static bool is_num_word_on = false;
