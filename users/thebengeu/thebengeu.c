@@ -7,7 +7,6 @@
 #include "thebengeu.h"
 
 #include "features/achordion.h"
-#include "features/sentence_case.h"
 
 enum layers { _BASE, _MS, _NUM, _SYM, _FUN, _MEH, _HYPR, _MEH_NUM, _HYPR_NUM };
 
@@ -452,7 +451,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_shifted_key(record, "__", KC_UNDS);
     }
 
-    return process_achordion(keycode, record) && process_sentence_case(keycode, record);
+    return process_achordion(keycode, record);
 }
 
 void matrix_scan_user(void) {
