@@ -285,7 +285,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         if (keycode == CTL_T(KC_LBRC) || keycode == LT(0, KC_LBRC)) {
             last_brc = KC_LBRC;
-        } else if (keycode == SFT_T(KC_RBRC) || keycode == KC_RBRC) {
+        } else if (keycode == ALT_T(KC_RBRC)) {
             last_brc = KC_RBRC;
         } else if (last_brc) {
             last_keycode_after_brc = keycode;
