@@ -78,21 +78,23 @@ const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_E
 const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MEH_NUM, KC_MINS), LT(_SYM, KC_0), COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
-const uint16_t PROGMEM combos_bbspc[]                = {KC_B, LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combos_nspc[]                 = {KC_N, LT(_SYM, KC_SPC), COMBO_END};
+const uint16_t PROGMEM combos_rf[]                   = {KC_R, SFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM combos_uj[]                   = {KC_U, SFT_T(KC_J), COMBO_END};
 
 // clang-format off
-combo_t key_combos[] = {COMBO(thumbcombos_base_left_left, GUI_T(UNDS)),
-                        COMBO(thumbcombos_base_left_right, SFT_T(CW_TOGG)),
-                        COMBO(thumbcombos_base_right_left, LT(_HYPR,NW_TOGG)),
-                        COMBO(thumbcombos_ms_right, KC_BTN3),
-                        COMBO(thumbcombos_num_left_left, KC_TAB),
-                        COMBO(thumbcombos_num_left_right, KC_SPC),
-                        COMBO(thumbcombos_num_right, LT(_HYPR_NUM, KC_DOT)),
-                        COMBO(combos_fg, QK_AREP),
-                        COMBO(combos_hj, QK_REP),
-                        COMBO(combos_bbspc, LT(0, KC_LBRC)),
-                        COMBO(combos_nspc, LT(0, KC_RBRC))};
+combo_t key_combos[] = {
+    COMBO(thumbcombos_base_left_left, GUI_T(CW_TOGG)),
+    COMBO(thumbcombos_base_left_right, SFT_T(KC_LBRC)),
+    COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_RBRC)),
+    COMBO(thumbcombos_ms_right, KC_BTN3),
+    COMBO(thumbcombos_num_left_left, KC_TAB),
+    COMBO(thumbcombos_num_left_right, KC_SPC),
+    COMBO(thumbcombos_num_right, LT(_HYPR_NUM, KC_DOT)),
+    COMBO(combos_rf, KC_UNDS),
+    COMBO(combos_uj, KC_MINS),
+    COMBO(combos_fg, QK_AREP),
+    COMBO(combos_hj, QK_REP),
+};
 // clang-format on
 
 static bool is_num_word_on = false;
@@ -327,11 +329,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case ALT_T(GUI_6):
                 tap_code16_caps_word(G(KC_6));
                 return false;
-            case SFT_T(CW_TOGG):
+            case GUI_T(CW_TOGG):
                 caps_word_toggle();
                 return false;
-            case GUI_T(UNDS):
-                tap_code16_caps_word(KC_UNDS);
+            case SFT_T(KC_LBRC):
+                tap_code16_caps_word(KC_LBRC);
                 return false;
             case LT(_MEH, KC_TAB):
                 if (is_caps_word_on()) {
