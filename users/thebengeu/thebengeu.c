@@ -8,7 +8,17 @@
 
 #include "features/achordion.h"
 
-enum layers { _BASE, _MS, _NUM, _SYM, _FUN, _MEH, _HYPR, _MEH_NUM, _HYPR_NUM };
+enum layers {
+    _BASE,
+    _MS,
+    _NUM,
+    _SYM,
+    _FUN,
+    _MEH,
+    _HYPR,
+    _MEH_NUM,
+    _HYPR_NUM,
+};
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
