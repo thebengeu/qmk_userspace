@@ -22,12 +22,14 @@ layers:
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
           - { tap: /, shifted: "?" }
-        - - { tap: $$mdi:keyboard-esc$$, hold: Fun }
+        - - { tap: Wheel, hold: ↓, shifted: ↑ }
+          - { tap: $$mdi:keyboard-esc$$, hold: Fun }
           - { tap: $$mdi:backspace-outline$$, hold: Num }
           - { tap: $$mdi:keyboard-return$$, hold: Mouse }
           - { tap: $$mdi:keyboard-tab$$, hold: Meh }
           - { tap: $$mdi:keyboard-space$$, hold: Sym }
           - ""
+          - { tap: Tab, hold: Next, shifted: Prev }
     Mouse:
         - - "Wheel ↑"
           - "Wheel ←"
@@ -59,12 +61,18 @@ layers:
           - ⌘8
           - ⌘9
           - $$mdi:skip-forward$$
-        - - "Mid Btn"
+        - - { tap: Wheel, hold: →, shifted: ← }
+          - "Mid Btn"
           - "Left Btn"
           - { tap: Right Btn, type: held }
           - Right Btn
           - Left Btn
           - ""
+          - {
+                tap: Vol,
+                hold: $$mdi:volume-high$$,
+                shifted: $$mdi:volume-medium$$,
+            }
     Num:
         - - Switch Win
           - Close Tab
@@ -96,12 +104,14 @@ layers:
           - "8"
           - "9"
           - "/"
-        - - $$mdi:keyboard-esc$$
+        - - { tap: Zoom, hold: In, shifted: Out }
+          - $$mdi:keyboard-esc$$
           - { tap: $$mdi:backspace-outline$$, type: held }
           - $$mdi:keyboard-return$$
           - { tap: "-", hold: Meh }
           - { tap: "0", hold: Sym }
           - ""
+          - { hold: Redo, shifted: Undo }
     Sym:
         - - { tap: "~", type: held }
           - ^
@@ -133,12 +143,14 @@ layers:
           - PgUp
           - End
           - { tap: "|", hold: "||" }
-        - - $$mdi:backspace-reverse-outline$$
+        - - { tap: Arrow, hold: $$mdi:arrow-down$$, shifted: $$mdi:arrow-up$$ }
+          - $$mdi:backspace-reverse-outline$$
           - $$mdi:backspace-outline$$
           - $$mdi:keyboard-return$$
           - ""
           - { type: held }
           - ""
+          - { tap: Page, hold: Down, shifted: Up }
     Fun:
         - - Caps Word
           - "F10"
@@ -170,46 +182,45 @@ layers:
           - "F8"
           - "F9"
           - BL Step
+        - - { hold: F2, shifted: F1 }
           - { type: held }
           - ""
           - Numpad 1
           - Alt Rep
           - Rep
           - ""
+          - { tap: Repeat, hold: Rep, shifted: Alt Rep }
 combos:
-    - key_positions: [30, 31]
-      key: { tap: "_", hold: Cmd }
+    - key_positions: [31, 32]
+      key: { tap: CW, hold: Cmd }
       layers: [Base]
-    - key_positions: [30, 31]
+    - key_positions: [31, 32]
       key: $$mdi:keyboard-tab$$
       layers: [Num]
-    - key_positions: [31, 32]
-      key: { tap: CW, hold: $$mdi:apple-keyboard-shift$$ }
+    - key_positions: [32, 33]
+      key: { tap: "[", hold: Shift }
       layers: [Base]
-    - key_positions: [31, 32]
+    - key_positions: [32, 33]
       key: $$mdi:keyboard-space$$
       layers: [Num]
-    - key_positions: [33, 34]
-      key: { tap: "NW", hold: Hyper }
+    - key_positions: [34, 35]
+      key: { tap: "]", hold: Hyper }
       layers: [Base]
-    - key_positions: [33, 34]
+    - key_positions: [34, 35]
       key: Mid Btn
       layers: [Mouse]
-    - key_positions: [33, 34]
+    - key_positions: [34, 35]
       key: { tap: ., hold: Hyper }
       layers: [Num]
+    - key_positions: [3, 13]
+      key: _
+      layers: [Base]
+    - key_positions: [6, 16]
+      key: "-"
+      layers: [Base]
     - key_positions: [13, 14]
       key: Alt Rep
       layers: [Base]
     - key_positions: [15, 16]
       key: Rep
       layers: [Base]
-    - key_positions: [24, 31]
-      key: "["
-      layers: [Base]
-    - key_positions: [25, 34]
-      key: "]"
-      layers: [Base]
-draw_config:
-    combo_h: 28
-    combo_w: 30
