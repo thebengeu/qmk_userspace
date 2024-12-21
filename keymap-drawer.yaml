@@ -74,7 +74,7 @@ layers:
                 shifted: $$mdi:volume-medium$$,
             }
     Num:
-        - - Switch Win
+        - - { tap: "=>", hold: "=> {}" }
           - Close Tab
           - Prev Tab
           - Next Tab
@@ -84,17 +84,17 @@ layers:
           - "2"
           - "3"
           - { tap: "+", hold: "++", type: held }
-        - - { tap: "{", hold: $$mdi:apple-keyboard-command$$ }
-          - { tap: "}", hold: $$mdi:apple-keyboard-option$$ }
-          - { tap: (, hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: ), hold: $$mdi:apple-keyboard-shift$$ }
+        - - { tap: "~", hold: $$mdi:apple-keyboard-command$$ }
+          - { tap: "^", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "%", hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: "_", hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: $, hold: "${}" }
           - { tap: "=", hold: => }
           - "4"
           - "5"
           - "6"
           - ":"
-        - - "%"
+        - - Switch Win
           - Prev App
           - Next App
           - Num Word
@@ -113,7 +113,7 @@ layers:
           - ""
           - { hold: Redo, shifted: Undo }
     Sym:
-        - - { tap: "~", type: held }
+        - - { tap: "&", hold: "&&", type: held }
           - ^
           - $$mdi:arrow-up$$
           - { tap: $, hold: "${}" }
@@ -122,27 +122,27 @@ layers:
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
-          - { tap: "=>", hold: "=> {}" }
+          - { tap: "|", hold: "||" }
         - - { tap: "`", hold: "```" }
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
           - $$mdi:arrow-right$$
           - { tap: \, hold: \\ }
           - { tap: "*", hold: Fn }
-          - { tap: "_", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: "[", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "]", hold: $$mdi:apple-keyboard-option$$ }
+          - { tap: "(", hold: $$mdi:apple-keyboard-shift$$ }
+          - { tap: "{", hold: $$mdi:apple-keyboard-control$$ }
+          - { tap: "[", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: ";", hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: "&", hold: "&&" }
+        - - ""
           - "Close Split"
           - "Split Horz"
           - "Split Vert"
           - "NW :"
-          - Home
-          - PgDn
-          - PgUp
-          - End
-          - { tap: "|", hold: "||" }
+          - ""
+          - )
+          - "}"
+          - "]"
+          - ""
         - - { tap: Arrow, hold: $$mdi:arrow-down$$, shifted: $$mdi:arrow-up$$ }
           - $$mdi:backspace-reverse-outline$$
           - $$mdi:backspace-outline$$
