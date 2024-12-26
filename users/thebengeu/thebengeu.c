@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     LT(_FUN,KC_ESC),LT(_NUM,KC_BSPC), LT(_MS,KC_ENT),LT(_MEH,KC_TAB),     LT(_SYM,KC_SPC),  KC_NO
   ),
   [_MS] = LAYOUT_split_3x5_3_custom(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          QK_BOOT,       KC_MUTE,             G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          KC_NO,         KC_MUTE,             G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
     KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       RCTL_T(KC_VOLD),     SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
     U_UND,          U_CUT,          U_CPY,          U_PST,            U_RDO,         KC_MPRV,             G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,          KC_BTN2,       KC_BTN2,             KC_BTN1,          KC_NO
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(0,CW_TOGG),  KC_F10,         KC_F11,         KC_F12,           KC_PAUS,       RGB_HUD,             KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),    OSM(MOD_RCTL), RGB_SAD,             KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
     KC_CAPS,        DT_PRNT,        DT_UP,          DT_DOWN,          KC_PSCR,       RGB_VAD,             KC_F7,            KC_F8,          KC_F9,          BL_STEP,
-                                    KC_NO,          KC_NO,            KC_P1,         QK_AREP,             QK_REP,           KC_NO
+                                    KC_NO,          QK_BOOT,          KC_P1,         QK_AREP,             QK_REP,           KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),        MEH(KC_T),     MEH(KC_Y),           MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
