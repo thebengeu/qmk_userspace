@@ -1,5 +1,5 @@
 # Corne Keyboard (CRKBD)
 
 ```console
-make crkbd:trackpoint:flash
+make crkbd/rev1:trackpoint:flash
 ```

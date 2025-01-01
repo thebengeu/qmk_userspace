@@ -1,11 +1,12 @@
 {
-    "userspace_version": "1.0",
+    "userspace_version": "1.1",
     "build_targets": [
-        ["crkbd", "thebengeu"],
+        ["crkbd/rev1", "trackpoint"],
         ["crkbd/rev1/plus", "plus"],
         ["hazel/bad_wings", "thebengeu"],
         ["keyboardio/atreus", "thebengeu"],
         ["sofleplus", "thebengeu"],
-        ["stront/38keys", "thebengeu"]
+        ["stront", "thebengeu"],
+        ["zsa/planck_ez/glow", "thebengeu"]
     ]
 }
