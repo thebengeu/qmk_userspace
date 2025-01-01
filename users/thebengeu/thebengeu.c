@@ -523,6 +523,19 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
     return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
+uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode, uint16_t next_keycode) {
+    if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+        return 0;
+    }
+
+    uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
+    if ((mod & MOD_LSFT) != 0) {
+        return 100;
+    } else {
+        return 200;
+    }
+}
+
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     switch (tap_hold_keycode) {
         case LT(_FUN, KC_ESC):
@@ -538,6 +551,26 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 
 bool achordion_eager_mod(uint8_t mod) {
     return false;
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_T(KC_F):
+        case SFT_T(KC_J):
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_T(KC_F):
+        case SFT_T(KC_J):
+            return true;
+        default:
+            return false;
+    }
 }
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
