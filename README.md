@@ -1,4 +1,7 @@
 # Beng's QMK Userspace
 
-![Keymap](keymap.svg)
+```console
+qmk userspace-compile
+```
 
+![Keymap](keymap.svg)
