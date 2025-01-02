@@ -6,8 +6,6 @@
 
 #include "thebengeu.h"
 
-// #include "features/achordion.h"
-
 enum layers {
     _BASE,
     _MS,
@@ -467,8 +465,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_shifted_key(record, "__", KC_UNDS);
     }
 
-    // return process_achordion(keycode, record);
-
     return true;
 }
 
@@ -477,81 +473,6 @@ void matrix_scan_user(void) {
         unregister_code(KC_LGUI);
         is_gui_tab_active = false;
     }
-
-    // achordion_task();
-}
-
-bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
-    switch (tap_hold_keycode) {
-        case GUI_T(KC_A):
-        case LT(_MS, KC_Z):
-            switch (other_keycode) {
-                case KC_C:
-                case KC_V:
-                case KC_X:
-                    return true;
-            }
-            break;
-        case CTL_T(KC_K):
-            switch (other_keycode) {
-                case LT(_SYM, KC_SPC):
-                    return true;
-            }
-        case SFT_T(KC_J):
-            switch (other_keycode) {
-                case LT(_MEH, KC_TAB):
-                    return true;
-            }
-            break;
-        case ALT_T(KC_L):
-            switch (other_keycode) {
-                case LT(_MEH, KC_TAB):
-                case LT(_SYM, KC_SPC):
-                    return true;
-            }
-            break;
-        case GUI_T(KC_QUOT):
-            switch (other_keycode) {
-                case KC_H:
-                case ALT_T(KC_L):
-                case LT(_MEH, KC_TAB):
-                case LT(_SYM, KC_SPC):
-                    return true;
-            }
-            break;
-    }
-
-    // return achordion_opposite_hands(tap_hold_record, other_record);
-
-    return true;
-}
-
-uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode, uint16_t next_keycode) {
-    switch (tap_hold_keycode) {
-        case LT(_SYM, KC_Q):
-        case LT(_NUM, KC_P):
-        case GUI_T(KC_A):
-        case ALT_T(KC_S):
-        case CTL_T(KC_D):
-        case RCTL_T(KC_G):
-        case RCTL_T(KC_H):
-        case CTL_T(KC_K):
-        case ALT_T(KC_L):
-        case GUI_T(KC_QUOT):
-        case LT(_MS, KC_Z):
-        case LT(_SYM, KC_SPC):
-            return 100;
-        default:
-            return 0;
-    }
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-    return TAPPING_TERM;
-}
-
-bool achordion_eager_mod(uint8_t mod) {
-    return false;
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {

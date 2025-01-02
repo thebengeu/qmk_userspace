@@ -14,6 +14,5 @@ NKRO_ENABLE = no
 NO_USB_STARTUP_CHECK = yes
 REPEAT_KEY_ENABLE = yes
 SPACE_CADET_ENABLE = no
-# SRC += features/achordion.c
 TAP_DANCE_ENABLE = no
 UNICODE_ENABLE = no
