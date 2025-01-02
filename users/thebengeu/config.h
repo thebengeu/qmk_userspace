@@ -1,6 +1,6 @@
 #pragma once
 
-// #define ACHORDION_STREAK
+#define ACHORDION_STREAK
 #define CAPS_WORD_IDLE_TIMEOUT 0
 #define CAPS_WORD_INVERT_ON_SHIFT
 #define COMBO_TERM 25
