@@ -517,20 +517,14 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     return 0;
 }
 
-// https://github.com/JBaguley/qmk_firmware/tree/crkbd-retrograde-keymap/keyboards/crkbd/keymaps/retrograde
 #ifdef OLED_ENABLE
-unsigned int state = 0;
-
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return is_keyboard_left() ? OLED_ROTATION_0 : rotation;
 }
 
 bool oled_task_user(void) {
-    if (is_oled_on()) {
-        if (last_input_activity_elapsed() > OLED_TIMEOUT) {
-            oled_off();
-        } else {
-        }
+    if (is_oled_on() && last_input_activity_elapsed() > OLED_TIMEOUT) {
+        oled_off();
     }
 
     return false;
