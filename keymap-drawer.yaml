@@ -23,9 +23,9 @@ layers:
           - { tap: ., shifted: ">" }
           - { tap: /, shifted: "?" }
         - - { tap: Wheel, hold: ↓, shifted: ↑ }
-          - { tap: $$mdi:keyboard-esc$$, hold: Fun }
-          - { tap: $$mdi:backspace-outline$$, hold: Num }
-          - { tap: $$mdi:keyboard-return$$, hold: Mouse }
+          - { tap: $$mdi:keyboard-esc$$, hold: Mouse }
+          - { tap: $$mdi:backspace-outline$$, hold: Shift }
+          - { tap: $$mdi:keyboard-return$$, hold: Num }
           - { tap: $$mdi:keyboard-tab$$, hold: Meh }
           - { tap: $$mdi:keyboard-space$$, hold: Sym }
           - ""
@@ -62,9 +62,9 @@ layers:
           - ⌘9
           - $$mdi:skip-forward$$
         - - { tap: Wheel, hold: →, shifted: ← }
-          - "Mid Btn"
-          - "Left Btn"
-          - { tap: Right Btn, type: held }
+          - { tap: Mid Btn, type: held }
+          - Left Btn
+          - Right Btn
           - Right Btn
           - Left Btn
           - ""
@@ -106,8 +106,8 @@ layers:
           - "/"
         - - { tap: Zoom, hold: In, shifted: Out }
           - $$mdi:keyboard-esc$$
-          - { tap: $$mdi:backspace-outline$$, type: held }
-          - $$mdi:keyboard-return$$
+          - $$mdi:backspace-outline$$
+          - { tap: $$mdi:keyboard-return$$, type: held }
           - { tap: "-", hold: Meh }
           - { tap: "0", hold: Sym }
           - ""
@@ -174,8 +174,8 @@ layers:
           - "RGB Mode Fwd"
         - - $$mdi:apple-keyboard-caps$$
           - Tap Term Print
-          - Tap Term Up
           - Tap Term Down
+          - Tap Term Up
           - Print Screen
           - "Val-"
           - "F7"
@@ -183,8 +183,8 @@ layers:
           - "F9"
           - BL Step
         - - { hold: F2, shifted: F1 }
-          - { type: held }
           - ""
+          - Boot
           - Numpad 1
           - Alt Rep
           - Rep
@@ -201,7 +201,7 @@ combos:
       key: NW
       layers: [Sym]
     - key_positions: [32, 33]
-      key: { tap: "[", hold: Shift }
+      key: { tap: "[", hold: Fun }
       layers: [Base]
     - key_positions: [32, 33]
       key: $$mdi:keyboard-space$$
