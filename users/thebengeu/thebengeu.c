@@ -8,6 +8,7 @@
 
 enum layers {
     _BASE,
+    _SFT,
     _MS,
     _NUM,
     _SYM,
@@ -24,8 +25,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,             KC_T,          KC_Y,                KC_U,             KC_I,           KC_O,          LT(_NUM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),      RCTL_T(KC_G),  RCTL_T(KC_H),        SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),   GUI_T(KC_QUOT),
     LT(_MS,KC_Z),   KC_X,           KC_C,           KC_V,             KC_B,          KC_N,                KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),  LT(_FUN,KC_SLSH),
-                                    LT(_FUN,KC_ESC),LT(_NUM,KC_BSPC), LT(_MS,KC_ENT),LT(_MEH,KC_TAB),     LT(_SYM,KC_SPC),  KC_NO
+                                    LT(_MS,KC_ESC),LT(_SFT,KC_BSPC), LT(_NUM,KC_ENT),LT(_MEH,KC_TAB),     LT(_SYM,KC_SPC),  KC_NO
   ),
+    [_SFT] = LAYOUT_split_3x5_3_custom(
+    S(KC_Q),  S(KC_W),  S(KC_E),  S(KC_R),  S(KC_T),  S(KC_Y),  S(KC_U),  S(KC_I),  S(KC_O),  S(KC_P),
+    S(KC_A),  S(KC_S),  S(KC_D),  S(KC_F),  S(KC_G),  S(KC_H),  S(KC_J),  S(KC_K),  S(KC_L),  S(KC_QUOT),
+    S(KC_Z),  S(KC_X),  S(KC_C),  S(KC_V),  S(KC_B),  S(KC_N),  S(KC_M),  S(KC_COMM), S(KC_DOT), S(KC_SLSH),
+                                    KC_NO,          KC_NO,          KC_NO,         QK_AREP,             QK_REP,           KC_NO
+),
   [_MS] = LAYOUT_split_3x5_3_custom(
     KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,          KC_NO,         KC_MUTE,             G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
     KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,          KC_RCTL,       RCTL_T(KC_VOLD),     SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
@@ -47,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FUN] = LAYOUT_split_3x5_3_custom(
     LT(0,CW_TOGG),  KC_F10,         KC_F11,         KC_F12,           KC_PAUS,       RGB_HUD,             KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),    OSM(MOD_RCTL), RGB_SAD,             KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    KC_CAPS,        DT_PRNT,        DT_UP,          DT_DOWN,          KC_PSCR,       RGB_VAD,             KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+    KC_CAPS,        DT_PRNT,        DT_DOWN,          DT_UP,          KC_PSCR,       RGB_VAD,             KC_F7,            KC_F8,          KC_F9,          BL_STEP,
                                     KC_NO,          QK_BOOT,          KC_P1,         QK_AREP,             QK_REP,           KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
@@ -77,8 +84,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-const uint16_t PROGMEM thumbcombos_base_left_left[]  = {LT(_FUN, KC_ESC), LT(_NUM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_base_left_right[] = {LT(_NUM, KC_BSPC), LT(_MS, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_base_left_left[]  = {LT(_FUN, KC_ESC), LT(_SFT, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_base_left_right[] = {LT(_SFT, KC_BSPC), LT(_NUM, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_END};
@@ -93,7 +100,7 @@ const uint16_t PROGMEM combos_uj[]                   = {KC_U, SFT_T(KC_J), COMBO
 // clang-format off
 combo_t key_combos[] = {
     COMBO(thumbcombos_base_left_left, GUI_T(CW_TOGG)),
-    COMBO(thumbcombos_base_left_right, SFT_T(KC_LBRC)),
+    COMBO(thumbcombos_base_left_right, LT(_FUN, KC_LBRC)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_RBRC)),
     COMBO(thumbcombos_ms_right, KC_BTN3),
     COMBO(thumbcombos_num_left_left, KC_TAB),
@@ -295,7 +302,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             last_keycode_after_brc = 0;
         }
 
-        if (keycode == ALT_T(KC_LBRC) || keycode == SFT_T(KC_LBRC)) {
+        if (keycode == ALT_T(KC_LBRC) || keycode == LT(_FUN, KC_LBRC)) {
             last_brc = KC_LBRC;
         } else if (keycode == LT(_HYPR, KC_RBRC) || keycode == KC_RBRC) {
             last_brc = KC_RBRC;
@@ -344,7 +351,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case GUI_T(CW_TOGG):
                 caps_word_toggle();
                 return false;
-            case SFT_T(KC_LBRC):
+            case LT(_FUN, KC_LBRC):
                 tap_code16_caps_word(KC_LBRC);
                 return false;
             case LT(_MEH, KC_TAB):
@@ -482,8 +489,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case GUI_T(KC_A):
         case ALT_T(KC_S):
         case CTL_T(KC_D):
+        case SFT_T(KC_F):
         case RCTL_T(KC_G):
         case RCTL_T(KC_H):
+        case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
         case LT(_MS, KC_Z):
