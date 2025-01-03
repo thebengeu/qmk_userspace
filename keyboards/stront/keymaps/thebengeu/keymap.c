@@ -13,6 +13,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [7] = {ENCODER_CCW_CW(S(KC_H), S(KC_L)), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [8] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [9] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [10] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [11] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     // clang-format on
 };
 #endif
