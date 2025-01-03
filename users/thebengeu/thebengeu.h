@@ -1,5 +1,6 @@
 #pragma once
 
+// clang-format off
 enum custom_keycodes {
   GUI_4 = SAFE_RANGE,
   GUI_5,
@@ -13,6 +14,10 @@ enum custom_keycodes {
   SHIFT_GUI_TAB,
   UNDS
 };
+// clang-format on
+
+#define LCSG(kc) (QK_LCTL | QK_LSFT | QK_LGUI | (kc))
+#define LSAG(kc) (QK_LSFT | QK_LALT | QK_LGUI | (kc))
 
 #define U_RDO SCMD(KC_Z)
 #define U_PST LCMD(KC_V)
