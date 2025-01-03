@@ -540,47 +540,106 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     return 0;
 }
 
-void sentence_end(tap_dance_state_t *state, void *user_data) {
-    switch (state->count) {
-        // Double tapping TD_DOT produces
-        // ". <one-shot-shift>" i.e. dot, space and capitalize next letter.
-        // This helps to quickly end a sentence and begin another one
-        // without having to hit shift.
-        case 2:
-            /* Check that Shift is inactive */
-            if (!(get_mods() & MOD_MASK_SHIFT)) {
-                tap_code(KC_SPC);
-                /* Internal code of OSM(MOD_LSFT) */
-                add_oneshot_mods(MOD_BIT(KC_LEFT_SHIFT));
+typedef enum {
+    TD_NONE,
+    TD_UNKNOWN,
+    TD_SINGLE_TAP,
+    TD_SINGLE_HOLD,
+    TD_DOUBLE_TAP,
+    TD_DOUBLE_HOLD,
+    TD_DOUBLE_SINGLE_TAP,
+    TD_TRIPLE_TAP,
+    TD_TRIPLE_HOLD,
+} td_state_t;
 
+typedef struct {
+    bool       is_press_action;
+    td_state_t state;
+} td_tap_t;
+
+td_state_t cur_dance(tap_dance_state_t *state) {
+    switch (state->count) {
+        case 1:
+            return state->interrupted || !state->pressed ? TD_SINGLE_TAP : TD_SINGLE_HOLD;
+        case 2:
+            return state->interrupted ? TD_DOUBLE_SINGLE_TAP : state->pressed ? TD_DOUBLE_HOLD : TD_DOUBLE_TAP;
+        case 3:
+            return state->interrupted || !state->pressed ? TD_TRIPLE_TAP : TD_TRIPLE_HOLD;
+        default:
+            return TD_UNKNOWN;
+    }
+}
+
+static td_tap_t dot_tap_state = {.is_press_action = true, .state = TD_NONE};
+
+void dot_finished(tap_dance_state_t *state, void *user_data) {
+    const uint8_t mods         = get_mods();
+    const uint8_t oneshot_mods = get_oneshot_mods();
+    const uint8_t weak_mods    = get_weak_mods();
+    const bool    is_shifted   = (mods | oneshot_mods | weak_mods) & MOD_MASK_SHIFT;
+
+    dot_tap_state.state = cur_dance(state);
+
+    switch (dot_tap_state.state) {
+        case TD_SINGLE_TAP:
+            register_code(KC_DOT);
+            break;
+        case TD_SINGLE_HOLD:
+            if (is_shifted) {
+                del_weak_mods(MOD_MASK_SHIFT);
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                unregister_mods(MOD_MASK_SHIFT);
+                send_string(">= ");
+                register_mods(mods);
+                set_weak_mods(weak_mods);
             } else {
-                // send ">" (KC_DOT + shift → ">")
-                tap_code(KC_DOT);
+                send_string("../");
             }
             break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_DOT);
 
-        // Since `sentence_end` is called on each tap
-        // and not at the end of the tapping term,
-        // the third tap needs to cancel the effects
-        // of the double tap in order to get the expected
-        // three dots ellipsis.
-        case 3:
-            // remove the added space of the double tap case
-            tap_code(KC_BSPC);
-            // replace the space with a second dot
-            tap_code(KC_DOT);
-            // tap the third dot
-            tap_code(KC_DOT);
+            if (is_shifted) {
+                register_code(KC_DOT);
+            } else {
+                tap_code(KC_SPC);
+                add_oneshot_mods(MOD_BIT(KC_LSFT));
+            }
             break;
-
-        // send KC_DOT on every normal tap of TD_DOT
-        default:
+        case TD_DOUBLE_HOLD:
             tap_code(KC_DOT);
+            register_code(KC_DOT);
+            break;
+        case TD_TRIPLE_TAP:
+        case TD_TRIPLE_HOLD:
+            tap_code(KC_DOT);
+            tap_code(KC_DOT);
+            register_code(KC_DOT);
+        default:
+            break;
     }
-};
+}
+
+void dot_reset(tap_dance_state_t *state, void *user_data) {
+    switch (dot_tap_state.state) {
+        case TD_SINGLE_TAP:
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_HOLD:
+        case TD_DOUBLE_SINGLE_TAP:
+        case TD_TRIPLE_TAP:
+        case TD_TRIPLE_HOLD:
+            unregister_code(KC_DOT);
+            break;
+        default:
+            break;
+    }
+
+    dot_tap_state.state = TD_NONE;
+}
 
 tap_dance_action_t tap_dance_actions[] = {
-    [DOT_TD] = ACTION_TAP_DANCE_FN_ADVANCED(sentence_end, NULL, NULL),
+    [DOT_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dot_finished, dot_reset),
 };
 
 #ifdef OLED_ENABLE
