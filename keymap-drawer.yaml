@@ -21,7 +21,7 @@ layers:
           - M
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">" }
-          - { tap: /, shifted: "?" }
+          - { tap: /, shifted: "?", hold: Fun }
         - - { tap: Wheel, hold: ↓, shifted: ↑ }
           - { tap: $$mdi:keyboard-esc$$, hold: Mouse }
           - { tap: $$mdi:backspace-outline$$, hold: Shift }
@@ -113,8 +113,8 @@ layers:
           - ""
           - { hold: Redo, shifted: Undo }
     Sym:
-        - - ""
-          - { tap: "&", hold: "&&", type: held }
+        - - { type: held }
+          - { tap: "&", hold: "&&" }
           - $$mdi:arrow-up$$
           - { tap: "|", hold: "||" }
           - "NW :"
@@ -181,7 +181,7 @@ layers:
           - "F7"
           - "F8"
           - "F9"
-          - BL Step
+          - { tap: "BL Step", type: held }
         - - { hold: F2, shifted: F1 }
           - ""
           - Boot
