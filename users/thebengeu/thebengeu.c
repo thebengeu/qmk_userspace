@@ -514,6 +514,19 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     return 0;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case GUI_T(KC_A):
+        case GUI_T(KC_QUOT):
+            return g_tapping_term - 25;
+        case LT(0, KC_AMPR):
+        case LT(1, KC_PIPE):
+            return g_tapping_term - 50;
+        default:
+            return g_tapping_term;
+    }
+}
+
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,
