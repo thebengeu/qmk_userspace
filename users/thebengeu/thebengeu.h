@@ -2,7 +2,11 @@
 
 // clang-format off
 enum custom_keycodes {
-  GUI_4 = SAFE_RANGE,
+  ALT_TAB = SAFE_RANGE,
+  CTL_4,
+  CTL_5,
+  CTL_6,
+  GUI_4,
   GUI_5,
   GUI_6,
   GUI_TAB,
@@ -11,6 +15,7 @@ enum custom_keycodes {
   NW_DLR,
   NW_TOGG,
   RCBR,
+  SHIFT_ALT_TAB,
   SHIFT_GUI_TAB,
   UNDS
 };
@@ -18,9 +23,3 @@ enum custom_keycodes {
 
 #define LCSG(kc) (QK_LCTL | QK_LSFT | QK_LGUI | (kc))
 #define LSAG(kc) (QK_LSFT | QK_LALT | QK_LGUI | (kc))
-
-#define U_RDO SCMD(KC_Z)
-#define U_PST LCMD(KC_V)
-#define U_CPY LCMD(KC_C)
-#define U_CUT LCMD(KC_X)
-#define U_UND LCMD(KC_Z)
