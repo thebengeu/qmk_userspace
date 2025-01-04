@@ -7,10 +7,13 @@
 #include "thebengeu.h"
 
 enum layers {
-    _BASE,
+    _MAC,
+    _WIN,
     _S,
-    _MS,
-    _NO,
+    _MM,
+    _MW,
+    _NM,
+    _NW,
     _SYM,
     _FUN,
     _MEH,
@@ -28,11 +31,17 @@ enum {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_split_3x5_3_custom(
-    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,           KC_Y,              KC_U,            KC_I,           KC_O,           LT(_NO,KC_P),
+  [_MAC] = LAYOUT_split_3x5_3_custom(
+    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,           KC_Y,              KC_U,            KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),     CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MS,KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,           KC_N,              KC_M,            LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
-                                    LT(_MS,KC_ESC), LT(_S,KC_BSPC), LT(_NO,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC), KC_NO
+    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,           KC_N,              KC_M,            LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
+                                    LT(_MM,KC_ESC), LT(_S,KC_BSPC), LT(_NM,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC), KC_NO
+  ),
+  [_WIN] = LAYOUT_split_3x5_3_custom(
+    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,           KC_Y,              KC_U,            KC_I,           KC_O,           LT(_NW,KC_P),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),     CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
+    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,           KC_N,              KC_M,            LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
+                                    LT(_MW,KC_ESC), LT(_S,KC_BSPC), LT(_NW,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC), KC_NO
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
     S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),        S(KC_T),        S(KC_Y),           S(KC_U),         S(KC_I),        S(KC_O),        S(KC_P),
@@ -40,16 +49,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),        S(KC_B),        S(KC_N),           S(KC_M),         S(KC_COMM),     S(KC_DOT),      S(KC_SLSH),
                                     KC_NO,          KC_NO,          KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,          KC_NO
   ),
-  [_MS] = LAYOUT_split_3x5_3_custom(
+  [_MM] = LAYOUT_split_3x5_3_custom(
     KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,        KC_NO,          KC_MUTE,           G(KC_1),         G(KC_2),        G(KC_3),        KC_MPLY,
     KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),    CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
-    U_UND,          U_CUT,          U_CPY,          U_PST,          U_RDO,          KC_MPRV,           G(KC_7),         G(KC_8),        G(KC_9),        KC_MNXT,
+    G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),        LSG(KC_Z),      KC_MPRV,           G(KC_7),         G(KC_8),        G(KC_9),        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,         KC_NO
   ),
-  [_NO] = LAYOUT_split_3x5_3_custom(
+  [_MW] = LAYOUT_split_3x5_3_custom(
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,        KC_NO,          KC_MUTE,           C(KC_1),         C(KC_2),        C(KC_3),        KC_MPLY,
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),    CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
+    C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        S(C(KC_Z)),     KC_MPRV,           C(KC_7),         C(KC_8),        C(KC_9),        KC_MNXT,
+                                    KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,         KC_NO
+  ),
+  [_NM] = LAYOUT_split_3x5_3_custom(
     KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   KC_NO,          KC_DOT,            KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(2,KC_EQL),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),     G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
+                                    KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
+  ),
+  [_NW] = LAYOUT_split_3x5_3_custom(
+    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      KC_NO,          KC_DOT,            KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(2,KC_EQL),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
+    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),     A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
@@ -59,10 +80,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_DEL,         KC_BSPC,        KC_ENT,         KC_NO,             KC_NO,           KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          KC_F10,         KC_F11,         KC_F12,         KC_PAUS,        RGB_HUD,           KC_F1,           KC_F2,          KC_F3,          RGB_TOG,
+    DF(_WIN),       KC_F10,         KC_F11,         KC_F12,         KC_PAUS,        RGB_HUD,           KC_F1,           KC_F2,          KC_F3,          RGB_TOG,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),  OSM(MOD_RCTL),  RGB_SAD,           KC_F4,           KC_F5,          KC_F6,          RGB_MOD,
     KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,          KC_PSCR,        RGB_VAD,           KC_F7,           KC_F8,          KC_F9,          BL_STEP,
-                                    QK_BOOT,        KC_NO,          KC_P1,          QK_REP,            QK_AREP,         KC_NO
+                                    QK_BOOT,        DF(_MAC),       KC_P1,          QK_REP,            QK_AREP,         KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),      MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),       MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
@@ -103,8 +124,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-const uint16_t PROGMEM thumbcombos_base_left_left[]  = {LT(_MS, KC_ESC), LT(_S, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_base_left_right[] = {LT(_S, KC_BSPC), LT(_NO, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_S, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_S, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_S, KC_BSPC), LT(_NM, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_S, KC_BSPC), LT(_NW, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_s_right[]         = {LT(_LCSG, KC_UNDS), QK_REP, COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
@@ -121,8 +144,10 @@ const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO
 
 // clang-format off
 combo_t key_combos[] = {
-    COMBO(thumbcombos_base_left_left, GUI_T(CW_TOGG)),
-    COMBO(thumbcombos_base_left_right, LT(_FUN, NW_TOGG)),
+    COMBO(thumbcombos_mac_left_left, GUI_T(CW_TOGG)),
+    COMBO(thumbcombos_win_left_left, CTL_T(CW_TOGG)),
+    COMBO(thumbcombos_mac_left_right, LT(_FUN, NW_TOGG)),
+    COMBO(thumbcombos_win_left_right, LT(_FUN, NW_TOGG)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_UNDS)),
     COMBO(thumbcombos_s_right, QK_AREP),
     COMBO(thumbcombos_ms_right, KC_BTN3),
@@ -145,13 +170,15 @@ void caps_word_set_user(bool active) {
         return;
     }
 
+    const bool is_win = detected_host_os() == OS_WINDOWS;
+
     if (active) {
-        default_layer_set(1UL << _NO);
+        set_single_default_layer(is_win ? _NW : _NM);
     } else {
         is_num_word_on = false;
 
-        default_layer_set(1UL << _BASE);
-        set_oneshot_layer(_NO, ONESHOT_START);
+        set_single_default_layer(is_win ? _WIN : _MAC);
+        set_oneshot_layer(is_win ? _NW : _NM, ONESHOT_START);
         clear_oneshot_layer_state(ONESHOT_PRESSED);
     }
 }
@@ -300,6 +327,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 }
 
 bool is_gui_tab_active = false;
+bool is_alt_tab_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
@@ -378,6 +406,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case ALT_T(GUI_6):
                 tap_code16_caps_word(G(KC_6));
                 return false;
+            case SFT_T(CTL_4):
+                tap_code16_caps_word(C(KC_4));
+                return false;
+            case CTL_T(CTL_5):
+                tap_code16_caps_word(C(KC_5));
+                return false;
+            case ALT_T(CTL_6):
+                tap_code16_caps_word(C(KC_6));
+                return false;
             case GUI_T(CW_TOGG):
                 caps_word_toggle();
                 return false;
@@ -399,6 +436,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if (!is_gui_tab_active) {
                     is_gui_tab_active = true;
                     register_code(KC_LGUI);
+                }
+                register_code16(tab_or_shift_tab);
+            } else {
+                unregister_code16(tab_or_shift_tab);
+            }
+        } break;
+        case ALT_TAB:
+        case SHIFT_ALT_TAB: {
+            uint16_t tab_or_shift_tab = keycode == ALT_TAB ? KC_TAB : S(KC_TAB);
+
+            if (record->event.pressed) {
+                if (!is_alt_tab_active) {
+                    is_alt_tab_active = true;
+                    register_code(KC_LALT);
                 }
                 register_code16(tab_or_shift_tab);
             } else {
@@ -474,16 +525,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-    if (is_gui_tab_active && !layer_state_is(_NO)) {
+    if (is_gui_tab_active && !layer_state_is(_NM)) {
         unregister_code(KC_LGUI);
         is_gui_tab_active = false;
+    } else if (is_alt_tab_active && !layer_state_is(_NW)) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
     }
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_SYM, KC_Q):
-        case LT(_NO, KC_P):
+        case LT(_NM, KC_P):
+        case LT(_NW, KC_P):
         case GUI_T(KC_A):
         case ALT_T(KC_S):
         case CTL_T(KC_D):
@@ -493,7 +548,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
-        case LT(_MS, KC_Z):
+        case LT(_MM, KC_Z):
+        case LT(_MW, KC_Z):
         case LT(_SYM, KC_SPC):
             return false;
         default:
@@ -675,6 +731,14 @@ tap_dance_action_t tap_dance_actions[] = {
     [DLR_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dlr_finished, dlr_reset),
     [DOT_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dot_finished, dot_reset),
 };
+
+bool process_detected_host_os_user(os_variant_t detected_os) {
+    if (detected_os == OS_WINDOWS) {
+        set_single_default_layer(_WIN);
+    }
+
+    return true;
+}
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
