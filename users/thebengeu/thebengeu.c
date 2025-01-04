@@ -46,19 +46,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,         KC_NO
   ),
   [_NO] = LAYOUT_split_3x5_3_custom(
-    LT(2,KC_EQL),   G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   NW_DLR,         KC_DOT,           KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
+    LT(2,KC_EQL),   G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   KC_NO,          KC_DOT,           KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), SFT_T(KC_UNDS), LT(0,KC_DLR),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),     G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),  NW_COLN,        KC_NO,             LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
+    KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),  KC_NO,          KC_NO,             LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
     LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,KC_BSLS),  RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),  CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,        KC_PGUP,        KC_HOME,           KC_RPRN,         KC_RCBR,        KC_RBRC,        KC_END,
                                     KC_DEL,         KC_BSPC,        KC_ENT,         KC_NO,             KC_NO,           KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
-    LT(0,CW_TOGG),  KC_F10,         KC_F11,         KC_F12,         KC_PAUS,        RGB_HUD,           KC_F1,           KC_F2,          KC_F3,          RGB_TOG,
+    KC_NO,          KC_F10,         KC_F11,         KC_F12,         KC_PAUS,        RGB_HUD,           KC_F1,           KC_F2,          KC_F3,          RGB_TOG,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),  OSM(MOD_RCTL),  RGB_SAD,           KC_F4,           KC_F5,          KC_F6,          RGB_MOD,
     KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,          KC_PSCR,        RGB_VAD,           KC_F7,           KC_F8,          KC_F9,          BL_STEP,
                                     QK_BOOT,        KC_NO,          KC_P1,          QK_REP,            QK_AREP,         KC_NO
@@ -340,7 +340,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         switch (keycode) {
-            case NW_TOGG:
             case LT(_FUN, NW_TOGG):
             case LT(_HNO, NW_TOGG):
                 is_num_word_on = true;
@@ -387,22 +386,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     return false;
                 }
                 break;
-            case G(KC_GRV):
-                if (is_num_word_on) {
-                    tap_code16_caps_word(KC_TILD);
-                    return false;
-                }
-                break;
-            case NW_COLN:
-                is_num_word_on = true;
-                caps_word_on();
-                tap_code16_caps_word(KC_COLN);
-                return false;
-            case NW_DLR:
-                is_num_word_on = true;
-                caps_word_on();
-                tap_code16_caps_word(KC_DLR);
-                return false;
         }
     }
 
@@ -421,19 +404,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code16(tab_or_shift_tab);
             }
         } break;
-        case LT(0, CW_TOGG):
-            if (record->tap.count) {
-                if (record->event.pressed) {
-                    caps_word_toggle();
-                    return false;
-                }
-            } else {
-                if (record->event.pressed) {
-                    tap_code(KC_CAPS);
-                }
-                return false;
-            }
-            return true;
         case LT(0, KC_HASH):
             if (record->tap.count) {
                 if (record->event.pressed) {

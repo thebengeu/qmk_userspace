@@ -78,7 +78,7 @@ layers:
           - Close Tab
           - Prev Tab
           - Next Tab
-          - NW $
+          - ""
           - "."
           - "1"
           - "2"
@@ -117,7 +117,7 @@ layers:
           - { tap: "&", hold: "&&" }
           - $$mdi:arrow-up$$
           - { tap: "|", hold: "||" }
-          - "NW :"
+          - ""
           - ""
           - { tap: "!", hold: "!==" }
           - "@"
@@ -152,7 +152,7 @@ layers:
           - ""
           - { tap: Page, hold: Down, shifted: Up }
     Fun:
-        - - Caps Word
+        - - ""
           - "F10"
           - "F11"
           - "F12"
