@@ -74,7 +74,7 @@ layers:
                 shifted: $$mdi:volume-medium$$,
             }
     Num:
-        - - { tap: "=>", hold: "=> {}" }
+        - - ""
           - Close Tab
           - Prev Tab
           - Next Tab
@@ -87,9 +87,9 @@ layers:
         - - { tap: "~", hold: $$mdi:apple-keyboard-command$$ }
           - { tap: "^", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "%", hold: $$mdi:apple-keyboard-control$$ }
-          - { tap: "_", hold: $$mdi:apple-keyboard-shift$$ }
-          - { tap: $, hold: "${}" }
-          - { tap: "=", hold: => }
+          - { tap: "$", hold: $$mdi:apple-keyboard-shift$$, shifted: "${}" }
+          - { tap: "=>", hold: "=> {}" }
+          - { tap: "=", hold: === }
           - "4"
           - "5"
           - "6"
