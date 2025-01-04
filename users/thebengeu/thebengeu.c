@@ -22,6 +22,7 @@ enum layers {
 };
 
 enum {
+    DLR_TD,
     DOT_TD,
 };
 
@@ -46,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,         KC_NO
   ),
   [_NO] = LAYOUT_split_3x5_3_custom(
-    LT(2,KC_EQL),   G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   KC_NO,          KC_DOT,           KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
-    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), SFT_T(KC_UNDS), LT(0,KC_DLR),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
+    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   KC_NO,          KC_DOT,            KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(2,KC_EQL),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),     G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
   ),
@@ -431,7 +432,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LT(0, KC_DOT):
             return process_tap_or_long_press_key(record, "../", ">= ");
         case LT(0, KC_EQL):
-            return process_tap_or_long_press_key(record, "=> ", "++ ");
+            return process_tap_or_long_press_key(record, "=== ", "++ ");
         case LT(2, KC_EQL):
             if (record->tap.count) {
                 if (record->event.pressed) {
@@ -557,7 +558,51 @@ td_state_t cur_dance(tap_dance_state_t *state) {
     }
 }
 
+static td_tap_t dlr_tap_state = {.is_press_action = true, .state = TD_NONE};
 static td_tap_t dot_tap_state = {.is_press_action = true, .state = TD_NONE};
+
+void dlr_finished(tap_dance_state_t *state, void *user_data) {
+    dlr_tap_state.state = cur_dance(state);
+
+    switch (dlr_tap_state.state) {
+        case TD_SINGLE_TAP:
+            tap_code16_caps_word(KC_DLR);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP:
+            SEND_STRING("${}" SS_TAP(X_LEFT));
+            break;
+        case TD_DOUBLE_HOLD:
+            tap_code16_caps_word(KC_DLR);
+            register_code(KC_LSFT);
+            break;
+        case TD_TRIPLE_TAP:
+        case TD_TRIPLE_HOLD:
+            tap_code16_caps_word(KC_DLR);
+            tap_code16_caps_word(KC_DLR);
+            register_code(KC_LSFT);
+            break;
+        default:
+            break;
+    }
+}
+
+void dlr_reset(tap_dance_state_t *state, void *user_data) {
+    switch (dlr_tap_state.state) {
+        case TD_SINGLE_HOLD:
+        case TD_DOUBLE_HOLD:
+        case TD_TRIPLE_HOLD:
+            unregister_code(KC_LSFT);
+            break;
+        default:
+            break;
+    }
+
+    dlr_tap_state.state = TD_NONE;
+}
 
 void dot_finished(tap_dance_state_t *state, void *user_data) {
     const uint8_t mods         = get_mods();
@@ -603,6 +648,7 @@ void dot_finished(tap_dance_state_t *state, void *user_data) {
             tap_code(KC_DOT);
             tap_code(KC_DOT);
             register_code(KC_DOT);
+            break;
         default:
             break;
     }
@@ -626,6 +672,7 @@ void dot_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 tap_dance_action_t tap_dance_actions[] = {
+    [DLR_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dlr_finished, dlr_reset),
     [DOT_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dot_finished, dot_reset),
 };
 
