@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYM] = LAYOUT_split_3x5_3_custom(
     KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),  KC_NO,          KC_NO,             LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
     LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,KC_BSLS),  RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),  CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
-    LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,        KC_PGUP,        KC_HOME,           KC_RPRN,         KC_RCBR,        KC_RBRC,        KC_END,
+    LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,        KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),   LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
                                     KC_DEL,         KC_BSPC,        KC_ENT,         KC_NO,             KC_NO,           KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
@@ -360,6 +360,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 last_brc = KC_LBRC;
                 break;
             case KC_RBRC:
+            case LT(0, KC_RBRC):
                 last_brc = KC_RBRC;
                 break;
             default:
@@ -389,8 +390,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case SFT_T(KC_LPRN):
                 tap_code16_caps_word(KC_LPRN);
                 return false;
+            case LT(0, KC_RPRN):
+                tap_code16_caps_word(KC_RPRN);
+                return false;
             case CTL_T(KC_LCBR):
                 tap_code16_caps_word(KC_LCBR);
+                return false;
+            case LT(1, KC_RCBR):
+                tap_code16_caps_word(KC_RCBR);
                 return false;
             case SFT_T(KC_UNDS):
             case LT(_HYPR, KC_UNDS):
@@ -478,10 +485,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_shifted_key(record, "\\\\", KC_BSLS);
         case LT(0, KC_COMM):
             return process_tap_or_long_press_key(record, ", ", "<= ");
-        case LT(0, KC_DLR):
-            return process_tap_or_long_press_shifted_key(record, "${}" SS_TAP(X_LEFT), KC_DLR);
-        case LT(0, KC_DOT):
-            return process_tap_or_long_press_key(record, "../", ">= ");
         case LT(0, KC_EQL):
             return process_tap_or_long_press_key(record, "=== ", "++ ");
         case LT(2, KC_EQL):
@@ -501,24 +504,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_shifted_key(record, "!== ", KC_EXLM);
         case LT(0, KC_GRV):
             return process_tap_or_long_press_key(record, "```", "~/");
-        case LT(0, KC_LBRC):
-            return process_tap_or_long_press_key(record, "[]" SS_TAP(X_LEFT), "{}" SS_TAP(X_LEFT));
-        case LT(1, KC_LCBR):
-            return process_tap_or_long_press_shifted_key(record, "{}" SS_TAP(X_LEFT), KC_LCBR);
-        case LT(0, KC_LPRN):
-            return process_tap_or_long_press_shifted_key(record, "()" SS_TAP(X_LEFT), KC_LPRN);
-        case LT(0, KC_MINS):
-            return process_tap_or_long_press_key(record, "--", "__");
         case LT(1, KC_PIPE):
             return process_tap_or_long_press_shifted_key(record, "|| ", KC_PIPE);
         case LT(1, KC_PLUS):
             return process_tap_or_long_press_shifted_key(record, "++ ", KC_PLUS);
+        case LT(0, KC_RBRC):
+            return process_tap_or_long_press_key(record, "[]" SS_TAP(X_LEFT), "{}" SS_TAP(X_LEFT));
+        case LT(1, KC_RCBR):
+            return process_tap_or_long_press_shifted_key(record, "{}" SS_TAP(X_LEFT), KC_LCBR);
+        case LT(0, KC_RPRN):
+            return process_tap_or_long_press_shifted_key(record, "()" SS_TAP(X_LEFT), KC_LPRN);
         case LT(0, KC_SLSH):
             return process_tap_or_long_press_key(record, "// ", "?? ");
-        case LT(1, KC_TILD):
-            return process_tap_or_long_press_shifted_key(record, "~/", KC_TILD);
-        case LT(1, KC_UNDS):
-            return process_tap_or_long_press_shifted_key(record, "__", KC_UNDS);
     }
 
     return true;
@@ -577,7 +574,19 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case GUI_T(KC_QUOT):
             return g_tapping_term - 25;
         case LT(0, KC_AMPR):
+        case LT(0, KC_AT):
+        case LT(0, KC_BSLS):
+        case LT(0, KC_COMM):
+        case LT(0, KC_EQL):
+        case LT(2, KC_EQL):
+        case LT(0, KC_EXLM):
+        case LT(0, KC_GRV):
         case LT(1, KC_PIPE):
+        case LT(1, KC_PLUS):
+        case LT(0, KC_RBRC):
+        case LT(1, KC_RCBR):
+        case LT(0, KC_RPRN):
+        case LT(0, KC_SLSH):
             return g_tapping_term - 50;
         default:
             return g_tapping_term;

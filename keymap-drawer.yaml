@@ -35,7 +35,7 @@ layers:
           - "Wheel ←"
           - "Mouse ↑"
           - "Wheel →"
-          - Boot
+          - ""
           - $$mdi:volume-low$$
           - ⌘1
           - ⌘2
