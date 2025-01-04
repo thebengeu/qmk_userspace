@@ -79,7 +79,7 @@ layers:
           - Prev Tab
           - Next Tab
           - NW $
-          - "*"
+          - "."
           - "1"
           - "2"
           - "3"
@@ -99,7 +99,7 @@ layers:
           - Next App
           - Back
           - Fwd
-          - ","
+          - "*"
           - "7"
           - "8"
           - "9"
@@ -183,11 +183,11 @@ layers:
           - "F9"
           - { tap: "BL Step", type: held }
         - - { hold: F2, shifted: F1 }
-          - ""
           - Boot
+          - ""
           - Numpad 1
-          - Alt Rep
           - Rep
+          - Alt Rep
           - ""
           - { tap: Repeat, hold: Rep, shifted: Alt Rep }
 combos:
@@ -197,29 +197,32 @@ combos:
     - key_positions: [31, 32]
       key: $$mdi:keyboard-tab$$
       layers: [Num]
-    - key_positions: [31, 32]
-      key: NW
-      layers: [Sym]
     - key_positions: [32, 33]
-      key: { tap: "[", hold: Fun }
+      key: { tap: NW, hold: Fun }
       layers: [Base]
     - key_positions: [32, 33]
       key: $$mdi:keyboard-space$$
       layers: [Num]
     - key_positions: [34, 35]
-      key: { tap: "]", hold: Hyper }
+      key: { tap: _, hold: Hyper }
       layers: [Base]
     - key_positions: [34, 35]
       key: Mid Btn
       layers: [Mouse]
     - key_positions: [34, 35]
-      key: { tap: ., hold: Hyper }
+      key: { tap: NW, hold: Hyper }
       layers: [Num]
+    - key_positions: [1, 11]
+      key: "["
+      layers: [Base]
     - key_positions: [3, 13]
-      key: _
+      key: "]"
       layers: [Base]
     - key_positions: [6, 16]
-      key: "-"
+      key: "["
+      layers: [Base]
+    - key_positions: [8, 18]
+      key: "]"
       layers: [Base]
     - key_positions: [13, 14]
       key: Alt Rep
