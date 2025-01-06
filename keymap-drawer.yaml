@@ -20,7 +20,7 @@ layers:
           - N
           - M
           - { tap: ",", shifted: "<" }
-          - { tap: ., shifted: ">" }
+          - { tap: ., shifted: ">", hold: ../ }
           - { tap: /, shifted: "?", hold: Fun }
         - - { tap: Wheel, hold: ↓, shifted: ↑ }
           - { tap: $$mdi:keyboard-esc$$, hold: Mouse }
@@ -78,7 +78,7 @@ layers:
           - Close Tab
           - Prev Tab
           - Next Tab
-          - ""
+          - Reopen Tab
           - "0"
           - "1"
           - "2"
@@ -139,9 +139,9 @@ layers:
           - Page Down
           - Page Up
           - Home
-          - )
-          - "}"
-          - "]"
+          - { tap: ")", hold: "()" }
+          - { tap: "}", hold: "{}" }
+          - { tap: "]", hold: "[]" }
           - End
         - - { tap: Arrow, hold: $$mdi:arrow-down$$, shifted: $$mdi:arrow-up$$ }
           - $$mdi:backspace-reverse-outline$$
