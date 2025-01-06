@@ -88,7 +88,7 @@ layers:
           - { tap: "^", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "%", hold: $$mdi:apple-keyboard-control$$ }
           - { tap: "$", hold: $$mdi:apple-keyboard-shift$$, shifted: "${}" }
-          - { tap: "=>", hold: "=> {}" }
+          - { tap: \, hold: \\ }
           - { tap: "=", hold: === }
           - "4"
           - "5"
@@ -127,7 +127,7 @@ layers:
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
           - $$mdi:arrow-right$$
-          - { tap: \, hold: \\ }
+          - { tap: "=>", hold: "=> {}" }
           - { tap: "*", hold: Fn }
           - { tap: "(", hold: $$mdi:apple-keyboard-shift$$ }
           - { tap: "{", hold: $$mdi:apple-keyboard-control$$ }
