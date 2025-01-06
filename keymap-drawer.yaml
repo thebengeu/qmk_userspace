@@ -79,7 +79,7 @@ layers:
           - Prev Tab
           - Next Tab
           - ""
-          - "."
+          - "0"
           - "1"
           - "2"
           - "3"
@@ -108,8 +108,8 @@ layers:
           - $$mdi:keyboard-esc$$
           - $$mdi:backspace-outline$$
           - { tap: $$mdi:keyboard-return$$, type: held }
-          - { tap: "-", hold: Meh }
-          - { tap: "0", hold: Sym }
+          - { tap: ".", hold: Meh }
+          - { tap: "-", hold: Sym }
           - ""
           - { hold: Redo, shifted: Undo }
     Sym:
