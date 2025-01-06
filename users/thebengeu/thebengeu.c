@@ -63,19 +63,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
     KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   KC_NO,          KC_DOT,            KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
-    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(2,KC_EQL),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),     G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
   ),
   [_NW] = LAYOUT_split_3x5_3_custom(
     KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      KC_NO,          KC_DOT,            KC_1,            KC_2,           KC_3,           LT(1,KC_PLUS),
-    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(2,KC_EQL),   LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,            KC_5,           KC_6,           KC_COLN,
     A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),     A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,            KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_MINS),  LT(_SYM,KC_0),   KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
     KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),  KC_NO,          KC_NO,             LT(0,KC_EXLM),   LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
-    LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(0,KC_BSLS),  RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),  CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
+    LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(2,KC_EQL),   RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),  CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,        KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),   LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
                                     KC_DEL,         KC_BSPC,        KC_ENT,         KC_NO,             KC_NO,           KC_NO
   ),
@@ -384,6 +384,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case CTL_T(KC_PERC):
                 tap_code16_caps_word(KC_PERC);
                 return false;
+            case LT(0, KC_ASTR):
             case RCTL_T(KC_ASTR):
                 tap_code16_caps_word(KC_ASTR);
                 return false;
