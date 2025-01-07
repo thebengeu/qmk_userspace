@@ -33,13 +33,13 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAC] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    KC_F,            RCTL_T(KC_G),   RCTL_T(KC_H),      KC_J,             CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
                                     LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    KC_F,            RCTL_T(KC_G),   RCTL_T(KC_H),      KC_J,             CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
                                     LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
   ),
@@ -135,11 +135,11 @@ const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_E
 const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MNO, KC_DOT), LT(_SYM, KC_MINS), COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym_left_left[]   = {KC_DEL, KC_BSPC, COMBO_END};
-const uint16_t PROGMEM combos_fg[]                   = {KC_F, RCTL_T(KC_G), COMBO_END};
-const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), KC_J, COMBO_END};
+const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
+const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combos_ws[]                   = {KC_W, ALT_T(KC_S), COMBO_END};
-const uint16_t PROGMEM combos_rf[]                   = {KC_R, KC_F, COMBO_END};
-const uint16_t PROGMEM combos_uj[]                   = {KC_U, KC_J, COMBO_END};
+const uint16_t PROGMEM combos_rf[]                   = {KC_R, SFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM combos_uj[]                   = {KC_U, SFT_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO_END};
 
 // clang-format off
@@ -281,7 +281,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
             switch (keycode) {
                 case KC_H:
                     return A(KC_L);
-                case KC_J:
+                case SFT_T(KC_J):
                     return A(KC_K);
                 case CTL_T(KC_K):
                     return A(KC_J);
@@ -541,8 +541,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case GUI_T(KC_A):
         case ALT_T(KC_S):
         case CTL_T(KC_D):
+        case SFT_T(KC_F):
         case RCTL_T(KC_G):
         case RCTL_T(KC_H):
+        case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
         case LT(_MM, KC_Z):
@@ -557,6 +559,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RCTL_T(KC_H):
+        case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
         case RCTL_T(KC_VOLD):
