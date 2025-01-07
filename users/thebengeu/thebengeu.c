@@ -62,16 +62,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    LSG(KC_T),      KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
+    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    LSG(KC_T),      LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
     G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),      G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
-                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
+                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_NW] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       S(C(KC_T)),     KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
+    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       S(C(KC_T)),     LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
     A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),      A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
-                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
+                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
     KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),   KC_NO,          KC_NO,             LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
@@ -133,7 +133,7 @@ const uint16_t PROGMEM thumbcombos_s_right[]         = {LT(_LCSG, KC_UNDS), QK_R
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_END};
-const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MNO, KC_DOT), LT(_SYM, KC_MINS), COMBO_END};
+const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MNO, KC_0), LT(_SYM, KC_MINS), COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym_left_left[]   = {KC_DEL, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
@@ -550,6 +550,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case LT(_MM, KC_Z):
         case LT(_MW, KC_Z):
         case LT(_SYM, KC_SPC):
+        case LT(_MNO, KC_0):
             return false;
         default:
             return true;
