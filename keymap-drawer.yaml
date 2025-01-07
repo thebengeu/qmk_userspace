@@ -24,8 +24,8 @@ layers:
           - { tap: /, shifted: "?", hold: Fun }
         - - { tap: Wheel, hold: ↓, shifted: ↑ }
           - { tap: $$mdi:keyboard-esc$$, hold: Mouse }
-          - { tap: $$mdi:backspace-outline$$, hold: Shift }
-          - { tap: $$mdi:keyboard-return$$, hold: Num }
+          - { tap: $$mdi:backspace-outline$$, hold: Num }
+          - { tap: $$mdi:keyboard-return$$, hold: Shift }
           - { tap: $$mdi:keyboard-tab$$, hold: Meh }
           - { tap: $$mdi:keyboard-space$$, hold: Sym }
           - ""
@@ -79,11 +79,11 @@ layers:
           - Prev Tab
           - Next Tab
           - Reopen Tab
-          - "0"
+          - { tap: "+", hold: "++" }
           - "1"
           - "2"
           - "3"
-          - { tap: "+", hold: "++", type: held }
+          - { tap: ".", type: held }
         - - { tap: "~", hold: $$mdi:apple-keyboard-command$$ }
           - { tap: "^", hold: $$mdi:apple-keyboard-option$$ }
           - { tap: "%", hold: $$mdi:apple-keyboard-control$$ }
@@ -108,7 +108,7 @@ layers:
           - $$mdi:keyboard-esc$$
           - $$mdi:backspace-outline$$
           - { tap: $$mdi:keyboard-return$$, type: held }
-          - { tap: ".", hold: Meh }
+          - { tap: "0", hold: Meh }
           - { tap: "-", hold: Sym }
           - ""
           - { hold: Redo, shifted: Undo }
@@ -192,13 +192,13 @@ layers:
           - { tap: Repeat, hold: Rep, shifted: Alt Rep }
 combos:
     - key_positions: [31, 32]
-      key: { tap: CW, hold: Cmd }
+      key: { tap: NW, hold: Cmd }
       layers: [Base]
     - key_positions: [31, 32]
       key: $$mdi:keyboard-tab$$
       layers: [Num]
     - key_positions: [32, 33]
-      key: { tap: NW, hold: Fun }
+      key: { tap: CW, hold: Fun }
       layers: [Base]
     - key_positions: [32, 33]
       key: $$mdi:keyboard-space$$
