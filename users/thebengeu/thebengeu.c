@@ -26,7 +26,6 @@ enum layers {
 
 enum {
     DLR_TD,
-    DOT_TD,
 };
 
 // clang-format off
@@ -34,14 +33,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAC] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
-                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
+    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_FUN,KC_SLSH),
+                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_NO
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
-                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
+    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_FUN,KC_SLSH),
+                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_NO
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
     S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),         S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
@@ -487,6 +486,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_shifted_key(record, "\\\\", KC_BSLS);
         case LT(0, KC_COMM):
             return process_tap_or_long_press_key(record, ", ", "<= ");
+        case LT(0, KC_DOT):
+            return process_tap_or_long_press_key(record, "../", ">= ");
         case LT(0, KC_EQL):
             return process_tap_or_long_press_key(record, "=== ", "++ ");
         case LT(2, KC_EQL):
@@ -580,6 +581,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LT(0, KC_AT):
         case LT(0, KC_BSLS):
         case LT(0, KC_COMM):
+        case LT(0, KC_DOT):
         case LT(0, KC_EQL):
         case LT(2, KC_EQL):
         case LT(0, KC_EXLM):
@@ -627,7 +629,6 @@ td_state_t cur_dance(tap_dance_state_t *state) {
 }
 
 static td_tap_t dlr_tap_state = {.is_press_action = true, .state = TD_NONE};
-static td_tap_t dot_tap_state = {.is_press_action = true, .state = TD_NONE};
 
 void dlr_finished(tap_dance_state_t *state, void *user_data) {
     dlr_tap_state.state = cur_dance(state);
@@ -672,76 +673,8 @@ void dlr_reset(tap_dance_state_t *state, void *user_data) {
     dlr_tap_state.state = TD_NONE;
 }
 
-void dot_finished(tap_dance_state_t *state, void *user_data) {
-    const uint8_t mods         = get_mods();
-    const uint8_t oneshot_mods = get_oneshot_mods();
-    const uint8_t weak_mods    = get_weak_mods();
-    const bool    is_shifted   = (mods | oneshot_mods | weak_mods) & MOD_MASK_SHIFT;
-
-    dot_tap_state.state = cur_dance(state);
-
-    switch (dot_tap_state.state) {
-        case TD_SINGLE_TAP:
-            register_code(KC_DOT);
-            break;
-        case TD_SINGLE_HOLD:
-            if (is_shifted) {
-                del_weak_mods(MOD_MASK_SHIFT);
-                del_oneshot_mods(MOD_MASK_SHIFT);
-                unregister_mods(MOD_MASK_SHIFT);
-                send_string(">= ");
-                register_mods(mods);
-                set_weak_mods(weak_mods);
-            } else {
-                send_string("../");
-            }
-            break;
-        case TD_DOUBLE_TAP:
-        case TD_DOUBLE_SINGLE_TAP:
-            tap_code(KC_DOT);
-
-            if (is_shifted) {
-                register_code(KC_DOT);
-            } else {
-                tap_code(KC_SPC);
-                add_oneshot_mods(MOD_BIT(KC_LSFT));
-            }
-            break;
-        case TD_DOUBLE_HOLD:
-            tap_code(KC_DOT);
-            register_code(KC_DOT);
-            break;
-        case TD_TRIPLE_TAP:
-        case TD_TRIPLE_HOLD:
-            tap_code(KC_DOT);
-            tap_code(KC_DOT);
-            register_code(KC_DOT);
-            break;
-        default:
-            break;
-    }
-}
-
-void dot_reset(tap_dance_state_t *state, void *user_data) {
-    switch (dot_tap_state.state) {
-        case TD_SINGLE_TAP:
-        case TD_DOUBLE_TAP:
-        case TD_DOUBLE_HOLD:
-        case TD_DOUBLE_SINGLE_TAP:
-        case TD_TRIPLE_TAP:
-        case TD_TRIPLE_HOLD:
-            unregister_code(KC_DOT);
-            break;
-        default:
-            break;
-    }
-
-    dot_tap_state.state = TD_NONE;
-}
-
 tap_dance_action_t tap_dance_actions[] = {
     [DLR_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dlr_finished, dlr_reset),
-    [DOT_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dot_finished, dot_reset),
 };
 
 bool process_detected_host_os_user(os_variant_t detected_os) {
