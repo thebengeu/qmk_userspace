@@ -32,102 +32,102 @@ enum {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAC] = LAYOUT_split_3x5_3_custom(
-    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
-                                    LT(_MM,KC_ESC), LT(_S,KC_BSPC), LT(_NM,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
+    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
+    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
+                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
-    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,           KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
-    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),    RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
-                                    LT(_MW,KC_ESC), LT(_S,KC_BSPC), LT(_NW,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
+    LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
+    GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
+    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  TD(DOT_TD),     LT(_FUN,KC_SLSH),
+                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
-    S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),        S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
-    S(KC_A),        S(KC_S),        S(KC_D),        S(KC_F),        S(KC_G),        S(KC_H),           S(KC_J),          S(KC_K),        S(KC_L),        S(KC_QUOT),
-    S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),        S(KC_B),        S(KC_N),           S(KC_M),          S(KC_COMM),     S(KC_DOT),      S(KC_SLSH),
-                                    KC_NO,          KC_NO,          KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,           KC_NO
+    S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),         S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
+    S(KC_A),        S(KC_S),        S(KC_D),        S(KC_F),         S(KC_G),        S(KC_H),           S(KC_J),          S(KC_K),        S(KC_L),        S(KC_QUOT),
+    S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),         S(KC_B),        S(KC_N),           S(KC_M),          S(KC_COMM),     S(KC_DOT),      S(KC_SLSH),
+                                    KC_NO,          KC_NO,           KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,           KC_NO
   ),
   [_MM] = LAYOUT_split_3x5_3_custom(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,        KC_NO,          KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
-    G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),        LSG(KC_Z),      KC_MPRV,           G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
-                                    KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_NO,          KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
+    G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),         LSG(KC_Z),      KC_MPRV,           G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
+                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_MW] = LAYOUT_split_3x5_3_custom(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,        KC_NO,          KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
-    C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        S(C(KC_Z)),     KC_MPRV,           C(KC_7),          C(KC_8),        C(KC_9),        KC_MNXT,
-                                    KC_BTN3,        KC_BTN1,        KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
+    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_NO,          KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
+    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
+    C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),         S(C(KC_Z)),     KC_MPRV,           C(KC_7),          C(KC_8),        C(KC_9),        KC_MNXT,
+                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),   LSG(KC_T),      KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
-    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),     G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
-                                    KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
+    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    LSG(KC_T),      KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
+    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),      G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
   ),
   [_NW] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),      S(C(KC_T)),     KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
-    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),     LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),     A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
-                                    KC_ESC,         KC_BSPC,        KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
+    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       S(C(KC_T)),     KC_0,              KC_1,             KC_2,           KC_3,           LT(1,KC_PLUS),
+    GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
+    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),      A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+                                    KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_DOT),   LT(_SYM,KC_MINS), KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),  KC_NO,          KC_NO,             LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
-    LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(2,KC_EQL),   RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),   CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
-    LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,        KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),    LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
-                                    KC_DEL,         KC_BSPC,        KC_ENT,         KC_NO,             KC_NO,            KC_NO
+    KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),   KC_NO,          KC_NO,             LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
+    LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,        LT(2,KC_EQL),   RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),   CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
+    LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,         KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),    LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
+                                    KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            KC_NO
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
-    DF(_WIN),       KC_F10,         KC_F11,         KC_F12,         KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
-    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),  OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,          KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
-                                    QK_BOOT,        DF(_MAC),       KC_P1,          QK_REP,            QK_AREP,          KC_NO
+    DF(_WIN),       KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
+    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
+    KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+                                    QK_BOOT,        DF(_MAC),        KC_P1,          QK_REP,            QK_AREP,          KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
-    MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),      MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
-    MEH(KC_A),      MEH(KC_S),      MEH(KC_D),      MEH(KC_F),      MEH(KC_G),      MEH(KC_H),         MEH(KC_J),        MEH(KC_K),      MEH(KC_L),      MEH(KC_QUOT),
-    MEH(KC_Z),      MEH(KC_X),      MEH(KC_C),      MEH(KC_V),      MEH(KC_B),      MEH(KC_N),         MEH(KC_M),        MEH(KC_COMM),   MEH(KC_DOT),    MEH(KC_SLSH),
-                                    KC_NO,          OSL(_LCSG),     OSL(_MNO),      KC_NO,             KC_NO,            KC_NO
+    MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),       MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
+    MEH(KC_A),      MEH(KC_S),      MEH(KC_D),      MEH(KC_F),       MEH(KC_G),      MEH(KC_H),         MEH(KC_J),        MEH(KC_K),      MEH(KC_L),      MEH(KC_QUOT),
+    MEH(KC_Z),      MEH(KC_X),      MEH(KC_C),      MEH(KC_V),       MEH(KC_B),      MEH(KC_N),         MEH(KC_M),        MEH(KC_COMM),   MEH(KC_DOT),    MEH(KC_SLSH),
+                                    KC_NO,          OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
   ),
   [_HYPR] = LAYOUT_split_3x5_3_custom(
-    HYPR(KC_Q),     HYPR(KC_W),     HYPR(KC_E),     HYPR(KC_R),     HYPR(KC_T),     HYPR(KC_Y),        HYPR(KC_U),       HYPR(KC_I),     HYPR(KC_O),     HYPR(KC_P),
-    HYPR(KC_A),     HYPR(KC_S),     HYPR(KC_D),     HYPR(KC_F),     HYPR(KC_G),     HYPR(KC_H),        HYPR(KC_J),       HYPR(KC_K),     HYPR(KC_L),     HYPR(KC_QUOT),
-    HYPR(KC_Z),     HYPR(KC_X),     HYPR(KC_C),     HYPR(KC_V),     HYPR(KC_B),     HYPR(KC_N),        HYPR(KC_M),       HYPR(KC_COMM),  HYPR(KC_DOT),   HYPR(KC_SLSH),
-                                    KC_NO,          OSL(_LSAG),     OSL(_HNO),      KC_NO,             KC_NO,            KC_NO
+    HYPR(KC_Q),     HYPR(KC_W),     HYPR(KC_E),     HYPR(KC_R),      HYPR(KC_T),     HYPR(KC_Y),        HYPR(KC_U),       HYPR(KC_I),     HYPR(KC_O),     HYPR(KC_P),
+    HYPR(KC_A),     HYPR(KC_S),     HYPR(KC_D),     HYPR(KC_F),      HYPR(KC_G),     HYPR(KC_H),        HYPR(KC_J),       HYPR(KC_K),     HYPR(KC_L),     HYPR(KC_QUOT),
+    HYPR(KC_Z),     HYPR(KC_X),     HYPR(KC_C),     HYPR(KC_V),      HYPR(KC_B),     HYPR(KC_N),        HYPR(KC_M),       HYPR(KC_COMM),  HYPR(KC_DOT),   HYPR(KC_SLSH),
+                                    KC_NO,          OSL(_HNO),       OSL(_LSAG),     KC_NO,             KC_NO,            KC_NO
   ),
   [_LCSG] = LAYOUT_split_3x5_3_custom(
-    LCSG(KC_Q),     LCSG(KC_W),     LCSG(KC_E),     LCSG(KC_R),     LCSG(KC_T),     LCSG(KC_Y),        LCSG(KC_U),       LCSG(KC_I),     LCSG(KC_O),     LCSG(KC_P),
-    LCSG(KC_A),     LCSG(KC_S),     LCSG(KC_D),     LCSG(KC_F),     LCSG(KC_G),     LCSG(KC_H),        LCSG(KC_J),       LCSG(KC_K),     LCSG(KC_L),     LCSG(KC_QUOT),
-    LCSG(KC_Z),     LCSG(KC_X),     LCSG(KC_C),     LCSG(KC_V),     LCSG(KC_B),     LCSG(KC_N),        LCSG(KC_M),       LCSG(KC_COMM),  LCSG(KC_DOT),   LCSG(KC_SLSH),
-                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,             KC_NO,            KC_NO
+    LCSG(KC_Q),     LCSG(KC_W),     LCSG(KC_E),     LCSG(KC_R),      LCSG(KC_T),     LCSG(KC_Y),        LCSG(KC_U),       LCSG(KC_I),     LCSG(KC_O),     LCSG(KC_P),
+    LCSG(KC_A),     LCSG(KC_S),     LCSG(KC_D),     LCSG(KC_F),      LCSG(KC_G),     LCSG(KC_H),        LCSG(KC_J),       LCSG(KC_K),     LCSG(KC_L),     LCSG(KC_QUOT),
+    LCSG(KC_Z),     LCSG(KC_X),     LCSG(KC_C),     LCSG(KC_V),      LCSG(KC_B),     LCSG(KC_N),        LCSG(KC_M),       LCSG(KC_COMM),  LCSG(KC_DOT),   LCSG(KC_SLSH),
+                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_LSAG] = LAYOUT_split_3x5_3_custom(
-    LSAG(KC_Q),     LSAG(KC_W),     LSAG(KC_E),     LSAG(KC_R),     LSAG(KC_T),     LSAG(KC_Y),        LSAG(KC_U),       LSAG(KC_I),     LSAG(KC_O),     LSAG(KC_P),
-    LSAG(KC_A),     LSAG(KC_S),     LSAG(KC_D),     LSAG(KC_F),     LSAG(KC_G),     LSAG(KC_H),        LSAG(KC_J),       LSAG(KC_K),     LSAG(KC_L),     LSAG(KC_QUOT),
-    LSAG(KC_Z),     LSAG(KC_X),     LSAG(KC_C),     LSAG(KC_V),     LSAG(KC_B),     LSAG(KC_N),        LSAG(KC_M),       LSAG(KC_COMM),  LSAG(KC_DOT),   LSAG(KC_SLSH),
-                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,             KC_NO,            KC_NO
+    LSAG(KC_Q),     LSAG(KC_W),     LSAG(KC_E),     LSAG(KC_R),      LSAG(KC_T),     LSAG(KC_Y),        LSAG(KC_U),       LSAG(KC_I),     LSAG(KC_O),     LSAG(KC_P),
+    LSAG(KC_A),     LSAG(KC_S),     LSAG(KC_D),     LSAG(KC_F),      LSAG(KC_G),     LSAG(KC_H),        LSAG(KC_J),       LSAG(KC_K),     LSAG(KC_L),     LSAG(KC_QUOT),
+    LSAG(KC_Z),     LSAG(KC_X),     LSAG(KC_C),     LSAG(KC_V),      LSAG(KC_B),     LSAG(KC_N),        LSAG(KC_M),       LSAG(KC_COMM),  LSAG(KC_DOT),   LSAG(KC_SLSH),
+                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_MNO] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      KC_NO,
-                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,             KC_NO,            KC_NO
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      KC_NO,
+                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_HNO] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KC_NO,
-                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,             KC_NO,            KC_NO
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KC_NO,
+                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   )
 };
 // clang-format on
 
-const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_S, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_S, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_S, KC_BSPC), LT(_NM, KC_ENT), COMBO_END};
-const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_S, KC_BSPC), LT(_NW, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_NW, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_s_right[]         = {LT(_LCSG, KC_UNDS), QK_REP, COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
@@ -144,10 +144,10 @@ const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO
 
 // clang-format off
 combo_t key_combos[] = {
-    COMBO(thumbcombos_mac_left_left, GUI_T(CW_TOGG)),
-    COMBO(thumbcombos_win_left_left, CTL_T(CW_TOGG)),
-    COMBO(thumbcombos_mac_left_right, LT(_FUN, NW_TOGG)),
-    COMBO(thumbcombos_win_left_right, LT(_FUN, NW_TOGG)),
+    COMBO(thumbcombos_mac_left_left, GUI_T(NW_TOGG)),
+    COMBO(thumbcombos_win_left_left, CTL_T(NW_TOGG)),
+    COMBO(thumbcombos_mac_left_right, LT(_FUN, CW_TOGG)),
+    COMBO(thumbcombos_win_left_right, LT(_FUN, CW_TOGG)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_UNDS)),
     COMBO(thumbcombos_s_right, QK_AREP),
     COMBO(thumbcombos_ms_right, KC_BTN3),
@@ -370,7 +370,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         switch (keycode) {
-            case LT(_FUN, NW_TOGG):
+            case GUI_T(NW_TOGG):
+            case CTL_T(NW_TOGG):
             case LT(_HNO, NW_TOGG):
                 is_num_word_on = true;
                 caps_word_toggle();
@@ -423,7 +424,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case ALT_T(CTL_6):
                 tap_code16_caps_word(C(KC_6));
                 return false;
-            case GUI_T(CW_TOGG):
+            case LT(_FUN, CW_TOGG):
                 caps_word_toggle();
                 return false;
             case LT(_MEH, KC_TAB):
