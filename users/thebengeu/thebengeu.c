@@ -574,9 +574,6 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case GUI_T(KC_A):
-        case GUI_T(KC_QUOT):
-            return g_tapping_term - 25;
         case LT(0, KC_AMPR):
         case LT(0, KC_AT):
         case LT(0, KC_BSLS):
