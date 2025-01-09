@@ -74,11 +74,11 @@ layers:
                 shifted: $$mdi:volume-medium$$,
             }
     Num:
-        - - ""
+        - - Back
           - Close Tab
           - Prev Tab
           - Next Tab
-          - Reopen Tab
+          - Fwd
           - { tap: "+", hold: "++" }
           - "1"
           - "2"
@@ -97,8 +97,8 @@ layers:
         - - Switch Win
           - Prev App
           - Next App
-          - Back
-          - Fwd
+          - Reopen Tab
+          - ""
           - "*"
           - "7"
           - "8"
