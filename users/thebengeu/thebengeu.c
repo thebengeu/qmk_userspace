@@ -61,15 +61,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    LSG(KC_T),      LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
+    G(KC_LBRC),     G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    G(KC_RBRC),     LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        G(KC_LBRC),      G(KC_RBRC),     LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        LSG(KC_T),       KC_NO,          LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_NW] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       S(C(KC_T)),     LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
+    A(KC_LEFT),     C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       A(KC_RIGHT),    LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        A(KC_LEFT),      A(KC_RIGHT),    LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        S(C(KC_T)),      KC_NO,          LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
