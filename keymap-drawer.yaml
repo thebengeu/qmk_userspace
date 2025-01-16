@@ -51,16 +51,16 @@ layers:
           - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: $$mdi:volume-high$$, hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: Mouse, type: held }
+        - - { tap: $$mdi:undo$$, type: held }
           - $$mdi:content-cut$$
           - $$mdi:content-copy$$
           - $$mdi:content-paste$$
-          - ""
+          - $$mdi:redo$$
           - $$mdi:skip-backward$$
           - Left Btn
           - Right Btn
           - Mid Btn
-          - $$mdi:skip-forward$$
+          - { tap: $$mdi:skip-forward$$, type: held }
         - - { tap: Wheel, hold: →, shifted: ← }
           - { tap: Mid Btn, type: held }
           - Left Btn
@@ -106,8 +106,8 @@ layers:
           - "/"
         - - { tap: Zoom, hold: In, shifted: Out }
           - $$mdi:keyboard-esc$$
-          - $$mdi:backspace-outline$$
-          - { tap: $$mdi:keyboard-return$$, type: held }
+          - { tap: $$mdi:backspace-outline$$, type: held }
+          - $$mdi:keyboard-return$$
           - { tap: "0", hold: Meh }
           - { tap: "-", hold: Sym }
           - ""
@@ -153,35 +153,35 @@ layers:
           - { tap: Page, hold: Down, shifted: Up }
     Fun:
         - - ""
-          - "F10"
-          - "F11"
-          - "F12"
+          - F10
+          - F11
+          - F12
           - Pause
-          - "Hue-"
-          - "F1"
-          - "F2"
-          - "F3"
-          - "Toggle RGB"
+          - Hue-
+          - F1
+          - F2
+          - F3
+          - Toggle RGB
         - - $$mdi:apple-keyboard-command$$
           - $$mdi:apple-keyboard-option$$
           - $$mdi:apple-keyboard-control$$
           - $$mdi:apple-keyboard-shift$$
-          - "Fn"
-          - "Sat-"
-          - "F4"
-          - "F5"
-          - "F6"
-          - "RGB Mode Fwd"
+          - Fn
+          - Sat-
+          - F4
+          - F5
+          - F6
+          - RGB Mode Fwd
         - - $$mdi:apple-keyboard-caps$$
           - Tap Term Print
           - Tap Term Down
           - Tap Term Up
           - Print Screen
-          - "Val-"
-          - "F7"
-          - "F8"
-          - "F9"
-          - { tap: "BL Step", type: held }
+          - Val-
+          - F7
+          - F8
+          - F9
+          - BL Step
         - - { hold: F2, shifted: F1 }
           - Boot
           - ""
@@ -212,17 +212,35 @@ combos:
     - key_positions: [34, 35]
       key: { tap: NW, hold: Hyper }
       layers: [Num]
+    - key_positions: [0, 10]
+      key: Btn 3
+      layers: [Base]
     - key_positions: [1, 11]
       key: "["
       layers: [Base]
+    - key_positions: [2, 12]
+      key: Btn 2
+      layers: [Base]
     - key_positions: [3, 13]
+      key: Btn 1
+      layers: [Base]
+    - key_positions: [4, 14]
       key: "]"
       layers: [Base]
-    - key_positions: [6, 16]
+    - key_positions: [5, 15]
       key: "["
+      layers: [Base]
+    - key_positions: [6, 16]
+      key: Btn 1
+      layers: [Base]
+    - key_positions: [7, 17]
+      key: Btn 2
       layers: [Base]
     - key_positions: [8, 18]
       key: "]"
+      layers: [Base]
+    - key_positions: [9, 19]
+      key: Btn 3
       layers: [Base]
     - key_positions: [13, 14]
       key: Alt Rep
