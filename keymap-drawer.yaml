@@ -21,7 +21,7 @@ layers:
           - M
           - { tap: ",", shifted: "<" }
           - { tap: ., shifted: ">", hold: ../ }
-          - { tap: /, shifted: "?", hold: Fun }
+          - { tap: /, shifted: "?", hold: Mouse }
         - - { tap: Wheel, hold: ↓, shifted: ↑ }
           - { tap: $$mdi:keyboard-esc$$, hold: Mouse }
           - { tap: $$mdi:backspace-outline$$, hold: Num }
@@ -51,15 +51,15 @@ layers:
           - { tap: ⌘5, hold: $$mdi:apple-keyboard-control$$ }
           - { tap: ⌘6, hold: $$mdi:apple-keyboard-option$$ }
           - { tap: $$mdi:volume-high$$, hold: $$mdi:apple-keyboard-command$$ }
-        - - { tap: $$mdi:undo$$, type: held }
+        - - { tap: Mouse, type: held }
           - $$mdi:content-cut$$
           - $$mdi:content-copy$$
           - $$mdi:content-paste$$
-          - $$mdi:redo$$
+          - ""
           - $$mdi:skip-backward$$
-          - ⌘7
-          - ⌘8
-          - ⌘9
+          - Left Btn
+          - Right Btn
+          - Mid Btn
           - $$mdi:skip-forward$$
         - - { tap: Wheel, hold: →, shifted: ← }
           - { tap: Mid Btn, type: held }

@@ -22,6 +22,7 @@ enum layers {
     _LSAG,
     _MNO,
     _HNO,
+    _KEYBALL,
 };
 
 enum {
@@ -33,13 +34,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAC] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_FUN,KC_SLSH),
+    LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MM,KC_SLSH),
                                     LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_NO
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
-    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_FUN,KC_SLSH),
+    LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MW,KC_SLSH),
                                     LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_NO
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
@@ -51,13 +52,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MM] = LAYOUT_split_3x5_3_custom(
     KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_NO,          KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
     KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
-    G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),         LSG(KC_Z),      KC_MPRV,           G(KC_7),          G(KC_8),        G(KC_9),        KC_MNXT,
+    OSL(_MM),       G(KC_X),        G(KC_C),        G(KC_V),         KC_NO,          KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_MW] = LAYOUT_split_3x5_3_custom(
     KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_NO,          KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
     KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
-    C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),         S(C(KC_Z)),     KC_MPRV,           C(KC_7),          C(KC_8),        C(KC_9),        KC_MNXT,
+    OSL(_MW),       C(KC_X),        C(KC_C),        C(KC_V),         KC_NO,          KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
@@ -88,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),       MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
     MEH(KC_A),      MEH(KC_S),      MEH(KC_D),      MEH(KC_F),       MEH(KC_G),      MEH(KC_H),         MEH(KC_J),        MEH(KC_K),      MEH(KC_L),      MEH(KC_QUOT),
     MEH(KC_Z),      MEH(KC_X),      MEH(KC_C),      MEH(KC_V),       MEH(KC_B),      MEH(KC_N),         MEH(KC_M),        MEH(KC_COMM),   MEH(KC_DOT),    MEH(KC_SLSH),
-                                    KC_NO,          OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
+                                    OSL(_KEYBALL),  OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
   ),
   [_HYPR] = LAYOUT_split_3x5_3_custom(
     HYPR(KC_Q),     HYPR(KC_W),     HYPR(KC_E),     HYPR(KC_R),      HYPR(KC_T),     HYPR(KC_Y),        HYPR(KC_U),       HYPR(KC_I),     HYPR(KC_O),     HYPR(KC_P),
@@ -119,7 +120,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KC_NO,
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
-  )
+  ),
+#ifdef KEYBALL_MODEL
+  [_KEYBALL] = LAYOUT_split_3x5_3_custom(
+    RGB_TOG,        AML_TO,         AML_I50,        AML_D50,         RGB_M_P,        RGB_M_B,           RGB_M_R,          RGB_M_SW,       RGB_M_SN,       RGB_M_K,
+    RGB_MOD,        RGB_HUI,        RGB_SAI,        RGB_VAI,         SCRL_DVI,       RGB_M_X,           RGB_M_G,          RGB_M_T,        RGB_M_TW,       KBC_RST,
+    RGB_RMOD,       RGB_HUD,        RGB_SAD,        RGB_VAD,         SCRL_DVD,       CPI_D1K,           CPI_D100,         CPI_I100,       CPI_I1K,        KBC_SAVE,
+                                    KC_NO,          SSNP_VRT,        SSNP_HOR,       KC_NO,             SSNP_FRE,         QK_BOOT
+  ),
+#endif
 };
 // clang-format on
 
@@ -172,11 +181,11 @@ void caps_word_set_user(bool active) {
     const bool is_win = detected_host_os() == OS_WINDOWS;
 
     if (active) {
-        set_single_default_layer(is_win ? _NW : _NM);
+        default_layer_set((layer_state_t)1 << (is_win ? _NW : _NM));
     } else {
         is_num_word_on = false;
 
-        set_single_default_layer(is_win ? _WIN : _MAC);
+        default_layer_set((layer_state_t)1 << (is_win ? _WIN : _MAC));
         set_oneshot_layer(is_win ? _NW : _NM, ONESHOT_START);
         clear_oneshot_layer_state(ONESHOT_PRESSED);
     }
@@ -550,6 +559,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case ALT_T(KC_L):
         case LT(_MM, KC_Z):
         case LT(_MW, KC_Z):
+        case LT(_MM, KC_SLSH):
+        case LT(_MW, KC_SLSH):
         case LT(_SYM, KC_SPC):
         case LT(_MNO, KC_0):
             return false;
@@ -574,6 +585,9 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case GUI_T(KC_A):
+        case GUI_T(KC_QUOT):
+            return g_tapping_term + 25;
         case LT(0, KC_AMPR):
         case LT(0, KC_AT):
         case LT(0, KC_BSLS):
@@ -676,26 +690,26 @@ tap_dance_action_t tap_dance_actions[] = {
 
 bool process_detected_host_os_user(os_variant_t detected_os) {
     if (detected_os == OS_WINDOWS) {
-        set_single_default_layer(_WIN);
+        default_layer_set((layer_state_t)1 << _WIN);
     }
 
     return true;
 }
 
-#ifdef OLED_ENABLE
-oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    return is_keyboard_left() ? OLED_ROTATION_0 : rotation;
-}
-
-bool oled_task_user(void) {
-    if (is_oled_on() && last_input_activity_elapsed() > OLED_TIMEOUT) {
-        oled_off();
-    }
-
-    return false;
-}
-
-void suspend_power_down_user(void) {
-    oled_off();
-}
-#endif
+// #ifdef OLED_ENABLE
+// oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+//     return is_keyboard_left() ? OLED_ROTATION_0 : rotation;
+// }
+//
+// bool oled_task_user(void) {
+//     if (is_oled_on() && last_input_activity_elapsed() > OLED_TIMEOUT) {
+//         oled_off();
+//     }
+//
+//     return false;
+// }
+//
+// void suspend_power_down_user(void) {
+//     oled_off();
+// }
+// #endif
