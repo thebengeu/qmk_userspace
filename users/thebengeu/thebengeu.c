@@ -10,6 +10,27 @@ enum {
     DLR_TD,
 };
 
+#ifndef KEYBALL_MODEL
+enum keyball_keycodes {
+    KBC_RST  = QK_KB_0,
+    KBC_SAVE = QK_KB_1,
+    CPI_I100 = QK_KB_2,
+    CPI_D100 = QK_KB_3,
+    CPI_I1K  = QK_KB_4,
+    CPI_D1K  = QK_KB_5,
+    SCRL_TO  = QK_KB_6,
+    SCRL_MO  = QK_KB_7,
+    SCRL_DVI = QK_KB_8,
+    SCRL_DVD = QK_KB_9,
+    SSNP_VRT = QK_KB_13,
+    SSNP_HOR = QK_KB_14,
+    SSNP_FRE = QK_KB_15,
+    AML_TO   = QK_KB_10,
+    AML_I50  = QK_KB_11,
+    AML_D50  = QK_KB_12,
+};
+#endif
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAC] = LAYOUT_split_3x5_3_custom(
