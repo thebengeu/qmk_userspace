@@ -6,25 +6,6 @@
 
 #include "thebengeu.h"
 
-enum layers {
-    _MAC,
-    _AUTO,
-    _WIN,
-    _S,
-    _MM,
-    _MW,
-    _NM,
-    _NW,
-    _SYM,
-    _FUN,
-    _MEH,
-    _HYPR,
-    _LCSG,
-    _MNO,
-    _HNO,
-    _KEYBALL,
-};
-
 enum {
     DLR_TD,
 };
