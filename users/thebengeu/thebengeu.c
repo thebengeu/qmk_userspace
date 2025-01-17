@@ -134,6 +134,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+uint8_t combo_ref_from_layer(uint8_t layer) {
+    return get_highest_layer(layer_state) == _AUTO ? _MAC : layer;
+}
+
 const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
