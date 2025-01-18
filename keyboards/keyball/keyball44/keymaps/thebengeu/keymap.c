@@ -1,9 +1,25 @@
 #include QMK_KEYBOARD_H
 #include "thebengeu.h"
 
+static uint8_t previous_cpi = 0;
+
 layer_state_t layer_state_set_user(layer_state_t state) {
     int highest_layer = get_highest_layer(state);
-    keyball_set_scroll_mode(highest_layer == _NM || highest_layer == _NW);
+
+    keyball_set_scrollsnap_mode(highest_layer == _FUN ? KEYBALL_SCROLLSNAP_MODE_FREE : KEYBALL_SCROLLSNAP_MODE_VERTICAL);
+    keyball_set_scroll_mode(highest_layer == _FUN || highest_layer == _NM || highest_layer == _NW);
+
+    if (highest_layer == _S) {
+        previous_cpi = keyball_get_cpi();
+        keyball_set_cpi(2);
+    } else if (highest_layer == _SYM) {
+        previous_cpi = keyball_get_cpi();
+        keyball_set_cpi(120);
+    } else if (previous_cpi) {
+        keyball_set_cpi(previous_cpi);
+        previous_cpi = 0;
+    }
+
     return state;
 }
 
