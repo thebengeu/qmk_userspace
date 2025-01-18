@@ -17,6 +17,7 @@ enum keyball_keycodes {
     CPI_D100 = QK_KB_3,
     CPI_I1K  = QK_KB_4,
     CPI_D1K  = QK_KB_5,
+    SCRL_TO  = QK_KB_6,
 };
 #endif
 
@@ -130,6 +131,10 @@ const uint16_t PROGMEM combos_ik[]                   = {KC_I, CTL_T(KC_K), COMBO
 const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
+const uint16_t PROGMEM combos_fv[]                   = {SFT_T(KC_F), KC_V, COMBO_END};
+const uint16_t PROGMEM combos_gb[]                   = {RCTL_T(KC_G), KC_B, COMBO_END};
+const uint16_t PROGMEM combos_hn[]                   = {RCTL_T(KC_H), KC_N, COMBO_END};
+const uint16_t PROGMEM combos_jm[]                   = {SFT_T(KC_J), KC_M, COMBO_END};
 
 // clang-format off
 combo_t key_combos[] = {
@@ -153,6 +158,10 @@ combo_t key_combos[] = {
     COMBO(combos_ol, KC_RBRC),
     COMBO(combos_fg, QK_AREP),
     COMBO(combos_hj, QK_REP),
+    COMBO(combos_fv, KC_WH_U),
+    COMBO(combos_gb, SCRL_TO),
+    COMBO(combos_hn, SCRL_TO),
+    COMBO(combos_jm, KC_WH_D),
 };
 // clang-format on
 
