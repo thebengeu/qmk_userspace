@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     UG_TOGG,        RGB_M_P,        RGB_M_B,        RGB_M_R,         RGB_M_SW,       RGB_M_SN,          MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      RGB_M_K,
     UG_NEXT,        UG_HUEU,        UG_SATU,        UG_VALU,         UG_SPDU,        RGB_M_X,           MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      RGB_M_G,
     UG_PREV,        UG_HUED,        UG_SATD,        UG_VALD,         UG_SPDD,        RGB_M_T,           MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      RGB_M_TW,
-                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
+                                    VK_TOGG,        KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_HNO] = LAYOUT_split_3x5_3_custom(
     RM_TOGG,        CPI_D1K,        CPI_D100,       CPI_I100,        CPI_I1K,        KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
