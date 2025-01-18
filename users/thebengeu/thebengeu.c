@@ -28,12 +28,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MM,KC_SLSH),
                                     LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_BTN3
   ),
-  [_AUTO] = LAYOUT_split_3x5_3_custom(
-    KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,         KC_TRNS,        KC_TRNS,           KC_TRNS,          KC_TRNS,        KC_TRNS,        KC_TRNS,
-    KC_TRNS,        KC_BTN3,        KC_BTN2,        KC_BTN1,         KC_TRNS,        KC_TRNS,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_TRNS,
-    KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,         KC_TRNS,        KC_TRNS,           KC_TRNS,          KC_TRNS,        KC_TRNS,        KC_TRNS,
-                                    KC_TRNS,        KC_TRNS,         KC_TRNS,        KC_TRNS,           KC_TRNS,          KC_TRNS
-  ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
@@ -114,10 +108,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 // clang-format on
-
-uint8_t combo_ref_from_layer(uint8_t layer) {
-    return get_highest_layer(layer_state) == _AUTO ? _MAC : layer;
-}
 
 const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
