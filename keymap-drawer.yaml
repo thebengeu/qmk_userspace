@@ -28,7 +28,7 @@ layers:
           - { tap: $$mdi:keyboard-return$$, hold: Shift }
           - { tap: $$mdi:keyboard-tab$$, hold: Meh }
           - { tap: $$mdi:keyboard-space$$, hold: Sym }
-          - ""
+          - Btn 3
           - { tap: Tab, hold: Next, shifted: Prev }
     Mouse:
         - - "Wheel ↑"
@@ -212,11 +212,8 @@ combos:
     - key_positions: [34, 35]
       key: { tap: NW, hold: Hyper }
       layers: [Num]
-    - key_positions: [0, 10]
-      key: Btn 3
-      layers: [Base]
     - key_positions: [1, 11]
-      key: "["
+      key: Btn 3
       layers: [Base]
     - key_positions: [2, 12]
       key: Btn 2
@@ -224,23 +221,14 @@ combos:
     - key_positions: [3, 13]
       key: Btn 1
       layers: [Base]
-    - key_positions: [4, 14]
-      key: "]"
-      layers: [Base]
-    - key_positions: [5, 15]
-      key: "["
-      layers: [Base]
     - key_positions: [6, 16]
-      key: Btn 1
+      key: "-"
       layers: [Base]
     - key_positions: [7, 17]
-      key: Btn 2
+      key: "["
       layers: [Base]
     - key_positions: [8, 18]
       key: "]"
-      layers: [Base]
-    - key_positions: [9, 19]
-      key: Btn 3
       layers: [Base]
     - key_positions: [13, 14]
       key: Alt Rep

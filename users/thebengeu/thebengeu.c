@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MM,KC_SLSH),
-                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_NO
+                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_BTN3
   ),
   [_AUTO] = LAYOUT_split_3x5_3_custom(
     KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,         KC_TRNS,        KC_TRNS,           KC_TRNS,          KC_TRNS,        KC_TRNS,        KC_TRNS,
@@ -49,12 +49,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MW,KC_SLSH),
-                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT),  LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_NO
+                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT),  LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN3
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
     S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),         S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
-    S(KC_A),        S(KC_S),        S(KC_D),        S(KC_F),         S(KC_G),        S(KC_H),           S(KC_J),          S(KC_K),        S(KC_L),        S(KC_QUOT),
-    S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),         S(KC_B),        S(KC_N),           S(KC_M),          S(KC_COMM),     S(KC_DOT),      S(KC_SLSH),
+    S(KC_A),        S(KC_S),        S(KC_D),        S(KC_F),         S(KC_G),        S(KC_H),           S(KC_J),          S(KC_K),        S(KC_L),        KC_DQUO,
+    S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),         S(KC_B),        S(KC_N),           S(KC_M),          KC_LT,          KC_GT,          KC_QUES,
                                     KC_NO,          KC_NO,           KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,           KC_NO
   ),
   [_MM] = LAYOUT_split_3x5_3_custom(
@@ -126,9 +126,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef KEYBALL_MODEL
   [_KEYBALL] = LAYOUT_split_3x5_3_custom(
     RGB_TOG,        AML_TO,         AML_I50,        AML_D50,         RGB_M_P,        RGB_M_B,           RGB_M_R,          RGB_M_SW,       RGB_M_SN,       RGB_M_K,
-    RGB_MOD,        RGB_HUI,        RGB_SAI,        RGB_VAI,         SCRL_DVI,       RGB_M_X,           RGB_M_G,          RGB_M_T,        RGB_M_TW,       KBC_RST,
+    RGB_MOD,        RGB_HUI,        RGB_SAI,        RGB_VAI,         SCRL_DVI,       RGB_M_X,           RGB_M_G,          RGB_M_T,        RGB_M_TW,       KC_NO,
     RGB_RMOD,       RGB_HUD,        RGB_SAD,        RGB_VAD,         SCRL_DVD,       CPI_D1K,           CPI_D100,         CPI_I100,       CPI_I1K,        KBC_SAVE,
-                                    KC_NO,          SSNP_VRT,        SSNP_HOR,       KC_NO,             SSNP_FRE,         QK_BOOT
+                                    KC_NO,          SSNP_VRT,        SSNP_HOR,       KC_NO,             SSNP_FRE,         KBC_RST
   ),
 #endif
 };
@@ -143,23 +143,20 @@ const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_NW,
 const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_NW, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_hno[]         = {LT(_NM, KC_BSPC), LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_hno[]         = {LT(_NW, KC_BSPC), LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_s_right[]         = {LT(_LCSG, KC_UNDS), QK_REP, COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_right[]       = {LT(_MNO, KC_0), LT(_SYM, KC_MINS), COMBO_END};
-const uint16_t PROGMEM thumbcombos_sym_left_left[]   = {KC_DEL, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM combos_qa[]                   = {LT(_SYM, KC_Q), GUI_T(KC_A), COMBO_END};
 const uint16_t PROGMEM combos_ws[]                   = {KC_W, ALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM combos_ed[]                   = {KC_E, CTL_T(KC_D), COMBO_END};
 const uint16_t PROGMEM combos_rf[]                   = {KC_R, SFT_T(KC_F), COMBO_END};
-const uint16_t PROGMEM combos_tg[]                   = {KC_T, RCTL_T(KC_G), COMBO_END};
-const uint16_t PROGMEM combos_yh[]                   = {KC_Y, RCTL_T(KC_H), COMBO_END};
 const uint16_t PROGMEM combos_uj[]                   = {KC_U, SFT_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combos_ik[]                   = {KC_I, CTL_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO_END};
-const uint16_t PROGMEM combos_pquot_m[]              = {LT(_NM, KC_P), GUI_T(KC_QUOT), COMBO_END};
-const uint16_t PROGMEM combos_pquot_w[]              = {LT(_NW, KC_P), GUI_T(KC_QUOT), COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
 
@@ -175,17 +172,14 @@ combo_t key_combos[] = {
     COMBO(thumbcombos_num_left_left, KC_TAB),
     COMBO(thumbcombos_num_left_right, KC_SPC),
     COMBO(thumbcombos_num_right, LT(_HNO, NW_TOGG)),
-    COMBO(combos_qa, KC_BTN3),
-    COMBO(combos_ws, KC_LBRC),
+    COMBO(thumbcombos_mac_hno, LT(_HNO, NW_TOGG)),
+    COMBO(thumbcombos_win_hno, LT(_HNO, NW_TOGG)),
+    COMBO(combos_ws, KC_BTN3),
     COMBO(combos_ed, KC_BTN2),
     COMBO(combos_rf, KC_BTN1),
-    COMBO(combos_tg, KC_RBRC),
-    COMBO(combos_yh, KC_LBRC),
-    COMBO(combos_uj, KC_BTN1),
-    COMBO(combos_ik, KC_BTN2),
+    COMBO(combos_uj, KC_MINS),
+    COMBO(combos_ik, KC_LBRC),
     COMBO(combos_ol, KC_RBRC),
-    COMBO(combos_pquot_m, KC_BTN3),
-    COMBO(combos_pquot_w, KC_BTN3),
     COMBO(combos_fg, QK_AREP),
     COMBO(combos_hj, QK_REP),
 };
