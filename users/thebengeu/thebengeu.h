@@ -9,14 +9,10 @@ enum custom_keycodes {
     GUI_5,
     GUI_6,
     GUI_TAB,
-    LLOCK,
-    NW_COLN,
-    NW_DLR,
     NW_TOGG,
-    RCBR,
     SHIFT_ALT_TAB,
     SHIFT_GUI_TAB,
-    UNDS,
+    SSNP_TOGG,
 };
 
 enum layers {
@@ -35,7 +31,6 @@ enum layers {
     _LCSG,
     _MNO,
     _HNO,
-    _KEYBALL,
 };
 
 #define LCSG(kc) (QK_LCTL | QK_LSFT | QK_LGUI | (kc))

@@ -12,22 +12,11 @@ enum {
 
 #ifndef KEYBALL_MODEL
 enum keyball_keycodes {
-    KBC_RST  = QK_KB_0,
     KBC_SAVE = QK_KB_1,
     CPI_I100 = QK_KB_2,
     CPI_D100 = QK_KB_3,
     CPI_I1K  = QK_KB_4,
     CPI_D1K  = QK_KB_5,
-    SCRL_TO  = QK_KB_6,
-    SCRL_MO  = QK_KB_7,
-    SCRL_DVI = QK_KB_8,
-    SCRL_DVD = QK_KB_9,
-    SSNP_VRT = QK_KB_13,
-    SSNP_HOR = QK_KB_14,
-    SSNP_FRE = QK_KB_15,
-    AML_TO   = QK_KB_10,
-    AML_I50  = QK_KB_11,
-    AML_D50  = QK_KB_12,
 };
 #endif
 
@@ -72,13 +61,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NM] = LAYOUT_split_3x5_3_custom(
     G(KC_LBRC),     G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    G(KC_RBRC),     LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        LSG(KC_T),       KC_NO,          LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+    G(KC_GRV),      SHIFT_GUI_TAB,  GUI_TAB,        LSG(KC_T),       SSNP_TOGG,      LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_NW] = LAYOUT_split_3x5_3_custom(
     A(KC_LEFT),     C(KC_W),        S(C(KC_TAB)),   C(KC_TAB),       A(KC_RIGHT),    LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
     GUI_T(KC_TILD), ALT_T(KC_CIRC), CTL_T(KC_PERC), TD(DLR_TD),      LT(0,KC_BSLS),  LT(0,KC_EQL),      KC_4,             KC_5,           KC_6,           KC_COLN,
-    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        S(C(KC_T)),      KC_NO,          LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
+    A(KC_ESC),      SHIFT_ALT_TAB,  ALT_TAB,        S(C(KC_T)),      SSNP_TOGG,      LT(0,KC_ASTR),     KC_7,             KC_8,           KC_9,           LT(0,KC_SLSH),
                                     KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), KC_NO
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
@@ -97,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),       MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
     MEH(KC_A),      MEH(KC_S),      MEH(KC_D),      MEH(KC_F),       MEH(KC_G),      MEH(KC_H),         MEH(KC_J),        MEH(KC_K),      MEH(KC_L),      MEH(KC_QUOT),
     MEH(KC_Z),      MEH(KC_X),      MEH(KC_C),      MEH(KC_V),       MEH(KC_B),      MEH(KC_N),         MEH(KC_M),        MEH(KC_COMM),   MEH(KC_DOT),    MEH(KC_SLSH),
-                                    OSL(_KEYBALL),  OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
+                                    KC_NO,          OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
   ),
   [_HYPR] = LAYOUT_split_3x5_3_custom(
     HYPR(KC_Q),     HYPR(KC_W),     HYPR(KC_E),     HYPR(KC_R),      HYPR(KC_T),     HYPR(KC_Y),        HYPR(KC_U),       HYPR(KC_I),     HYPR(KC_O),     HYPR(KC_P),
@@ -112,25 +101,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_MNO] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      KC_NO,
+    UG_TOGG,        RGB_M_P,        RGB_M_B,        RGB_M_R,         RGB_M_SW,       RGB_M_SN,          MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      RGB_M_K,
+    UG_NEXT,        UG_HUEU,        UG_SATU,        UG_VALU,         UG_SPDU,        RGB_M_X,           MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      RGB_M_G,
+    UG_PREV,        UG_HUED,        UG_SATD,        UG_VALD,         UG_SPDD,        RGB_M_T,           MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      RGB_M_TW,
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_HNO] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,           KC_NO,          KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KC_NO,
+    RM_TOGG,        CPI_D1K,        CPI_D100,       CPI_I100,        CPI_I1K,        KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
+    RM_NEXT,        RM_HUEU,        RM_SATU,        RM_VALU,         RM_SPDU,        KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
+    RM_PREV,        RM_HUED,        RM_SATD,        RM_VALD,         RM_SPDD,        KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KBC_SAVE,
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
-#ifdef KEYBALL_MODEL
-  [_KEYBALL] = LAYOUT_split_3x5_3_custom(
-    RGB_TOG,        AML_TO,         AML_I50,        AML_D50,         RGB_M_P,        RGB_M_B,           RGB_M_R,          RGB_M_SW,       RGB_M_SN,       RGB_M_K,
-    RGB_MOD,        RGB_HUI,        RGB_SAI,        RGB_VAI,         SCRL_DVI,       RGB_M_X,           RGB_M_G,          RGB_M_T,        RGB_M_TW,       KC_NO,
-    RGB_RMOD,       RGB_HUD,        RGB_SAD,        RGB_VAD,         SCRL_DVD,       CPI_D1K,           CPI_D100,         CPI_I100,       CPI_I1K,        KBC_SAVE,
-                                    KC_NO,          SSNP_VRT,        SSNP_HOR,       KC_NO,             SSNP_FRE,         KBC_RST
-  ),
-#endif
 };
 // clang-format on
 
@@ -397,6 +378,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case LT(_HNO, NW_TOGG):
                 is_num_word_on = true;
                 caps_word_toggle();
+                return false;
+            case SSNP_TOGG:
+                keyball_set_scrollsnap_mode(keyball_get_scrollsnap_mode() == KEYBALL_SCROLLSNAP_MODE_FREE ? KEYBALL_SCROLLSNAP_MODE_VERTICAL : KEYBALL_SCROLLSNAP_MODE_FREE);
                 return false;
             case GUI_T(KC_TILD):
                 tap_code16_caps_word(KC_TILD);
