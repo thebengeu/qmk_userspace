@@ -108,6 +108,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
 };
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0] = {ENCODER_CCW_CW(KC_WH_U, KC_WH_D), ENCODER_CCW_CW(LSG(KC_LBRC),   LSG(KC_RBRC))},
+    [1] = {ENCODER_CCW_CW(KC_WH_U, KC_WH_D), ENCODER_CCW_CW(S(C(KC_TAB)), C(KC_TAB))},
+    [2] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(QK_AREP, QK_REP)},
+    [3] = {ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [4] = {ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [5] = {ENCODER_CCW_CW(G(KC_MINS), G(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
+    [6] = {ENCODER_CCW_CW(C(KC_MINS), C(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
+    [7] = {ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN)},
+    [8] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_F1, KC_F2)},
+    [9] = {ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [10] = {ENCODER_CCW_CW(S(KC_H), S(KC_L)), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [11] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [12] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [13] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+};
+#endif
 // clang-format on
 
 const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
@@ -378,9 +397,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 is_num_word_on = true;
                 caps_word_toggle();
                 return false;
+#ifdef KEYBALL_MODEL
             case SSNP_TOGG:
                 keyball_set_scrollsnap_mode(keyball_get_scrollsnap_mode() == KEYBALL_SCROLLSNAP_MODE_FREE ? KEYBALL_SCROLLSNAP_MODE_VERTICAL : KEYBALL_SCROLLSNAP_MODE_FREE);
                 return false;
+#endif
             case GUI_T(KC_TILD):
                 tap_code16_caps_word(KC_TILD);
                 return false;
