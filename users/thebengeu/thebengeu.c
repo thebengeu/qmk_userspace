@@ -628,6 +628,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+#ifdef TAP_DANCE_ENABLE
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,
@@ -706,6 +707,7 @@ void dlr_reset(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [DLR_TD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dlr_finished, dlr_reset),
 };
+#endif
 
 bool process_detected_host_os_user(os_variant_t detected_os) {
     if (detected_os == OS_WINDOWS) {
