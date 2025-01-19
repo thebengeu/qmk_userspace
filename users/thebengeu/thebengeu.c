@@ -154,6 +154,9 @@ const uint16_t PROGMEM combos_fv[]                   = {SFT_T(KC_F), KC_V, COMBO
 const uint16_t PROGMEM combos_gb[]                   = {RCTL_T(KC_G), KC_B, COMBO_END};
 const uint16_t PROGMEM combos_hn[]                   = {RCTL_T(KC_H), KC_N, COMBO_END};
 const uint16_t PROGMEM combos_jm[]                   = {SFT_T(KC_J), KC_M, COMBO_END};
+const uint16_t PROGMEM combos_s_ws[]                 = {S(KC_W), S(KC_S), COMBO_END};
+const uint16_t PROGMEM combos_s_ed[]                 = {S(KC_E), S(KC_D), COMBO_END};
+const uint16_t PROGMEM combos_s_rf[]                 = {S(KC_R), S(KC_F), COMBO_END};
 
 // clang-format off
 combo_t key_combos[] = {
@@ -181,6 +184,9 @@ combo_t key_combos[] = {
     COMBO(combos_gb, SCRL_TO),
     COMBO(combos_hn, SCRL_TO),
     COMBO(combos_jm, KC_WH_D),
+    COMBO(combos_s_ws, KC_BTN3),
+    COMBO(combos_s_ed, KC_BTN2),
+    COMBO(combos_s_rf, KC_BTN1),
 };
 // clang-format on
 
