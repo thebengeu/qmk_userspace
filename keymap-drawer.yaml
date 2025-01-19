@@ -35,7 +35,7 @@ layers:
           - "Wheel ←"
           - "Mouse ↑"
           - "Wheel →"
-          - Boot
+          - ""
           - $$mdi:volume-low$$
           - ⌘1
           - ⌘2
@@ -110,7 +110,7 @@ layers:
           - $$mdi:keyboard-return$$
           - { tap: "0", hold: Meh }
           - { tap: "-", hold: Sym }
-          - ""
+          - Boot
           - { hold: Redo, shifted: Undo }
     Sym:
         - - { type: held }
