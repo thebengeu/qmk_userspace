@@ -581,6 +581,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
+        case GUI_T(KC_QUOT):
         case LT(_MM, KC_Z):
         case LT(_MW, KC_Z):
         case LT(0, KC_DOT):
@@ -610,9 +611,6 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case GUI_T(KC_A):
-        case GUI_T(KC_QUOT):
-            return g_tapping_term + 25;
         case LT(0, KC_AMPR):
         case LT(0, KC_AT):
         case LT(0, KC_BSLS):
