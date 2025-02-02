@@ -584,6 +584,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case GUI_T(KC_QUOT):
         case LT(_MM, KC_Z):
         case LT(_MW, KC_Z):
+        case LT(0, KC_COMM):
         case LT(0, KC_DOT):
         case LT(_MM, KC_SLSH):
         case LT(_MW, KC_SLSH):
