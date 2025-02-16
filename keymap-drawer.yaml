@@ -117,8 +117,8 @@ layers:
           - { tap: "&", hold: "&&" }
           - $$mdi:arrow-up$$
           - { tap: "|", hold: "||" }
-          - ""
-          - ""
+          - Alt Rep
+          - Rep
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
