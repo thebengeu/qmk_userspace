@@ -35,7 +35,7 @@ layers:
           - "Wheel ←"
           - "Mouse ↑"
           - "Wheel →"
-          - ""
+          - $$mdi:apple-keyboard-caps$$
           - $$mdi:volume-low$$
           - ⌘1
           - ⌘2
@@ -172,7 +172,7 @@ layers:
           - F5
           - F6
           - ""
-        - - $$mdi:apple-keyboard-caps$$
+        - - ""
           - Tap Term Print
           - Tap Term Down
           - Tap Term Up
