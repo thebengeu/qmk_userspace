@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MM,KC_SLSH),
-                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT), LT(_MEH,KC_TAB),    LT(_SYM,KC_SPC),  KC_BTN2
+                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT),  LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
@@ -567,6 +567,50 @@ void matrix_scan_user(void) {
     }
 }
 
+bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+    switch (tap_hold_keycode) {
+        case GUI_T(KC_A):
+        case LT(_MM, KC_Z):
+        case LT(_MW, KC_Z):
+            switch (other_keycode) {
+                case KC_C:
+                case KC_V:
+                case KC_X:
+                    return true;
+            }
+            break;
+        case CTL_T(KC_K):
+            switch (other_keycode) {
+                case LT(_SYM, KC_SPC):
+                    return true;
+            }
+        case SFT_T(KC_J):
+            switch (other_keycode) {
+                case LT(_MEH, KC_TAB):
+                    return true;
+            }
+            break;
+        case ALT_T(KC_L):
+            switch (other_keycode) {
+                case LT(_MEH, KC_TAB):
+                case LT(_SYM, KC_SPC):
+                    return true;
+            }
+            break;
+        case GUI_T(KC_QUOT):
+            switch (other_keycode) {
+                case RCTL_T(KC_H):
+                case ALT_T(KC_L):
+                case LT(_MEH, KC_TAB):
+                case LT(_SYM, KC_SPC):
+                    return true;
+            }
+            break;
+    }
+
+    return get_chordal_hold_default(tap_hold_record, other_record);
+}
+
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_SYM, KC_Q):
@@ -575,10 +619,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case GUI_T(KC_A):
         case ALT_T(KC_S):
         case CTL_T(KC_D):
-        case SFT_T(KC_F):
         case RCTL_T(KC_G):
         case RCTL_T(KC_H):
-        case SFT_T(KC_J):
         case CTL_T(KC_K):
         case ALT_T(KC_L):
         case GUI_T(KC_QUOT):
