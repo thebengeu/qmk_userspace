@@ -27,13 +27,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NM,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MM,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MM,KC_SLSH),
-                                    LT(_MM,KC_ESC), LT(_NM,KC_BSPC), LT(_S,KC_ENT),  LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
+                                    LT(_FUN,KC_ESC),LT(_NM,KC_BSPC), LT(_MM,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
   ),
   [_WIN] = LAYOUT_split_3x5_3_custom(
     LT(_SYM,KC_Q),  KC_W,           KC_E,           KC_R,            KC_T,           KC_Y,              KC_U,             KC_I,           KC_O,           LT(_NW,KC_P),
     GUI_T(KC_A),    ALT_T(KC_S),    CTL_T(KC_D),    SFT_T(KC_F),     RCTL_T(KC_G),   RCTL_T(KC_H),      SFT_T(KC_J),      CTL_T(KC_K),    ALT_T(KC_L),    GUI_T(KC_QUOT),
     LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MW,KC_SLSH),
-                                    LT(_MW,KC_ESC), LT(_NW,KC_BSPC), LT(_S,KC_ENT),  LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
+                                    LT(_FUN,KC_ESC),LT(_NW,KC_BSPC), LT(_MW,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
   ),
   [_S] = LAYOUT_split_3x5_3_custom(
     S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),         S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
@@ -42,14 +42,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_NO,          KC_NO,           KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,           KC_NO
   ),
   [_MM] = LAYOUT_split_3x5_3_custom(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_CAPS,        KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
+    G(KC_Q),        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_WH_U,        KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
+    G(KC_A),        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_WH_D,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
     G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),         LSG(KC_Z),      KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
   [_MW] = LAYOUT_split_3x5_3_custom(
-    KC_WH_U,        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_CAPS,        KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
-    KC_WH_D,        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_RCTL,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
+    A(KC_F4),       KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_WH_U,        KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
+    C(KC_A),        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_WH_D,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
     C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),         S(C(KC_Z)),     KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
                                     KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
   ),
@@ -73,9 +73,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
     DF(_WIN),       KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
-    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    KC_NO,          DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
-                                    KC_NO,          DF(_MAC),        KC_P1,          QK_REP,            QK_AREP,          KC_NO
+    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   KC_RCTL,        RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
+    KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+                                    KC_NO,          DF(_MAC),        KC_P1,          QK_AREP,           QK_REP,           KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),       MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
@@ -129,9 +129,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 #endif
 // clang-format on
 
-const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_MM, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_MW, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_FUN, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_FUN, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_MM, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_NW, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_mac_hno[]         = {LT(_NM, KC_BSPC), LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
@@ -162,8 +162,8 @@ const uint16_t PROGMEM combos_s_rf[]                 = {S(KC_R), S(KC_F), COMBO_
 combo_t key_combos[] = {
     COMBO(thumbcombos_mac_left_left, GUI_T(NW_TOGG)),
     COMBO(thumbcombos_win_left_left, CTL_T(NW_TOGG)),
-    COMBO(thumbcombos_mac_left_right, LT(_FUN, CW_TOGG)),
-    COMBO(thumbcombos_win_left_right, LT(_FUN, CW_TOGG)),
+    COMBO(thumbcombos_mac_left_right, LT(_LCSG, CW_TOGG)),
+    COMBO(thumbcombos_win_left_right, LT(_LCSG, CW_TOGG)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_UNDS)),
     COMBO(thumbcombos_s_right, QK_AREP),
     COMBO(thumbcombos_ms_right, KC_BTN3),
@@ -456,7 +456,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case ALT_T(CTL_6):
                 tap_code16_caps_word(C(KC_6));
                 return false;
-            case LT(_FUN, CW_TOGG):
+            case LT(_LCSG, CW_TOGG):
                 caps_word_toggle();
                 return false;
             case LT(_MEH, KC_TAB):
@@ -579,17 +579,17 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
                     return true;
             }
             break;
-        case CTL_T(KC_K):
-            switch (other_keycode) {
-                case LT(_SYM, KC_SPC):
-                    return true;
-            }
         case SFT_T(KC_J):
             switch (other_keycode) {
                 case LT(_MEH, KC_TAB):
                     return true;
             }
             break;
+        case CTL_T(KC_K):
+            switch (other_keycode) {
+                case LT(_SYM, KC_SPC):
+                    return true;
+            }
         case ALT_T(KC_L):
             switch (other_keycode) {
                 case LT(_MEH, KC_TAB):
@@ -606,6 +606,14 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
                     return true;
             }
             break;
+        case LT(_FUN, KC_ESC):
+        case LT(_MEH, KC_TAB):
+        case LT(_MM, KC_ENT):
+        case LT(_MW, KC_ENT):
+        case LT(_NM, KC_BSPC):
+        case LT(_NW, KC_BSPC):
+        case LT(_SYM, KC_SPC):
+            return true;
     }
 
     return get_chordal_hold_default(tap_hold_record, other_record);
