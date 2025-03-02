@@ -45,13 +45,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     G(KC_Q),        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_WH_U,        KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
     G(KC_A),        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_WH_D,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
     G(KC_Z),        G(KC_X),        G(KC_C),        G(KC_V),         LSG(KC_Z),      KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
-                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
+                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          QK_LLCK
   ),
   [_MW] = LAYOUT_split_3x5_3_custom(
     A(KC_F4),       KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_WH_U,        KC_MUTE,           C(KC_1),          C(KC_2),        C(KC_3),        KC_MPLY,
     C(KC_A),        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_WH_D,        RCTL_T(KC_VOLD),   SFT_T(CTL_4),     CTL_T(CTL_5),   ALT_T(CTL_6),   GUI_T(KC_VOLU),
     C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),         S(C(KC_Z)),     KC_MPRV,           KC_BTN1,          KC_BTN2,        KC_BTN3,        KC_MNXT,
-                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          KC_NO
+                                    KC_BTN3,        KC_BTN1,         KC_BTN2,        KC_BTN2,           KC_BTN1,          QK_LLCK
   ),
   [_NM] = LAYOUT_split_3x5_3_custom(
     G(KC_LBRC),     G(KC_W),        LSG(KC_LBRC),   LSG(KC_RBRC),    G(KC_RBRC),     LT(1,KC_PLUS),     KC_1,             KC_2,           KC_3,           KC_DOT,
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),   QK_AREP,        QK_REP,            LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
     LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,        LT(2,KC_EQL),   RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),   CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,         KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),    LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
-                                    KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            KC_NO
+                                    KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            QK_LLCK
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
     DF(_WIN),       KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,

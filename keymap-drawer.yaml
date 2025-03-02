@@ -67,7 +67,7 @@ layers:
           - { tap: Right Btn, type: held }
           - Right Btn
           - Left Btn
-          - ""
+          - Layer Lock
           - {
                 tap: Vol,
                 hold: $$mdi:volume-high$$,
@@ -149,7 +149,7 @@ layers:
           - $$mdi:keyboard-return$$
           - ""
           - { type: held }
-          - ""
+          - Layer Lock
           - { tap: Page, hold: Down, shifted: Up }
     Fun:
         - - ""
