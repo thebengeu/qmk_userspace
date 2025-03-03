@@ -149,6 +149,8 @@ const uint16_t PROGMEM combos_ik[]                   = {KC_I, CTL_T(KC_K), COMBO
 const uint16_t PROGMEM combos_ol[]                   = {KC_O, ALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combos_fg[]                   = {SFT_T(KC_F), RCTL_T(KC_G), COMBO_END};
 const uint16_t PROGMEM combos_hj[]                   = {RCTL_T(KC_H), SFT_T(KC_J), COMBO_END};
+const uint16_t PROGMEM combos_sx[]                   = {ALT_T(KC_S), KC_X, COMBO_END};
+const uint16_t PROGMEM combos_dc[]                   = {CTL_T(KC_D), KC_C, COMBO_END};
 const uint16_t PROGMEM combos_fv[]                   = {SFT_T(KC_F), KC_V, COMBO_END};
 const uint16_t PROGMEM combos_gb[]                   = {RCTL_T(KC_G), KC_B, COMBO_END};
 const uint16_t PROGMEM combos_hn[]                   = {RCTL_T(KC_H), KC_N, COMBO_END};
@@ -175,8 +177,10 @@ combo_t key_combos[] = {
     COMBO(combos_ol, KC_RBRC),
     COMBO(combos_fg, QK_AREP),
     COMBO(combos_hj, QK_REP),
-    COMBO(combos_fv, KC_WH_U),
-    COMBO(combos_gb, SCRL_TO),
+    COMBO(combos_sx, KC_WH_L),
+    COMBO(combos_dc, KC_WH_U),
+    COMBO(combos_fv, KC_WH_D),
+    COMBO(combos_gb, KC_WH_R),
     COMBO(combos_hn, SCRL_TO),
     COMBO(combos_jm, KC_WH_D),
 };

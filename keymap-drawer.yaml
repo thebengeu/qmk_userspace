@@ -236,11 +236,17 @@ combos:
     - key_positions: [15, 16]
       key: Rep
       layers: [Base]
-    - key_positions: [13, 23]
+    - key_positions: [11, 21]
+      key: Wheel ←
+      layers: [Base]
+    - key_positions: [12, 22]
       key: Wheel ↑
       layers: [Base]
+    - key_positions: [13, 23]
+      key: Wheel ↓
+      layers: [Base]
     - key_positions: [14, 24]
-      key: Scrl Togg
+      key: Wheel →
       layers: [Base]
     - key_positions: [15, 25]
       key: Scrl Togg
