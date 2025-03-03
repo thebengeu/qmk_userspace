@@ -1,8 +1,8 @@
 #pragma once
 
-#define ACHORDION_STREAK
 #define CAPS_WORD_IDLE_TIMEOUT 0
 #define CAPS_WORD_INVERT_ON_SHIFT
+#define CHORDAL_HOLD
 #define COMBO_TERM 25
 #define EXTRA_SHORT_COMBOS
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
@@ -18,7 +18,3 @@
 #define QUICK_TAP_TERM_PER_KEY
 #define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY
-
-#if VENDOR_ID != 0x5957
-#    define CHORDAL_HOLD
-#endif
