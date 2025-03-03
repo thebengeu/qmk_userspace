@@ -113,7 +113,7 @@ layers:
           - Boot
           - { hold: Redo, shifted: Undo }
     Sym:
-        - - { type: held }
+        - - { tap: $$mdi:apple-keyboard-caps$$, type: held }
           - { tap: "&", hold: "&&" }
           - $$mdi:arrow-up$$
           - { tap: "|", hold: "||" }
@@ -122,7 +122,7 @@ layers:
           - { tap: "!", hold: "!==" }
           - "@"
           - "#"
-          - ""
+          - Fn
         - - { tap: "`", hold: "```" }
           - $$mdi:arrow-left$$
           - $$mdi:arrow-down$$
@@ -172,7 +172,7 @@ layers:
           - F5
           - F6
           - ""
-        - - $$mdi:apple-keyboard-caps$$
+        - - ""
           - Tap Term Print
           - Tap Term Down
           - Tap Term Up
