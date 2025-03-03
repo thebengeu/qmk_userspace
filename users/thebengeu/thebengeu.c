@@ -89,6 +89,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LCSG(KC_Z),     LCSG(KC_X),     LCSG(KC_C),     LCSG(KC_V),      LCSG(KC_B),     LCSG(KC_N),        LCSG(KC_M),       LCSG(KC_COMM),  LCSG(KC_DOT),   LCSG(KC_SLSH),
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
+  [_LSAG] = LAYOUT_split_3x5_3_custom(
+    LSAG(KC_Q),     LSAG(KC_W),     LSAG(KC_E),     LSAG(KC_R),      LSAG(KC_T),     LSAG(KC_Y),        LSAG(KC_U),       LSAG(KC_I),     LSAG(KC_O),     LSAG(KC_P),
+    LSAG(KC_A),     LSAG(KC_S),     LSAG(KC_D),     LSAG(KC_F),      LSAG(KC_G),     LSAG(KC_H),        LSAG(KC_J),       LSAG(KC_K),     LSAG(KC_L),     LSAG(KC_QUOT),
+    LSAG(KC_Z),     LSAG(KC_X),     LSAG(KC_C),     LSAG(KC_V),      LSAG(KC_B),     LSAG(KC_N),        LSAG(KC_M),       LSAG(KC_COMM),  LSAG(KC_DOT),   LSAG(KC_SLSH),
+                                    KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
+  ),
   [_MNO] = LAYOUT_split_3x5_3_custom(
     UG_TOGG,        RGB_M_P,        RGB_M_B,        RGB_M_R,         RGB_M_SW,       RGB_M_SN,          MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      RGB_M_K,
     UG_NEXT,        UG_HUEU,        UG_SATU,        UG_VALU,         UG_SPDU,        RGB_M_X,           MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      RGB_M_G,
@@ -118,6 +124,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [10] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [11] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [12] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [13] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
 };
 #endif
 // clang-format on
@@ -152,8 +159,8 @@ const uint16_t PROGMEM combos_s_rf[]                 = {S(KC_R), S(KC_F), COMBO_
 
 // clang-format off
 combo_t key_combos[] = {
-    COMBO(thumbcombos_mac_left_left, GUI_T(NW_TOGG)),
-    COMBO(thumbcombos_win_left_left, CTL_T(NW_TOGG)),
+    COMBO(thumbcombos_mac_left_left, LT(_LSAG, NW_TOGG)),
+    COMBO(thumbcombos_win_left_left, LT(_LSAG, NW_TOGG)),
     COMBO(thumbcombos_mac_left_right, LT(_LCSG, CW_TOGG)),
     COMBO(thumbcombos_win_left_right, LT(_LCSG, CW_TOGG)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_UNDS)),
