@@ -360,6 +360,16 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 bool is_gui_tab_active = false;
 bool is_alt_tab_active = false;
 
+void matrix_scan_user(void) {
+    if (is_gui_tab_active && !layer_state_is(_NM)) {
+        unregister_code(KC_LGUI);
+        is_gui_tab_active = false;
+    } else if (is_alt_tab_active && !layer_state_is(_NW)) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     const bool is_combo = record->event.type == COMBO_EVENT;
@@ -560,22 +570,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifndef CHORDAL_HOLD
     return process_achordion(keycode, record);
-#else
-    return true;
-#endif
 }
 
-void matrix_scan_user(void) {
-    if (is_gui_tab_active && !layer_state_is(_NM)) {
-        unregister_code(KC_LGUI);
-        is_gui_tab_active = false;
-    } else if (is_alt_tab_active && !layer_state_is(_NW)) {
-        unregister_code(KC_LALT);
-        is_alt_tab_active = false;
-    }
-}
-
-#ifndef CHORDAL_HOLD
 void housekeeping_task_user(void) {
     achordion_task();
 }
@@ -612,6 +608,9 @@ bool achordion_eager_mod(uint8_t mod) {
 
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
 #else
+    return true;
+}
+
 bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
 #endif
     switch (tap_hold_keycode) {
