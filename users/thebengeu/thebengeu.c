@@ -10,7 +10,9 @@ enum {
     DLR_TD,
 };
 
-#ifndef KEYBALL_MODEL
+#ifdef KEYBALL_MODEL
+#    define QK_LLCK KC_NO
+#else
 enum keyball_keycodes {
     KBC_SAVE = QK_KB_1,
     CPI_I100 = QK_KB_2,
@@ -565,6 +567,7 @@ void matrix_scan_user(void) {
     }
 }
 
+#ifdef CHORDAL_HOLD
 bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
     switch (tap_hold_keycode) {
         case GUI_T(KC_A):
@@ -616,6 +619,7 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
 
     return get_chordal_hold_default(tap_hold_record, other_record);
 }
+#endif
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
