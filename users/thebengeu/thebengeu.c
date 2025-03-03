@@ -60,15 +60,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_ESC,         KC_BSPC,         KC_ENT,         LT(_MNO,KC_0),     LT(_SYM,KC_MINS), QK_BOOT
   ),
   [_SYM] = LAYOUT_split_3x5_3_custom(
-    KC_NO,          LT(0,KC_AMPR),  KC_UP,          LT(1,KC_PIPE),   QK_AREP,        QK_REP,            LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_NO,
+    KC_CAPS,          LT(0,KC_AMPR),  KC_UP,        LT(1,KC_PIPE),   QK_AREP,        QK_REP,            LT(0,KC_EXLM),    LT(0,KC_AT),    LT(0,KC_HASH),  KC_RCTL,
     LT(0,KC_GRV),   KC_LEFT,        KC_DOWN,        KC_RIGHT,        LT(2,KC_EQL),   RCTL_T(KC_ASTR),   SFT_T(KC_LPRN),   CTL_T(KC_LCBR), ALT_T(KC_LBRC), GUI_T(KC_SCLN),
     LSA(KC_X),      LSA(KC_MINS),   LSA(KC_BSLS),   KC_PGDN,         KC_PGUP,        KC_HOME,           LT(0,KC_RPRN),    LT(1,KC_RCBR),  LT(0,KC_RBRC),  KC_END,
                                     KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            QK_LLCK
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
     DF(_WIN),       KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
-    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   KC_RCTL,        RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    KC_CAPS,        DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
+    KC_NO,          DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
                                     KC_NO,          DF(_MAC),        KC_P1,          QK_AREP,           QK_REP,           KC_NO
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
