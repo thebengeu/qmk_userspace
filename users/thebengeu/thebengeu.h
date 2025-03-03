@@ -18,7 +18,6 @@ enum custom_keycodes {
 enum layers {
     _MAC,
     _WIN,
-    _S,
     _MM,
     _MW,
     _NM,

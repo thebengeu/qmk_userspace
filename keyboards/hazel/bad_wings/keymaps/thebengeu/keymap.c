@@ -14,7 +14,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     int highest_layer = get_highest_layer(state);
 
     switch (highest_layer) {
-        case _FUN:
+        case _LCSG:
             scrollsnap_mode = SCROLLSNAP_MODE_FREE;
             break;
         case _MEH:
@@ -30,13 +30,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
 
     switch (highest_layer) {
-        case _FUN:
+        case _LCSG:
         case _MEH:
         case _NM:
         case _NW:
             pointing_device_set_cpi(25);
             break;
-        case _S:
+        case _FUN:
             pointing_device_set_cpi(500);
             break;
         case _SYM:
