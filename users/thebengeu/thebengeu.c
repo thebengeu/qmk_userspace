@@ -6,17 +6,11 @@
 
 #include "thebengeu.h"
 
-#ifndef CHORDAL_HOLD
-#    include "features/achordion.h"
-#endif
-
 enum {
     DLR_TD,
 };
 
-#ifdef KEYBALL_MODEL
-#    define QK_LLCK KC_NO
-#else
+#ifndef KEYBALL_MODEL
 enum keyball_keycodes {
     KBC_SAVE = QK_KB_1,
     CPI_I100 = QK_KB_2,
@@ -562,51 +556,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return process_tap_or_long_press_key(record, "// ", "?? ");
     }
 
-#ifndef CHORDAL_HOLD
-    return process_achordion(keycode, record);
-}
-
-void housekeeping_task_user(void) {
-    achordion_task();
-}
-
-uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode, uint16_t next_keycode) {
-    switch (tap_hold_keycode) {
-        case LT(_SYM, KC_Q):
-        case LT(_NM, KC_P):
-        case LT(_NW, KC_P):
-        case GUI_T(KC_A):
-        case ALT_T(KC_S):
-        case CTL_T(KC_D):
-        case RCTL_T(KC_G):
-        case RCTL_T(KC_H):
-        case CTL_T(KC_K):
-        case ALT_T(KC_L):
-        case GUI_T(KC_QUOT):
-        case LT(_MM, KC_Z):
-        case LT(_MW, KC_Z):
-        case LT(_SYM, KC_SPC):
-            return 100;
-        default:
-            return 0;
-    }
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-    return g_tapping_term;
-}
-
-bool achordion_eager_mod(uint8_t mod) {
-    return false;
-}
-
-bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
-#else
     return true;
 }
 
 bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
-#endif
     switch (tap_hold_keycode) {
         case GUI_T(KC_A):
         case LT(_MM, KC_Z):
@@ -657,11 +610,7 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
             return true;
     }
 
-#ifndef CHORDAL_HOLD
-    return achordion_opposite_hands(tap_hold_record, other_record);
-#else
     return get_chordal_hold_default(tap_hold_record, other_record);
-#endif
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
