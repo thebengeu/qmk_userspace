@@ -1,6 +1,16 @@
 #include QMK_KEYBOARD_H
 #include "thebengeu.h"
 
+// clang-format off
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+LAYOUT( \
+'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R', \
+'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R', \
+'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R', \
+          'L', 'L', 'L', 'L', 'L',  'R', 'R',                'R'       \
+);
+// clang-format on
+
 static uint8_t previous_cpi = 0;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
