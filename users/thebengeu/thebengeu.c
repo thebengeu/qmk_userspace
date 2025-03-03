@@ -654,7 +654,9 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
         case LT(_FUN, KC_ESC):
         case LT(_MEH, KC_TAB):
         case LT(_MM, KC_ENT):
+        case LT(_MM, KC_SLSH):
         case LT(_MW, KC_ENT):
+        case LT(_MW, KC_SLSH):
         case LT(_NM, KC_BSPC):
         case LT(_NW, KC_BSPC):
         case LT(_SYM, KC_SPC):
