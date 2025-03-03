@@ -192,7 +192,7 @@ layers:
           - { tap: Repeat, hold: Rep, shifted: Alt Rep }
 combos:
     - key_positions: [31, 32]
-      key: { tap: NW, hold: Cmd }
+      key: { tap: NW, hold: LSAG }
       layers: [Base]
     - key_positions: [31, 32]
       key: $$mdi:keyboard-tab$$

@@ -27,6 +27,7 @@ enum layers {
     _MEH,
     _HYPR,
     _LCSG,
+    _LSAG,
     _MNO,
     _HNO,
 };
