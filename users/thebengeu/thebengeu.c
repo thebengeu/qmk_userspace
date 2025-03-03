@@ -578,10 +578,6 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
             }
             break;
         case CTL_T(KC_K):
-            switch (other_keycode) {
-                case LT(_SYM, KC_SPC):
-                    return true;
-            }
         case ALT_T(KC_L):
             switch (other_keycode) {
                 case LT(_MEH, KC_TAB):
@@ -620,8 +616,6 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case LT(_MW, KC_Z):
         case LT(0, KC_COMM):
         case LT(0, KC_DOT):
-        case LT(_MM, KC_SLSH):
-        case LT(_MW, KC_SLSH):
         case LT(_SYM, KC_SPC):
         case LT(_MNO, KC_0):
             return false;
