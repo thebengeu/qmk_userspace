@@ -35,12 +35,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(_MW,KC_Z),   KC_X,           KC_C,           KC_V,            KC_B,           KC_N,              KC_M,             LT(0,KC_COMM),  LT(0,KC_DOT),   LT(_MW,KC_SLSH),
                                     LT(_FUN,KC_ESC),LT(_NW,KC_BSPC), LT(_MW,KC_ENT), LT(_MEH,KC_TAB),   LT(_SYM,KC_SPC),  KC_BTN2
   ),
-  [_S] = LAYOUT_split_3x5_3_custom(
-    S(KC_Q),        S(KC_W),        S(KC_E),        S(KC_R),         S(KC_T),        S(KC_Y),           S(KC_U),          S(KC_I),        S(KC_O),        S(KC_P),
-    S(KC_A),        S(KC_S),        S(KC_D),        S(KC_F),         S(KC_G),        S(KC_H),           S(KC_J),          S(KC_K),        S(KC_L),        KC_DQUO,
-    S(KC_Z),        S(KC_X),        S(KC_C),        S(KC_V),         S(KC_B),        S(KC_N),           S(KC_M),          KC_LT,          KC_GT,          KC_QUES,
-                                    KC_NO,          KC_NO,           KC_NO,          LT(_LCSG,KC_UNDS), QK_REP,           KC_NO
-  ),
   [_MM] = LAYOUT_split_3x5_3_custom(
     G(KC_Q),        KC_WH_L,        KC_MS_U,        KC_WH_R,         KC_WH_U,        KC_MUTE,           G(KC_1),          G(KC_2),        G(KC_3),        KC_MPLY,
     G(KC_A),        KC_MS_L,        KC_MS_D,        KC_MS_R,         KC_WH_D,        RCTL_T(KC_VOLD),   SFT_T(GUI_4),     CTL_T(GUI_5),   ALT_T(GUI_6),   GUI_T(KC_VOLU),
@@ -113,18 +107,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] = {ENCODER_CCW_CW(KC_WH_U, KC_WH_D), ENCODER_CCW_CW(LSG(KC_LBRC),   LSG(KC_RBRC))},
     [1] = {ENCODER_CCW_CW(KC_WH_U, KC_WH_D), ENCODER_CCW_CW(S(C(KC_TAB)), C(KC_TAB))},
-    [2] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(QK_AREP, QK_REP)},
+    [2] = {ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [3] = {ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [4] = {ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [5] = {ENCODER_CCW_CW(G(KC_MINS), G(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
-    [6] = {ENCODER_CCW_CW(C(KC_MINS), C(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
-    [7] = {ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN)},
-    [8] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_F1, KC_F2)},
-    [9] = {ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_NO, KC_NO)},
-    [10] = {ENCODER_CCW_CW(S(KC_H), S(KC_L)), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [4] = {ENCODER_CCW_CW(G(KC_MINS), G(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
+    [5] = {ENCODER_CCW_CW(C(KC_MINS), C(KC_EQL)), ENCODER_CCW_CW(KC_U, C(KC_R))},
+    [6] = {ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN)},
+    [7] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_F1, KC_F2)},
+    [8] = {ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [9] = {ENCODER_CCW_CW(S(KC_H), S(KC_L)), ENCODER_CCW_CW(KC_NO, KC_NO)},
+    [10] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [11] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
     [12] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
-    [13] = {ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)},
 };
 #endif
 // clang-format on
@@ -132,11 +125,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 const uint16_t PROGMEM thumbcombos_mac_left_left[]   = {LT(_FUN, KC_ESC), LT(_NM, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_left_left[]   = {LT(_FUN, KC_ESC), LT(_NW, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_mac_left_right[]  = {LT(_NM, KC_BSPC), LT(_MM, KC_ENT), COMBO_END};
-const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_NW, KC_BSPC), LT(_S, KC_ENT), COMBO_END};
+const uint16_t PROGMEM thumbcombos_win_left_right[]  = {LT(_NW, KC_BSPC), LT(_MW, KC_ENT), COMBO_END};
 const uint16_t PROGMEM thumbcombos_base_right_left[] = {LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_mac_hno[]         = {LT(_NM, KC_BSPC), LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
 const uint16_t PROGMEM thumbcombos_win_hno[]         = {LT(_NW, KC_BSPC), LT(_MEH, KC_TAB), LT(_SYM, KC_SPC), COMBO_END};
-const uint16_t PROGMEM thumbcombos_s_right[]         = {LT(_LCSG, KC_UNDS), QK_REP, COMBO_END};
 const uint16_t PROGMEM thumbcombos_ms_right[]        = {KC_BTN1, KC_BTN2, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_left[]   = {KC_ESC, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM thumbcombos_num_left_right[]  = {KC_BSPC, KC_ENT, COMBO_END};
@@ -165,7 +157,6 @@ combo_t key_combos[] = {
     COMBO(thumbcombos_mac_left_right, LT(_LCSG, CW_TOGG)),
     COMBO(thumbcombos_win_left_right, LT(_LCSG, CW_TOGG)),
     COMBO(thumbcombos_base_right_left, LT(_HYPR,KC_UNDS)),
-    COMBO(thumbcombos_s_right, QK_AREP),
     COMBO(thumbcombos_ms_right, KC_BTN3),
     COMBO(thumbcombos_num_left_left, KC_TAB),
     COMBO(thumbcombos_num_left_right, KC_SPC),
