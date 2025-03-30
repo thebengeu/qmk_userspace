@@ -152,43 +152,43 @@ layers:
           - Layer Lock
           - { tap: Page, hold: Down, shifted: Up }
     Fun:
-        - - ""
+        - - Def Win
           - F10
           - F11
           - F12
           - Pause
-          - ""
+          - Hue
           - F1
           - F2
           - F3
-          - ""
+          - RGB Toggle
         - - $$mdi:apple-keyboard-command$$
           - $$mdi:apple-keyboard-option$$
           - $$mdi:apple-keyboard-control$$
           - $$mdi:apple-keyboard-shift$$
           - Fn
-          - ""
+          - Sat
           - F4
           - F5
           - F6
-          - ""
+          - RGB Mode
         - - ""
           - Tap Term Print
           - Tap Term Down
           - Tap Term Up
           - Print Screen
-          - ""
+          - Bright
           - F7
           - F8
           - F9
           - BL Step
         - - { hold: F2, shifted: F1 }
           - { type: held }
-          - ""
+          - Def Mac
           - Numpad 1
           - Alt Rep
           - Rep
-          - ""
+          - Numpad 0
           - { tap: Repeat, hold: Rep, shifted: Alt Rep }
 combos:
     - key_positions: [31, 32]
