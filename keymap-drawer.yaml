@@ -152,7 +152,7 @@ layers:
           - Layer Lock
           - { tap: Page, hold: Down, shifted: Up }
     Fun:
-        - - Def Win
+        - - Print Screen
           - F10
           - F11
           - F12
@@ -172,11 +172,11 @@ layers:
           - F5
           - F6
           - RGB Mode
-        - - ""
-          - Tap Term Print
-          - Tap Term Down
-          - Tap Term Up
-          - Print Screen
+        - - Screen Shot
+          - Area Shot
+          - All Shot
+          - Win Shot
+          - Prev Shot
           - Bright
           - F7
           - F8
@@ -184,7 +184,7 @@ layers:
           - BL Step
         - - { hold: F2, shifted: F1 }
           - { type: held }
-          - Def Mac
+          - ""
           - Numpad 1
           - Alt Rep
           - Rep

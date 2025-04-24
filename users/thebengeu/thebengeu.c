@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            QK_LLCK
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
-    DF(_WIN),       KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
+    KC_PSCR,        KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    KC_NO,          DT_PRNT,        DT_DOWN,        DT_UP,           KC_PSCR,        RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+    LSG(KC_3),      LSG(KC_4),      LSG(KC_5),      LSG(KC_6),       LSG(KC_7),      RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
                                     KC_NO,          DF(_MAC),        KC_P1,          QK_AREP,           QK_REP,           KC_P0
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
@@ -102,9 +102,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     VK_TOGG,        KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
   [_HNO] = LAYOUT_split_3x5_3_custom(
-    RM_TOGG,        CPI_D1K,        CPI_D100,       CPI_I100,        CPI_I1K,        KC_NO,             HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     KC_NO,
-    RM_NEXT,        RM_HUEU,        RM_SATU,        RM_VALU,         RM_SPDU,        KC_NO,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     KC_NO,
-    RM_PREV,        RM_HUED,        RM_SATD,        RM_VALD,         RM_SPDD,        KC_NO,             HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KBC_SAVE,
+    RM_TOGG,        CPI_D1K,        CPI_D100,       CPI_I100,        CPI_I1K,        DT_PRNT,           HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     DF(_MAC),
+    RM_NEXT,        RM_HUEU,        RM_SATU,        RM_VALU,         RM_SPDU,        DT_UP,             HYPR(KC_4),       HYPR(KC_5),     HYPR(KC_6),     DF(_WIN),
+    RM_PREV,        RM_HUED,        RM_SATD,        RM_VALD,         RM_SPDD,        DT_DOWN,           HYPR(KC_7),       HYPR(KC_8),     HYPR(KC_9),     KBC_SAVE,
                                     KC_NO,          KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
   ),
 };

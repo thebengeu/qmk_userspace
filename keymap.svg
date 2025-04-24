@@ -1091,7 +1091,7 @@ path.combo {
 <g transform="translate(28, 28)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Def</tspan><tspan x="0" dy="1.2em">Win</tspan>
+<tspan x="0" dy="-0.6em">Print</tspan><tspan x="0" dy="1.2em">Screen</tspan>
 </text>
 </g>
 <g transform="translate(84, 28)" class="key keypos-1">
@@ -1176,29 +1176,32 @@ path.combo {
 </g>
 <g transform="translate(28, 140)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Screen</tspan><tspan x="0" dy="1.2em">Shot</tspan>
+</text>
 </g>
 <g transform="translate(84, 140)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Tap</tspan><tspan x="0" dy="1.2em">Term</tspan><tspan x="0" dy="1.2em">Print</tspan>
+<tspan x="0" dy="-0.6em">Area</tspan><tspan x="0" dy="1.2em">Shot</tspan>
 </text>
 </g>
 <g transform="translate(140, 140)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Tap</tspan><tspan x="0" dy="1.2em">Term</tspan><tspan x="0" dy="1.2em">Down</tspan>
+<tspan x="0" dy="-0.6em">All</tspan><tspan x="0" dy="1.2em">Shot</tspan>
 </text>
 </g>
 <g transform="translate(196, 140)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">Tap</tspan><tspan x="0" dy="1.2em">Term</tspan><tspan x="0" dy="1.2em">Up</tspan>
+<tspan x="0" dy="-0.6em">Win</tspan><tspan x="0" dy="1.2em">Shot</tspan>
 </text>
 </g>
 <g transform="translate(252, 140)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Print</tspan><tspan x="0" dy="1.2em">Screen</tspan>
+<tspan x="0" dy="-0.6em">Prev</tspan><tspan x="0" dy="1.2em">Shot</tspan>
 </text>
 </g>
 <g transform="translate(476, 140)" class="key keypos-25">
@@ -1233,9 +1236,6 @@ path.combo {
 </g>
 <g transform="translate(252, 196)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Def</tspan><tspan x="0" dy="1.2em">Mac</tspan>
-</text>
 </g>
 <g transform="translate(308, 196)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
