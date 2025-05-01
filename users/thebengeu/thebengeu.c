@@ -75,13 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MEH(KC_Q),      MEH(KC_W),      MEH(KC_E),      MEH(KC_R),       MEH(KC_T),      MEH(KC_Y),         MEH(KC_U),        MEH(KC_I),      MEH(KC_O),      MEH(KC_P),
     MEH(KC_A),      MEH(KC_S),      MEH(KC_D),      MEH(KC_F),       MEH(KC_G),      MEH(KC_H),         MEH(KC_J),        MEH(KC_K),      MEH(KC_L),      MEH(KC_QUOT),
     MEH(KC_Z),      MEH(KC_X),      MEH(KC_C),      MEH(KC_V),       MEH(KC_B),      MEH(KC_N),         MEH(KC_M),        MEH(KC_COMM),   MEH(KC_DOT),    MEH(KC_SLSH),
-                                    KC_NO,          OSL(_MNO),       OSL(_LCSG),     KC_NO,             KC_NO,            KC_NO
+                                    KC_NO,          OSL(_MNO),       OSL(_LCSG),     KC_NO,             MEH(KC_SPC),      KC_NO
   ),
   [_HYPR] = LAYOUT_split_3x5_3_custom(
     HYPR(KC_Q),     HYPR(KC_W),     HYPR(KC_E),     HYPR(KC_R),      HYPR(KC_T),     HYPR(KC_Y),        HYPR(KC_U),       HYPR(KC_I),     HYPR(KC_O),     HYPR(KC_P),
     HYPR(KC_A),     HYPR(KC_S),     HYPR(KC_D),     HYPR(KC_F),      HYPR(KC_G),     HYPR(KC_H),        HYPR(KC_J),       HYPR(KC_K),     HYPR(KC_L),     HYPR(KC_QUOT),
     HYPR(KC_Z),     HYPR(KC_X),     HYPR(KC_C),     HYPR(KC_V),      HYPR(KC_B),     HYPR(KC_N),        HYPR(KC_M),       HYPR(KC_COMM),  HYPR(KC_DOT),   HYPR(KC_SLSH),
-                                    KC_NO,          OSL(_HNO),       KC_NO,          KC_NO,             KC_NO,            KC_NO
+                                    KC_NO,          OSL(_HNO),       KC_NO,          KC_NO,             HYPR(KC_SPC),     KC_NO
   ),
   [_LCSG] = LAYOUT_split_3x5_3_custom(
     LCSG(KC_Q),     LCSG(KC_W),     LCSG(KC_E),     LCSG(KC_R),      LCSG(KC_T),     LCSG(KC_Y),        LCSG(KC_U),       LCSG(KC_I),     LCSG(KC_O),     LCSG(KC_P),
