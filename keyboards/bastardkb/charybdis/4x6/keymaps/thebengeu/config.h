@@ -1,5 +1,9 @@
 #pragma once
 
+#define ALT KC_RALT
+#define CTL KC_RCTL
+#define GUI KC_RGUI
+#define SFT KC_RSFT
 #define KB1 KC_BTN1
 #define KB2 KC_BTN2
 #define KC0 KC_0
@@ -23,9 +27,9 @@ K20, K21, K22, K23, K24,                K25, K26, K27, K28, K29, \
 ) \
 LAYOUT( \
 K00, KC1, KC2, KC3, KC4, KC5,            KC6, KC7, KC8, KC9, KC0, K09, \
-K00, K00, K01, K02, K03, K04,            K05, K06, K07, K08, K09, K09, \
+CTL, K00, K01, K02, K03, K04,            K05, K06, K07, K08, K09, GUI, \
 K00, K10, K11, K12, K13, K14,            K15, K16, K17, K18, K19, K09, \
-KB1, K20, K21, K22, K23, K24,            K25, K26, K27, K28, K29, KB1, \
+ALT, K20, K21, K22, K23, K24,            K25, K26, K27, K28, K29, SFT, \
                     K30, K31, K32,  K33, K34,                          \
                          KB1, KB2,  K35                                \
 )

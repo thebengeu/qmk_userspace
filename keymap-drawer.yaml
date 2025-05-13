@@ -157,31 +157,31 @@ layers:
           - F11
           - F12
           - Pause
-          - Hue
+          - F13
           - F1
           - F2
           - F3
-          - RGB Toggle
+          - F16
         - - $$mdi:apple-keyboard-command$$
           - $$mdi:apple-keyboard-option$$
           - $$mdi:apple-keyboard-control$$
           - $$mdi:apple-keyboard-shift$$
           - Fn
-          - Sat
+          - F14
           - F4
           - F5
           - F6
-          - RGB Mode
+          - F17
         - - Screen Shot
           - Area Shot
           - All Shot
           - Win Shot
           - Prev Shot
-          - Bright
+          - F15
           - F7
           - F8
           - F9
-          - BL Step
+          - F18
         - - { hold: F2, shifted: F1 }
           - { type: held }
           - ""

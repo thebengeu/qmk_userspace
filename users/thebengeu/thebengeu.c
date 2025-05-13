@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_DEL,         KC_BSPC,         KC_ENT,         KC_NO,             KC_NO,            QK_LLCK
   ),
   [_FUN] = LAYOUT_split_3x5_3_custom(
-    KC_PSCR,        KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        RGB_HUD,           KC_F1,            KC_F2,          KC_F3,          RGB_TOG,
-    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  RGB_SAD,           KC_F4,            KC_F5,          KC_F6,          RGB_MOD,
-    LSG(KC_3),      LSG(KC_4),      LSG(KC_5),      LSG(KC_6),       LSG(KC_7),      RGB_VAD,           KC_F7,            KC_F8,          KC_F9,          BL_STEP,
+    KC_PSCR,        KC_F10,         KC_F11,         KC_F12,          KC_PAUS,        KC_F13,            KC_F1,            KC_F2,          KC_F3,          KC_F16,
+    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),   OSM(MOD_RCTL),  KC_F14,            KC_F4,            KC_F5,          KC_F6,          KC_F17,
+    LSG(KC_3),      LSG(KC_4),      LSG(KC_5),      LSG(KC_6),       LSG(KC_7),      KC_F15,            KC_F7,            KC_F8,          KC_F9,          KC_F18,
                                     KC_NO,          DF(_MAC),        KC_P1,          QK_AREP,           QK_REP,           KC_P0
   ),
   [_MEH] = LAYOUT_split_3x5_3_custom(
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     UG_TOGG,        RGB_M_P,        RGB_M_B,        RGB_M_R,         RGB_M_SW,       RGB_M_SN,          MEH(KC_1),        MEH(KC_2),      MEH(KC_3),      RGB_M_K,
     UG_NEXT,        UG_HUEU,        UG_SATU,        UG_VALU,         UG_SPDU,        RGB_M_X,           MEH(KC_4),        MEH(KC_5),      MEH(KC_6),      RGB_M_G,
     UG_PREV,        UG_HUED,        UG_SATD,        UG_VALD,         UG_SPDD,        RGB_M_T,           MEH(KC_7),        MEH(KC_8),      MEH(KC_9),      RGB_M_TW,
-                                    VK_TOGG,        KC_NO,           KC_NO,          KC_NO,             KC_NO,            KC_NO
+                                    VK_TOGG,        KC_NO,           KC_NO,          KC_NO,             BL_STEP,          KC_NO
   ),
   [_HNO] = LAYOUT_split_3x5_3_custom(
     RM_TOGG,        CPI_D1K,        CPI_D100,       CPI_I100,        CPI_I1K,        DT_PRNT,           HYPR(KC_1),       HYPR(KC_2),     HYPR(KC_3),     DF(_MAC),
