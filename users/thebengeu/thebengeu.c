@@ -603,6 +603,31 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, u
     return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_SYM, KC_Q):
+        case LT(_NM, KC_P):
+        case LT(_NW, KC_P):
+        case GUI_T(KC_A):
+        case ALT_T(KC_S):
+        case CTL_T(KC_D):
+        case RCTL_T(KC_G):
+        case RCTL_T(KC_H):
+        case CTL_T(KC_K):
+        case ALT_T(KC_L):
+        case GUI_T(KC_QUOT):
+        case LT(_MM, KC_Z):
+        case LT(_MW, KC_Z):
+        case LT(0, KC_COMM):
+        case LT(0, KC_DOT):
+        case LT(_SYM, KC_SPC):
+        case LT(_MNO, KC_0):
+            return false;
+        default:
+            return true;
+    }
+}
+
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_SYM, KC_Q):
