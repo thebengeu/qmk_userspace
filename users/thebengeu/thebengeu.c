@@ -665,6 +665,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool is_flow_tap_key(uint16_t keycode) {
+    switch (get_tap_keycode(keycode)) {
+        case KC_A ... KC_Z:
+            return true;
+    }
+    return false;
+}
+
 #ifdef TAP_DANCE_ENABLE
 typedef enum {
     TD_NONE,
