@@ -2,8 +2,8 @@
 
 #define ALT KC_RALT
 #define CTL KC_RCTL
-#define LSF KC_LSFT
-#define RSF KC_RSFT
+#define LSF LSFT_T(KC_LBRC)
+#define RSF RSFT_T(KC_RBRC)
 #define MS1 MS_BTN1
 #define MS2 MS_BTN2
 #define XXX KC_NO
@@ -17,7 +17,7 @@ K20, K21, K22, K23, K24,                K25, K26, K27, K28, K29, \
 ) \
 LAYOUT( \
 CTL, K00, K01, K02, K03, K04,            K05, K06, K07, K08, K09, ALT, \
-K00, K10, K11, K12, K13, K14,            K15, K16, K17, K18, K19, K09, \
+MS1, K10, K11, K12, K13, K14,            K15, K16, K17, K18, K19, MS1, \
 LSF, K20, K21, K22, K23, K24,            K25, K26, K27, K28, K29, RSF, \
           MS2, MS1, K30, K31, K32,  K33, K34,                K35       \
 )
